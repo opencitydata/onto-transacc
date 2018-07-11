@@ -1,0 +1,388 @@
+{
+  "@context" : {
+    "hasWalkway" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#hasWalkway",
+      "@type" : "@id"
+    },
+    "intenseLight" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#intenseLight",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "lastStop" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#lastStop",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "Route" : {
+      "@id" : "http://vocab.gtfs.org/terms#Route"
+    },
+    "inBusRoute" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#inBusRoute",
+      "@type" : "@id"
+    },
+    "brailleLetters" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#brailleLetters",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "term_status" : {
+      "@id" : "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"
+    },
+    "impairment" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#impairment"
+    },
+    "TrainStop" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#TrainStop"
+    },
+    "Stair" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Stair"
+    },
+    "raisedButtons" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#raisedButtons",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "personalAssistance" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#personalAssistance",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "Platform" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Platform"
+    },
+    "bigLetters" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#bigLetters"
+    },
+    "Neon" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#Neon"
+    },
+    "BusRoute" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#BusRoute"
+    },
+    "parkingDisabled" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#parkingDisabled",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "stairStrips" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#stairStrips",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "issued" : {
+      "@id" : "http://purl.org/dc/terms/issued"
+    },
+    "rampHandrail" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#rampHandrail",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "Thing" : {
+      "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    },
+    "topDataProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#topDataProperty",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "easyToRead" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#easyToRead",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "age" : {
+      "@id" : "http://xmlns.com/foaf/0.1/age"
+    },
+    "stopsRoute" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#stopsRoute",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasVersion" : {
+      "@id" : "http://purl.org/dc/terms/hasVersion"
+    },
+    "lineMap" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#lineMap",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "Notice" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice"
+    },
+    "infoTickets" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#infoTickets",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "specialPavementWalk" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#specialPavementWalk",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "long" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#long"
+    },
+    "directionsPlatform" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#directionsPlatform",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "Sound" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#Sound"
+    },
+    "busStopNotice" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#busStopNotice",
+      "@type" : "@id"
+    },
+    "frequent" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#frequent",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "Concept" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "visualDisabBathroom" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#visualDisabBathroom",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "familyName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/familyName",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "rampInclination" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#rampInclination"
+    },
+    "User" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#User"
+    },
+    "specialPavementBorder" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#specialPavementBorder",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "addressExit" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#addressExit",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "rampDisabFeature" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#rampDisabFeature",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "FootPass" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass"
+    },
+    "stopId" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#stopId"
+    },
+    "specialPavementTicketing" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#specialPavementTicketing"
+    },
+    "Person" : {
+      "@id" : "http://www.w3.org/2000/10/swap/pim/contact#Person"
+    },
+    "note" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#note"
+    },
+    "minutesVehicle" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#minutesVehicle",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "Sign" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#Sign"
+    },
+    "Agent" : {
+      "@id" : "http://xmlns.com/foaf/0.1/Agent"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/terms/creator"
+    },
+    "spaceWheelchair" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#spaceWheelchair",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "givenName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/givenName"
+    },
+    "raisedLetters" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#raisedLetters",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "schedule" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#schedule",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "noticeDisabFeature" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#noticeDisabFeature",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "typePlatform" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#typePlatform"
+    },
+    "alternativeRamp" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#alternativeRamp",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "Billboard" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#Billboard"
+    },
+    "seats" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#seats",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "buttonSound" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#buttonSound",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "typeStair" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#typeStair"
+    },
+    "TrainRoute" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#TrainRoute"
+    },
+    "hasPlatform" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#hasPlatform",
+      "@type" : "@id"
+    },
+    "counterForWheelchair" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#counterForWheelchair",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "identifier" : {
+      "@id" : "http://purl.org/dc/terms/identifier"
+    },
+    "routeId" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#routeId",
+      "@type" : "http://www.w3.org/2001/XMLSchema#positiveInteger"
+    },
+    "lineSchedule" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#lineSchedule",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "stationNotice" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#stationNotice",
+      "@type" : "@id"
+    },
+    "OnlineAccount" : {
+      "@id" : "http://xmlns.com/foaf/0.1/OnlineAccount"
+    },
+    "typeBusStop" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#typeBusStop"
+    },
+    "account" : {
+      "@id" : "http://xmlns.com/foaf/0.1/account",
+      "@type" : "@id"
+    },
+    "isDefinedBy" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+    },
+    "Elevator" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Elevator"
+    },
+    "brailleButtons" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#brailleButtons",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "specialPavementBoard" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#specialPavementBoard",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "MovingWalkway" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#MovingWalkway"
+    },
+    "inTrainRoute" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#inTrainRoute",
+      "@type" : "@id"
+    },
+    "lat" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+    },
+    "state" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#state",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "physicalDisabBathroom" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#physicalDisabBathroom",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "modified" : {
+      "@id" : "http://purl.org/dc/terms/modified"
+    },
+    "ExteriorAccess" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#ExteriorAccess"
+    },
+    "walkwayLength" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#walkwayLength",
+      "@type" : "http://www.w3.org/2001/XMLSchema#float"
+    },
+    "Station" : {
+      "@id" : "http://vocab.gtfs.org/terms#Station"
+    },
+    "doorWheelchair" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#doorWheelchair",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "noticeType" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#noticeType",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "clear" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#clear",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "BusStop" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#BusStop"
+    },
+    "contrastLetters" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#contrastLetters",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "prolongationHandrail" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#prolongationHandrail",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "parentStation" : {
+      "@id" : "http://vocab.gtfs.org/terms#parentStation",
+      "@type" : "@id"
+    },
+    "isquialSupports" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#isquialSupports",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "platformNotice" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#platformNotice",
+      "@type" : "@id"
+    },
+    "typeDoor" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#typeDoor"
+    },
+    "specialPavementFirstCar" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#specialPavementFirstCar",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "seqNumber" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#seqNumber",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "code" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#code",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "hasStair" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#hasStair",
+      "@type" : "@id"
+    },
+    "pictographic" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#pictographic",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "sidewalk" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#sidewalk",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description"
+    },
+    "exteriorAccessTo" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#exteriorAccessTo",
+      "@type" : "@id"
+    },
+    "numStairs" : {
+      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#numStairs",
+      "@type" : "http://www.w3.org/2001/XMLSchema#positiveInteger"
+    },
+    "Stop" : {
+      "@id" : "http://vocab.gtfs.org/terms#Stop"
+    }
+  }
+}

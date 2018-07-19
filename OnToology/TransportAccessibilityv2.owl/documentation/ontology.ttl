@@ -77,22 +77,73 @@
 #    Object Properties
 #################################################################
 
-###  http://transacc.linkeddata.es/def/core#hasPlatform
-<http://transacc.linkeddata.es/def/core#hasPlatform> rdf:type owl:ObjectProperty ;
-                                                     rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#TrainStop> ;
-                                                     rdfs:range <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Platform> .
+###  http://transacc.linkeddata.es/def/core#adresses
+<http://transacc.linkeddata.es/def/core#adresses> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <http://transacc.linkeddata.es/def/core#DisabilityFeature> ;
+                                                  rdfs:range <http://transacc.linkeddata.es/def/core#DisabilityType> ;
+                                                  rdfs:comment "A disability feature adresses a certain disability type"@es ;
+                                                  rdfs:label "atiende"@es .
 
 
-###  http://transacc.linkeddata.es/def/core#inTrainRoute
-<http://transacc.linkeddata.es/def/core#inTrainRoute> rdf:type owl:ObjectProperty ;
-                                                      rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#TrainStop> ;
-                                                      rdfs:range <http://transacc.linkeddata.es/def/core#TrainRoute> .
+###  http://transacc.linkeddata.es/def/core#annotates
+<http://transacc.linkeddata.es/def/core#annotates> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain <http://transacc.linkeddata.es/def/core#Annotation> ;
+                                                   rdfs:comment "Any transportation element can be annotated by a user in different dates"@es ;
+                                                   rdfs:label "anotado"@es .
 
 
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#busStopNotice
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#busStopNotice> rdf:type owl:ObjectProperty ;
-                                                                                       rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#BusStop> ;
-                                                                                       rdfs:range <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice> .
+###  http://transacc.linkeddata.es/def/core#hasContent
+<http://transacc.linkeddata.es/def/core#hasContent> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice> ;
+                                                    rdfs:range <http://transacc.linkeddata.es/def/core#Content> ;
+                                                    rdfs:comment "type of content of notices, for example \"exit address\", \"map of lines\""@es ;
+                                                    rdfs:label "tieneContenido"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#hasDirection
+<http://transacc.linkeddata.es/def/core#hasDirection> rdf:type owl:ObjectProperty ;
+                                                      rdfs:domain <http://vocab.gtfs.org/terms#Route> ;
+                                                      rdfs:range <http://transacc.linkeddata.es/def/core#RouteDirection> ;
+                                                      rdfs:comment "a Route can have in general two directions, characterized by headsign"@es ;
+                                                      rdfs:label "tieneDireccion"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#hasDisabilityFeature
+<http://transacc.linkeddata.es/def/core#hasDisabilityFeature> rdf:type owl:ObjectProperty ;
+                                                              rdfs:range <http://transacc.linkeddata.es/def/core#DisabilityFeature> ;
+                                                              rdfs:comment "An element in public transportation has a feature for disability"@es ;
+                                                              rdfs:label "tieneCaracteristicaDiscapacidad"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#hasDisabilityType
+<http://transacc.linkeddata.es/def/core#hasDisabilityType> rdf:type owl:ObjectProperty ;
+                                                           rdfs:range <http://transacc.linkeddata.es/def/core#DisabilityType> ;
+                                                           rdfs:comment "A person has a type of disability"@es ;
+                                                           rdfs:label "tieneTipoDiscapacidad"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#madeBy
+<http://transacc.linkeddata.es/def/core#madeBy> rdf:type owl:ObjectProperty ;
+                                                rdfs:domain <http://transacc.linkeddata.es/def/core#Annotation> ;
+                                                rdfs:range <http://www.w3.org/2000/10/swap/pim/contact#Person> ;
+                                                rdfs:comment "An annotation is made by a person (user)"@es ;
+                                                rdfs:label "hechoPor"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#toRouteDirection
+<http://transacc.linkeddata.es/def/core#toRouteDirection> rdf:type owl:ObjectProperty ;
+                                                          rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Platform> ;
+                                                          rdfs:range <http://transacc.linkeddata.es/def/core#RouteDirection> ;
+                                                          rdfs:comment "A platform corresponds to a direction of a route (RouteDirection) in a certain stattion"@es ;
+                                                          rdfs:label "aRutaDireccion"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#toStation
+<http://transacc.linkeddata.es/def/core#toStation> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Platform> ;
+                                                   rdfs:range <http://vocab.gtfs.org/terms#Station> ;
+                                                   rdfs:comment "A platform corresponds to a direcion of a route in a certain station (Station)"@es ;
+                                                   rdfs:label "aEstacion"@es .
 
 
 ###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#exteriorAccessTo
@@ -101,34 +152,19 @@
                                                                                           rdfs:range <http://vocab.gtfs.org/terms#Station> .
 
 
+###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#hasNotice
+<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#hasNotice> rdf:type owl:ObjectProperty ;
+                                                                                   rdfs:range <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice> ;
+                                                                                   rdfs:comment "A station, platform, bus stop can have notices"@es ;
+                                                                                   rdfs:label "tieneAnuncio"@es .
+
+
 ###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#hasStair
 <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#hasStair> rdf:type owl:ObjectProperty ;
                                                                                   rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass> ;
-                                                                                  rdfs:range <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Stair> .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#hasWalkway
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#hasWalkway> rdf:type owl:ObjectProperty ;
-                                                                                    rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass> ;
-                                                                                    rdfs:range <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#MovingWalkway> .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#inBusRoute
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#inBusRoute> rdf:type owl:ObjectProperty ;
-                                                                                    rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#BusStop> ;
-                                                                                    rdfs:range <http://transacc.linkeddata.es/def/core#BusRoute> .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#platformNotice
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#platformNotice> rdf:type owl:ObjectProperty ;
-                                                                                        rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Platform> ;
-                                                                                        rdfs:range <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice> .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#stationNotice
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#stationNotice> rdf:type owl:ObjectProperty ;
-                                                                                       rdfs:domain <http://vocab.gtfs.org/terms#Station> ;
-                                                                                       rdfs:range <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice> .
+                                                                                  rdfs:range <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Stair> ;
+                                                                                  rdfs:comment "An exterior access may have stairs"@es ;
+                                                                                  rdfs:label "tieneEscalera"@es .
 
 
 ###  http://xmlns.com/foaf/0.1/account
@@ -145,310 +181,64 @@
 #    Data properties
 #################################################################
 
-###  http://transacc.linkeddata.es/def/core#addressExit
-<http://transacc.linkeddata.es/def/core#addressExit> rdf:type owl:DatatypeProperty ;
-                                                     rdfs:domain <http://transacc.linkeddata.es/def/core#Sign> ;
-                                                     rdfs:range xsd:boolean .
+###  http://transacc.linkeddata.es/def/core#dateAnnotation
+<http://transacc.linkeddata.es/def/core#dateAnnotation> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:domain <http://transacc.linkeddata.es/def/core#Annotation> ;
+                                                        rdfs:range xsd:dateTime ;
+                                                        rdfs:label "fechaAnotacion"@es .
 
 
-###  http://transacc.linkeddata.es/def/core#bigLetters
-<http://transacc.linkeddata.es/def/core#bigLetters> rdf:type owl:DatatypeProperty .
+###  http://transacc.linkeddata.es/def/core#disabilityType
+<http://transacc.linkeddata.es/def/core#disabilityType> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:domain <http://transacc.linkeddata.es/def/core#DisabilityType> ;
+                                                        rdfs:range rdfs:Literal ;
+                                                        rdfs:label "tipoDiscapacidad"@es .
 
 
-###  http://transacc.linkeddata.es/def/core#brailleButtons
-<http://transacc.linkeddata.es/def/core#brailleButtons> rdf:type owl:DatatypeProperty ;
-                                                        rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Elevator> ;
-                                                        rdfs:range xsd:boolean .
-
-
-###  http://transacc.linkeddata.es/def/core#brailleLetters
-<http://transacc.linkeddata.es/def/core#brailleLetters> rdf:type owl:DatatypeProperty ;
-                                                        rdfs:domain <http://transacc.linkeddata.es/def/core#Billboard> ;
-                                                        rdfs:range xsd:boolean .
-
-
-###  http://transacc.linkeddata.es/def/core#buttonSound
-<http://transacc.linkeddata.es/def/core#buttonSound> rdf:type owl:DatatypeProperty ;
-                                                     rdfs:domain <http://transacc.linkeddata.es/def/core#Billboard> ;
-                                                     rdfs:range xsd:boolean .
-
-
-###  http://transacc.linkeddata.es/def/core#clear
-<http://transacc.linkeddata.es/def/core#clear> rdf:type owl:DatatypeProperty ;
-                                               rdfs:domain <http://transacc.linkeddata.es/def/core#Sound> ;
-                                               rdfs:range xsd:boolean .
-
-
-###  http://transacc.linkeddata.es/def/core#contrastLetters
-<http://transacc.linkeddata.es/def/core#contrastLetters> rdf:type owl:DatatypeProperty ;
-                                                         rdfs:range xsd:boolean .
-
-
-###  http://transacc.linkeddata.es/def/core#directionsPlatform
-<http://transacc.linkeddata.es/def/core#directionsPlatform> rdf:type owl:DatatypeProperty ;
-                                                            rdfs:domain <http://transacc.linkeddata.es/def/core#Sign> ;
-                                                            rdfs:range xsd:boolean .
-
-
-###  http://transacc.linkeddata.es/def/core#easyToRead
-<http://transacc.linkeddata.es/def/core#easyToRead> rdf:type owl:DatatypeProperty ;
-                                                    rdfs:domain <http://transacc.linkeddata.es/def/core#Billboard> ;
-                                                    rdfs:range xsd:boolean .
-
-
-###  http://transacc.linkeddata.es/def/core#frequent
-<http://transacc.linkeddata.es/def/core#frequent> rdf:type owl:DatatypeProperty ;
-                                                  rdfs:domain <http://transacc.linkeddata.es/def/core#Sound> ;
-                                                  rdfs:range xsd:boolean .
+###  http://transacc.linkeddata.es/def/core#feature
+<http://transacc.linkeddata.es/def/core#feature> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <http://transacc.linkeddata.es/def/core#DisabilityFeature> ;
+                                                 rdfs:range rdfs:Literal ;
+                                                 rdfs:label "caracteristica"@es .
 
 
 ###  http://transacc.linkeddata.es/def/core#impairment
 <http://transacc.linkeddata.es/def/core#impairment> rdf:type owl:DatatypeProperty ;
-                                                    rdfs:range [ rdf:type rdfs:Datatype ;
-                                                                 owl:oneOf [ rdf:type rdf:List ;
-                                                                             rdf:first "cognitive"^^xsd:string ;
-                                                                             rdf:rest [ rdf:type rdf:List ;
-                                                                                        rdf:first "hearing"^^xsd:string ;
-                                                                                        rdf:rest [ rdf:type rdf:List ;
-                                                                                                   rdf:first "reduced mobility"^^xsd:string ;
-                                                                                                   rdf:rest [ rdf:type rdf:List ;
-                                                                                                              rdf:first "vision"^^xsd:string ;
-                                                                                                              rdf:rest [ rdf:type rdf:List ;
-                                                                                                                         rdf:first "wheeelchair"^^xsd:string ;
-                                                                                                                         rdf:rest rdf:nil
-                                                                                                                       ]
-                                                                                                            ]
-                                                                                                 ]
-                                                                                      ]
-                                                                           ]
-                                                               ] .
-
-
-###  http://transacc.linkeddata.es/def/core#infoTickets
-<http://transacc.linkeddata.es/def/core#infoTickets> rdf:type owl:DatatypeProperty ;
-                                                     rdfs:domain <http://transacc.linkeddata.es/def/core#Billboard> ;
-                                                     rdfs:range xsd:boolean .
-
-
-###  http://transacc.linkeddata.es/def/core#intenseLight
-<http://transacc.linkeddata.es/def/core#intenseLight> rdf:type owl:DatatypeProperty ;
-                                                      rdfs:domain <http://transacc.linkeddata.es/def/core#Neon> ;
-                                                      rdfs:range xsd:boolean .
-
-
-###  http://transacc.linkeddata.es/def/core#lastStop
-<http://transacc.linkeddata.es/def/core#lastStop> rdf:type owl:DatatypeProperty ;
-                                                  rdfs:domain <http://transacc.linkeddata.es/def/core#Sign> ;
-                                                  rdfs:range xsd:boolean .
-
-
-###  http://transacc.linkeddata.es/def/core#lineMap
-<http://transacc.linkeddata.es/def/core#lineMap> rdf:type owl:DatatypeProperty ;
-                                                 rdfs:domain <http://transacc.linkeddata.es/def/core#Billboard> ;
-                                                 rdfs:range xsd:boolean .
-
-
-###  http://transacc.linkeddata.es/def/core#lineSchedule
-<http://transacc.linkeddata.es/def/core#lineSchedule> rdf:type owl:DatatypeProperty ;
-                                                      rdfs:domain <http://transacc.linkeddata.es/def/core#Billboard> ;
-                                                      rdfs:range xsd:boolean .
-
-
-###  http://transacc.linkeddata.es/def/core#minutesVehicle
-<http://transacc.linkeddata.es/def/core#minutesVehicle> rdf:type owl:DatatypeProperty ;
-                                                        rdfs:range xsd:boolean .
-
-
-###  http://transacc.linkeddata.es/def/core#pictographic
-<http://transacc.linkeddata.es/def/core#pictographic> rdf:type owl:DatatypeProperty ;
-                                                      rdfs:range xsd:boolean .
-
-
-###  http://transacc.linkeddata.es/def/core#raisedButtons
-<http://transacc.linkeddata.es/def/core#raisedButtons> rdf:type owl:DatatypeProperty ;
-                                                       rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Elevator> ;
-                                                       rdfs:range xsd:boolean .
-
-
-###  http://transacc.linkeddata.es/def/core#rampHandrail
-<http://transacc.linkeddata.es/def/core#rampHandrail> rdf:type owl:DatatypeProperty ;
-                                                      rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Stair> ;
-                                                      rdfs:range xsd:boolean .
-
-
-###  http://transacc.linkeddata.es/def/core#rampInclination
-<http://transacc.linkeddata.es/def/core#rampInclination> rdf:type owl:DatatypeProperty ;
-                                                         rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Stair> ;
-                                                         rdfs:range [ rdf:type rdfs:Datatype ;
-                                                                      owl:oneOf [ rdf:type rdf:List ;
-                                                                                  rdf:first "adequate"^^xsd:string ;
-                                                                                  rdf:rest [ rdf:type rdf:List ;
-                                                                                             rdf:first "not adequate"^^xsd:string ;
-                                                                                             rdf:rest rdf:nil
-                                                                                           ]
-                                                                                ]
-                                                                    ] .
-
-
-###  http://transacc.linkeddata.es/def/core#specialPavementFirstCar
-<http://transacc.linkeddata.es/def/core#specialPavementFirstCar> rdf:type owl:DatatypeProperty ;
-                                                                 rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Platform> ;
-                                                                 rdfs:range xsd:boolean .
+                                                    rdfs:domain <http://transacc.linkeddata.es/def/core#DisabilityType> ;
+                                                    rdfs:range rdfs:Literal ;
+                                                    rdfs:label "discapacidad"@es .
 
 
 ###  http://transacc.linkeddata.es/def/core#state
 <http://transacc.linkeddata.es/def/core#state> rdf:type owl:DatatypeProperty ;
-                                               rdfs:range rdfs:Literal .
+                                               rdfs:range rdfs:Literal ;
+                                               rdfs:comment "State of a disability feature, for example \"elevator out of order\""@es ;
+                                               rdfs:label "estado"@es .
 
 
-###  http://transacc.linkeddata.es/def/core#stopsRoute
-<http://transacc.linkeddata.es/def/core#stopsRoute> rdf:type owl:DatatypeProperty ;
-                                                    rdfs:range xsd:boolean .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#alternativeRamp
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#alternativeRamp> rdf:type owl:DatatypeProperty ;
-                                                                                         rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Stair> ;
-                                                                                         rdfs:range xsd:boolean .
+###  http://transacc.linkeddata.es/def/core#typeContent
+<http://transacc.linkeddata.es/def/core#typeContent> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:domain <http://transacc.linkeddata.es/def/core#Content> ;
+                                                     rdfs:range rdfs:Literal ;
+                                                     rdfs:label "tipoContenido"@es .
 
 
 ###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#code
 <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#code> rdf:type owl:DatatypeProperty ;
-                                                                              rdfs:domain <http://vocab.gtfs.org/terms#Stop> ;
                                                                               rdfs:range rdfs:Literal .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#counterForWheelchair
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#counterForWheelchair> rdf:type owl:DatatypeProperty ;
-                                                                                              rdfs:domain <http://vocab.gtfs.org/terms#Station> ;
-                                                                                              rdfs:range xsd:boolean .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#doorWheelchair
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#doorWheelchair> rdf:type owl:DatatypeProperty ;
-                                                                                        rdfs:range xsd:boolean .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#isquialSupports
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#isquialSupports> rdf:type owl:DatatypeProperty ;
-                                                                                         rdfs:range xsd:boolean .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#noticeDisabFeature
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#noticeDisabFeature> rdf:type owl:DatatypeProperty ;
-                                                                                            rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice> ;
-                                                                                            rdfs:range rdfs:Literal .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#noticeType
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#noticeType> rdf:type owl:DatatypeProperty ;
-                                                                                    rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice> ;
-                                                                                    rdfs:range rdfs:Literal .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#numStairs
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#numStairs> rdf:type owl:DatatypeProperty ;
-                                                                                   rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Stair> ;
-                                                                                   rdfs:range xsd:positiveInteger .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#parkingDisabled
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#parkingDisabled> rdf:type owl:DatatypeProperty ;
-                                                                                         rdfs:domain <http://vocab.gtfs.org/terms#Station> ;
-                                                                                         rdfs:range xsd:int .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#personalAssistance
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#personalAssistance> rdf:type owl:DatatypeProperty ;
-                                                                                            rdfs:domain <http://vocab.gtfs.org/terms#Station> ;
-                                                                                            rdfs:range xsd:boolean .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#physicalDisabBathroom
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#physicalDisabBathroom> rdf:type owl:DatatypeProperty ;
-                                                                                               rdfs:domain <http://vocab.gtfs.org/terms#Station> ;
-                                                                                               rdfs:range xsd:boolean .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#prolongationHandrail
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#prolongationHandrail> rdf:type owl:DatatypeProperty ;
-                                                                                              rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Stair> ;
-                                                                                              rdfs:range xsd:boolean .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#raisedLetters
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#raisedLetters> rdf:type owl:DatatypeProperty ;
-                                                                                       rdfs:domain <http://transacc.linkeddata.es/def/core#Billboard> ;
-                                                                                       rdfs:range xsd:boolean .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#rampDisabFeature
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#rampDisabFeature> rdf:type owl:DatatypeProperty ;
-                                                                                          rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Stair> ;
-                                                                                          rdfs:range rdfs:Literal .
 
 
 ###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#routeId
 <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#routeId> rdf:type owl:DatatypeProperty ;
                                                                                  rdfs:domain <http://vocab.gtfs.org/terms#Route> ;
-                                                                                 rdfs:range xsd:positiveInteger .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#schedule
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#schedule> rdf:type owl:DatatypeProperty ;
-                                                                                  rdfs:range rdfs:Literal .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#seats
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#seats> rdf:type owl:DatatypeProperty ;
-                                                                               rdfs:range xsd:boolean .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#seqNumber
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#seqNumber> rdf:type owl:DatatypeProperty ;
-                                                                                   rdfs:range xsd:int .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#sidewalk
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#sidewalk> rdf:type owl:DatatypeProperty ;
-                                                                                  rdfs:range rdfs:Literal .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#spaceWheelchair
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#spaceWheelchair> rdf:type owl:DatatypeProperty ;
-                                                                                         rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#BusStop> ;
-                                                                                         rdfs:range xsd:boolean .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#specialPavementBoard
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#specialPavementBoard> rdf:type owl:DatatypeProperty ;
-                                                                                              rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#ExteriorAccess> ;
-                                                                                              rdfs:range xsd:boolean .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#specialPavementBorder
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#specialPavementBorder> rdf:type owl:DatatypeProperty ;
-                                                                                               rdfs:range xsd:boolean .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#specialPavementTicketing
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#specialPavementTicketing> rdf:type owl:DatatypeProperty .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#specialPavementWalk
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#specialPavementWalk> rdf:type owl:DatatypeProperty ;
-                                                                                             rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#ExteriorAccess> ;
-                                                                                             rdfs:range xsd:boolean .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#stairStrips
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#stairStrips> rdf:type owl:DatatypeProperty ;
-                                                                                     rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Stair> ;
-                                                                                     rdfs:range xsd:boolean .
+                                                                                 rdfs:range xsd:positiveInteger ;
+                                                                                 rdfs:label "idRuta"@es .
 
 
 ###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#stopId
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#stopId> rdf:type owl:DatatypeProperty .
+<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#stopId> rdf:type owl:DatatypeProperty ;
+                                                                                rdfs:domain <http://vocab.gtfs.org/terms#Stop> ;
+                                                                                rdfs:isDefinedBy "idParada"@es .
 
 
 ###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#typeBusStop
@@ -462,20 +252,8 @@
                                                                                                                          rdf:rest rdf:nil
                                                                                                                        ]
                                                                                                             ]
-                                                                                                ] .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#typeDoor
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#typeDoor> rdf:type owl:DatatypeProperty ;
-                                                                                  rdfs:range [ rdf:type rdfs:Datatype ;
-                                                                                               owl:oneOf [ rdf:type rdf:List ;
-                                                                                                           rdf:first "Automatic"^^xsd:string ;
-                                                                                                           rdf:rest [ rdf:type rdf:List ;
-                                                                                                                      rdf:first "Manual"^^xsd:string ;
-                                                                                                                      rdf:rest rdf:nil
-                                                                                                                    ]
-                                                                                                         ]
-                                                                                             ] .
+                                                                                                ] ;
+                                                                                     rdfs:label "tipoParadaBus"@es .
 
 
 ###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#typePlatform
@@ -489,7 +267,8 @@
                                                                                                                           rdf:rest rdf:nil
                                                                                                                         ]
                                                                                                              ]
-                                                                                                 ] .
+                                                                                                 ] ;
+                                                                                      rdfs:label "tipoAnden"@es .
 
 
 ###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#typeStair
@@ -503,19 +282,8 @@
                                                                                                                        rdf:rest rdf:nil
                                                                                                                      ]
                                                                                                           ]
-                                                                                              ] .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#visualDisabBathroom
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#visualDisabBathroom> rdf:type owl:DatatypeProperty ;
-                                                                                             rdfs:domain <http://vocab.gtfs.org/terms#Station> ;
-                                                                                             rdfs:range xsd:boolean .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#walkwayLength
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#walkwayLength> rdf:type owl:DatatypeProperty ;
-                                                                                       rdfs:domain <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#MovingWalkway> ;
-                                                                                       rdfs:range xsd:float .
+                                                                                              ] ;
+                                                                                   rdfs:label "tipoEscalera"@es .
 
 
 ###  http://www.w3.org/2002/07/owl#topDataProperty
@@ -544,6 +312,12 @@ owl:topDataProperty rdfs:range xsd:boolean .
 #    Classes
 #################################################################
 
+###  http://transacc.linkeddata.es/def/core#Annotation
+<http://transacc.linkeddata.es/def/core#Annotation> rdf:type owl:Class ;
+                                                    rdfs:comment "Annotation that a user writes on a disability feature"@es ;
+                                                    rdfs:label "Anotacion"@es .
+
+
 ###  http://transacc.linkeddata.es/def/core#Billboard
 <http://transacc.linkeddata.es/def/core#Billboard> rdf:type owl:Class ;
                                                    rdfs:subClassOf <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice> .
@@ -551,12 +325,45 @@ owl:topDataProperty rdfs:range xsd:boolean .
 
 ###  http://transacc.linkeddata.es/def/core#BusRoute
 <http://transacc.linkeddata.es/def/core#BusRoute> rdf:type owl:Class ;
-                                                  rdfs:subClassOf <http://vocab.gtfs.org/terms#Route> .
+                                                  rdfs:subClassOf <http://vocab.gtfs.org/terms#Route> ;
+                                                  owl:disjointWith <http://transacc.linkeddata.es/def/core#MetroRoute> ;
+                                                  rdfs:label "RutaBus"@es .
 
 
-###  http://transacc.linkeddata.es/def/core#Neon
-<http://transacc.linkeddata.es/def/core#Neon> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice> .
+###  http://transacc.linkeddata.es/def/core#Content
+<http://transacc.linkeddata.es/def/core#Content> rdf:type owl:Class ;
+                                                 rdfs:comment "Content of a Notice"@es ;
+                                                 rdfs:label "Contenido"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#DisabilityFeature
+<http://transacc.linkeddata.es/def/core#DisabilityFeature> rdf:type owl:Class ;
+                                                           rdfs:comment "Transportation feature to address some disability type"@es ;
+                                                           rdfs:label "CaracteristicaDiscapacidad"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#DisabilityType
+<http://transacc.linkeddata.es/def/core#DisabilityType> rdf:type owl:Class ;
+                                                        rdfs:comment "Disability category: cognitive, visual, heariing, etc."@es ;
+                                                        rdfs:label "TipoDiscapacidad"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#Luminous
+<http://transacc.linkeddata.es/def/core#Luminous> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice> .
+
+
+###  http://transacc.linkeddata.es/def/core#MetroRoute
+<http://transacc.linkeddata.es/def/core#MetroRoute> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://vocab.gtfs.org/terms#Route> ;
+                                                    rdfs:label "RutaMetro"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#RouteDirection
+<http://transacc.linkeddata.es/def/core#RouteDirection> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://vocab.gtfs.org/terms#Trip> ;
+                                                        rdfs:comment "Direction of a line characterized by its headsign"@es ;
+                                                        rdfs:label "DireccionRuta"@es .
 
 
 ###  http://transacc.linkeddata.es/def/core#Sign
@@ -569,53 +376,70 @@ owl:topDataProperty rdfs:range xsd:boolean .
                                                rdfs:subClassOf <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice> .
 
 
-###  http://transacc.linkeddata.es/def/core#TrainRoute
-<http://transacc.linkeddata.es/def/core#TrainRoute> rdf:type owl:Class ;
-                                                    rdfs:subClassOf <http://vocab.gtfs.org/terms#Route> .
+###  http://transacc.linkeddata.es/def/core#TrainStop
+<http://transacc.linkeddata.es/def/core#TrainStop> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://vocab.gtfs.org/terms#Stop> ;
+                                                   rdfs:label "ParadaTren"@es .
+
+
+###  http://vocab.gtfs.org/terms#Stop
+<http://vocab.gtfs.org/terms#Stop> owl:disjointUnionOf ( <http://transacc.linkeddata.es/def/core#TrainStop>
+                                                         <http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#BusStop>
+                                                         <http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#MetroStop>
+                                                       ) .
 
 
 ###  http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#BusStop
 <http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#BusStop> rdf:type owl:Class ;
-                                                                                 rdfs:subClassOf <http://vocab.gtfs.org/terms#Stop> .
+                                                                                 rdfs:subClassOf <http://vocab.gtfs.org/terms#Stop> ;
+                                                                                 rdfs:label "ParadaBus"@es .
 
 
-###  http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#TrainStop
-<http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#TrainStop> rdf:type owl:Class ;
-                                                                                   rdfs:subClassOf <http://vocab.gtfs.org/terms#Stop> .
+###  http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#MetroStop
+<http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#MetroStop> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf <http://vocab.gtfs.org/terms#Stop> ;
+                                                                                   rdfs:label "ParadaMetro"@es .
 
 
 ###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Elevator
 <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Elevator> rdf:type owl:Class ;
-                                                                                  rdfs:subClassOf <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#ExteriorAccess> .
+                                                                                  rdfs:subClassOf <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#ExteriorAccess> ;
+                                                                                  owl:disjointWith <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass> ;
+                                                                                  rdfs:label "Ascensor"@es .
 
 
 ###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#ExteriorAccess
 <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#ExteriorAccess> rdf:type owl:Class ;
-                                                                                        rdfs:comment "Access from the street to the station"^^xsd:string .
+                                                                                        rdfs:comment "Access from the street to the station"^^xsd:string ;
+                                                                                        rdfs:label "AccesoExterior"@es .
 
 
 ###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass
 <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass> rdf:type owl:Class ;
-                                                                                  rdfs:subClassOf <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#ExteriorAccess> .
-
-
-###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#MovingWalkway
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#MovingWalkway> rdf:type owl:Class ;
-                                                                                       rdfs:comment "a moving walkway inside the station"^^xsd:string .
+                                                                                  rdfs:subClassOf <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#ExteriorAccess> ;
+                                                                                  rdfs:label "PasoAPie"@es .
 
 
 ###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice
 <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice> rdf:type owl:Class ;
-                                                                                rdfs:comment "Any written or neon sign, billboard, or sound announcement"^^xsd:string .
+                                                                                owl:disjointUnionOf ( <http://transacc.linkeddata.es/def/core#Billboard>
+                                                                                                      <http://transacc.linkeddata.es/def/core#Luminous>
+                                                                                                      <http://transacc.linkeddata.es/def/core#Sign>
+                                                                                                      <http://transacc.linkeddata.es/def/core#Sound>
+                                                                                                    ) ;
+                                                                                rdfs:comment "Any written or luminous sign, billboard, or sound announcement"^^xsd:string ;
+                                                                                rdfs:label "Aviso"@es .
 
 
 ###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Platform
 <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Platform> rdf:type owl:Class ;
-                                                                                  rdfs:comment "a platform of a metro route in a certain stop and direction"^^xsd:string .
+                                                                                  rdfs:comment "a platform of a metro route in a certain stop and direction"^^xsd:string ;
+                                                                                  rdfs:label "Anden"@es .
 
 
 ###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Stair
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Stair> rdf:type owl:Class .
+<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Stair> rdf:type owl:Class ;
+                                                                               rdfs:label "Escalera"@es .
 
 
 ###  http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#User

@@ -10,9 +10,6 @@ This section provides details for each class and property defined by Public Tran
          </a>
       </li>
       <li>
-         <a href="#Elevator" title="http://transacc.linkeddata.es/def/core#Elevator">Ascensor</a>
-      </li>
-      <li>
          <a href="#Billboard" title="http://transacc.linkeddata.es/def/core#Billboard">
             <span>billboard</span>
          </a>
@@ -45,9 +42,19 @@ This section provides details for each class and property defined by Public Tran
          </a>
       </li>
       <li>
+         <a href="#Elevator" title="http://transacc.linkeddata.es/def/core#Elevator">
+            <span>elevator</span>
+         </a>
+      </li>
+      <li>
          <a href="#ExteriorAccess"
             title="http://transacc.linkeddata.es/def/core#ExteriorAccess">
             <span>exterior access</span>
+         </a>
+      </li>
+      <li>
+         <a href="#FootPass" title="http://transacc.linkeddata.es/def/core#FootPass">
+            <span>foot pass</span>
          </a>
       </li>
       <li>
@@ -68,17 +75,12 @@ This section provides details for each class and property defined by Public Tran
          </a>
       </li>
       <li>
-         <a href="#http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice"
-            title="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice">
+         <a href="#Notice" title="http://transacc.linkeddata.es/def/core#Notice">
             <span>notice</span>
          </a>
       </li>
       <li>
          <a href="#http://xmlns.com/foaf/0.1/OnlineAccount" title="http://xmlns.com/foaf/0.1/OnlineAccount">Online Account</a>
-      </li>
-      <li>
-         <a href="#http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass"
-            title="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass">PasoAPie</a>
       </li>
       <li>
          <a href="#http://www.w3.org/2000/10/swap/pim/contact#Person"
@@ -135,8 +137,7 @@ This section provides details for each class and property defined by Public Tran
          <a href="#http://vocab.gtfs.org/terms#Trip" title="http://vocab.gtfs.org/terms#Trip">Trip</a>
       </li>
       <li>
-         <a href="#http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#User"
-            title="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#User">
+         <a href="#User" title="http://transacc.linkeddata.es/def/core#User">
             <span>user</span>
          </a>
       </li>
@@ -166,28 +167,6 @@ This section provides details for each class and property defined by Public Tran
          </dd>
       </dl>
    </div>
-   <div class="entity" id="Elevator">
-      <h3>Ascensor<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#Elevator</p>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#ExteriorAccess"
-               title="http://transacc.linkeddata.es/def/core#ExteriorAccess">exterior access</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass"
-               title="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass">PasoAPie</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
    <div class="entity" id="Billboard">
       <h3>billboard<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -198,8 +177,7 @@ This section provides details for each class and property defined by Public Tran
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice"
-               title="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice">notice</a>
+            <a href="#Notice" title="http://transacc.linkeddata.es/def/core#Notice">notice</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -324,6 +302,27 @@ This section provides details for each class and property defined by Public Tran
          </dd>
       </dl>
    </div>
+   <div class="entity" id="Elevator">
+      <h3>elevator<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#Elevator</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ExteriorAccess"
+               title="http://transacc.linkeddata.es/def/core#ExteriorAccess">exterior access</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#FootPass" title="http://transacc.linkeddata.es/def/core#FootPass">foot pass</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="ExteriorAccess">
       <h3>exterior access<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -337,9 +336,34 @@ This section provides details for each class and property defined by Public Tran
       <dl class="description">
          <dt>has sub-classes</dt>
          <dd>
-            <a href="#Elevator" title="http://transacc.linkeddata.es/def/core#Elevator">Ascensor</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass"
-               title="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass">PasoAPie</a>
+            <a href="#Elevator" title="http://transacc.linkeddata.es/def/core#Elevator">elevator</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#FootPass" title="http://transacc.linkeddata.es/def/core#FootPass">foot pass</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="FootPass">
+      <h3>foot pass<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#FootPass</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ExteriorAccess"
+               title="http://transacc.linkeddata.es/def/core#ExteriorAccess">exterior access</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasStair" title="http://transacc.linkeddata.es/def/core#hasStair">has stair</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Elevator" title="http://transacc.linkeddata.es/def/core#Elevator">elevator</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -354,8 +378,7 @@ This section provides details for each class and property defined by Public Tran
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice"
-               title="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice">notice</a>
+            <a href="#Notice" title="http://transacc.linkeddata.es/def/core#Notice">notice</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -395,13 +418,13 @@ This section provides details for each class and property defined by Public Tran
          </dd>
       </dl>
    </div>
-   <div class="entity" id="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice">
+   <div class="entity" id="Notice">
       <h3>notice<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice</p>
+         <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#Notice</p>
       <div class="comment">
          <span class="markdown">Any written or luminous sign, billboard, or sound announcement</span>
       </div>
@@ -457,32 +480,6 @@ This section provides details for each class and property defined by Public Tran
          <dd>
             <a href="#http://xmlns.com/foaf/0.1/account" title="http://xmlns.com/foaf/0.1/account">account</a>
             <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass">
-      <h3>PasoAPie<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass</p>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#ExteriorAccess"
-               title="http://transacc.linkeddata.es/def/core#ExteriorAccess">exterior access</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#hasStair" title="http://transacc.linkeddata.es/def/core#hasStair">has stair</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#Elevator" title="http://transacc.linkeddata.es/def/core#Elevator">Ascensor</a>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -673,8 +670,7 @@ This section provides details for each class and property defined by Public Tran
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice"
-               title="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice">notice</a>
+            <a href="#Notice" title="http://transacc.linkeddata.es/def/core#Notice">notice</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -689,8 +685,7 @@ This section provides details for each class and property defined by Public Tran
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice"
-               title="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice">notice</a>
+            <a href="#Notice" title="http://transacc.linkeddata.es/def/core#Notice">notice</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -816,13 +811,13 @@ This section provides details for each class and property defined by Public Tran
          </dd>
       </dl>
    </div>
-   <div class="entity" id="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#User">
+   <div class="entity" id="User">
       <h3>user<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#User</p>
+         <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#User</p>
       <div class="comment">
          <span class="markdown">User of the accesibility of transport descriptions</span>
       </div>
@@ -1101,8 +1096,7 @@ This section provides details for each class and property defined by Public Tran
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice"
-                  title="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice">notice</a>
+               <a href="#Notice" title="http://transacc.linkeddata.es/def/core#Notice">notice</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1195,8 +1189,7 @@ This section provides details for each class and property defined by Public Tran
          <dl>
             <dt>has range</dt>
             <dd>
-               <a href="#http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice"
-                  title="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice">notice</a>
+               <a href="#Notice" title="http://transacc.linkeddata.es/def/core#Notice">notice</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -1216,8 +1209,7 @@ This section provides details for each class and property defined by Public Tran
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass"
-                  title="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass">PasoAPie</a>
+               <a href="#FootPass" title="http://transacc.linkeddata.es/def/core#FootPass">foot pass</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>

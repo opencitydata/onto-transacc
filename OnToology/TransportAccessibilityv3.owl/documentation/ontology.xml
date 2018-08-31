@@ -217,7 +217,7 @@
 
 
     <owl:ObjectProperty rdf:about="http://transacc.linkeddata.es/def/core#hasContent">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice"/>
+        <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#Notice"/>
         <rdfs:range rdf:resource="http://transacc.linkeddata.es/def/core#Content"/>
         <rdfs:comment xml:lang="es">type of content of notices, for example &quot;exit address&quot;, &quot;map of lines&quot;</rdfs:comment>
     </owl:ObjectProperty>
@@ -259,7 +259,7 @@
 
 
     <owl:ObjectProperty rdf:about="http://transacc.linkeddata.es/def/core#hasNotice">
-        <rdfs:range rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice"/>
+        <rdfs:range rdf:resource="http://transacc.linkeddata.es/def/core#Notice"/>
         <rdfs:comment xml:lang="es">A station, platform, bus stop can have notices</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -269,7 +269,7 @@
 
 
     <owl:ObjectProperty rdf:about="http://transacc.linkeddata.es/def/core#hasStair">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass"/>
+        <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#FootPass"/>
         <rdfs:range rdf:resource="http://transacc.linkeddata.es/def/core#Stair"/>
         <rdfs:comment xml:lang="es">An exterior access may have stairs</rdfs:comment>
     </owl:ObjectProperty>
@@ -756,7 +756,7 @@
 
 
     <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#Billboard">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice"/>
+        <rdfs:subClassOf rdf:resource="http://transacc.linkeddata.es/def/core#Notice"/>
     </owl:Class>
     
 
@@ -812,8 +812,7 @@
 
     <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#Elevator">
         <rdfs:subClassOf rdf:resource="http://transacc.linkeddata.es/def/core#ExteriorAccess"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass"/>
-        <rdfs:label xml:lang="es">Ascensor</rdfs:label>
+        <owl:disjointWith rdf:resource="http://transacc.linkeddata.es/def/core#FootPass"/>
     </owl:Class>
     
 
@@ -827,11 +826,20 @@
     
 
 
+    <!-- http://transacc.linkeddata.es/def/core#FootPass -->
+
+
+    <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#FootPass">
+        <rdfs:subClassOf rdf:resource="http://transacc.linkeddata.es/def/core#ExteriorAccess"/>
+    </owl:Class>
+    
+
+
     <!-- http://transacc.linkeddata.es/def/core#Luminous -->
 
 
     <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#Luminous">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice"/>
+        <rdfs:subClassOf rdf:resource="http://transacc.linkeddata.es/def/core#Notice"/>
     </owl:Class>
     
 
@@ -850,6 +858,21 @@
 
     <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#MetroStop">
         <rdfs:subClassOf rdf:resource="http://vocab.gtfs.org/terms#Stop"/>
+    </owl:Class>
+    
+
+
+    <!-- http://transacc.linkeddata.es/def/core#Notice -->
+
+
+    <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#Notice">
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://transacc.linkeddata.es/def/core#Billboard"/>
+            <rdf:Description rdf:about="http://transacc.linkeddata.es/def/core#Luminous"/>
+            <rdf:Description rdf:about="http://transacc.linkeddata.es/def/core#Sign"/>
+            <rdf:Description rdf:about="http://transacc.linkeddata.es/def/core#Sound"/>
+        </owl:disjointUnionOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any written or luminous sign, billboard, or sound announcement</rdfs:comment>
     </owl:Class>
     
 
@@ -877,7 +900,7 @@
 
 
     <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#Sign">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice"/>
+        <rdfs:subClassOf rdf:resource="http://transacc.linkeddata.es/def/core#Notice"/>
     </owl:Class>
     
 
@@ -886,7 +909,7 @@
 
 
     <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#Sound">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice"/>
+        <rdfs:subClassOf rdf:resource="http://transacc.linkeddata.es/def/core#Notice"/>
     </owl:Class>
     
 
@@ -903,6 +926,16 @@
 
     <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#TrainStop">
         <rdfs:subClassOf rdf:resource="http://vocab.gtfs.org/terms#Stop"/>
+    </owl:Class>
+    
+
+
+    <!-- http://transacc.linkeddata.es/def/core#User -->
+
+
+    <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#User">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User of the accesibility of transport descriptions</rdfs:comment>
     </owl:Class>
     
 
@@ -1029,41 +1062,6 @@
         <rdfs:seeAlso rdf:resource="https://developers.google.com/transit/gtfs/reference#stops_fields"/>
         <ns:term_status xml:lang="es">inestable</ns:term_status>
         <ns:term_status xml:lang="en">unstable</ns:term_status>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass -->
-
-
-    <owl:Class rdf:about="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass">
-        <rdfs:subClassOf rdf:resource="http://transacc.linkeddata.es/def/core#ExteriorAccess"/>
-        <rdfs:label xml:lang="es">PasoAPie</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice -->
-
-
-    <owl:Class rdf:about="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice">
-        <owl:disjointUnionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://transacc.linkeddata.es/def/core#Billboard"/>
-            <rdf:Description rdf:about="http://transacc.linkeddata.es/def/core#Luminous"/>
-            <rdf:Description rdf:about="http://transacc.linkeddata.es/def/core#Sign"/>
-            <rdf:Description rdf:about="http://transacc.linkeddata.es/def/core#Sound"/>
-        </owl:disjointUnionOf>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any written or luminous sign, billboard, or sound announcement</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#User -->
-
-
-    <owl:Class rdf:about="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#User">
-        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User of the accesibility of transport descriptions</rdfs:comment>
     </owl:Class>
     
 

@@ -65,7 +65,7 @@
       "@id" : "http://purl.org/dc/terms/hasVersion"
     },
     "Notice" : {
-      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice"
+      "@id" : "http://transacc.linkeddata.es/def/core#Notice"
     },
     "long" : {
       "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#long"
@@ -96,10 +96,10 @@
       "@type" : "@id"
     },
     "User" : {
-      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#User"
+      "@id" : "http://transacc.linkeddata.es/def/core#User"
     },
     "FootPass" : {
-      "@id" : "http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass"
+      "@id" : "http://transacc.linkeddata.es/def/core#FootPass"
     },
     "hasNotice" : {
       "@id" : "http://transacc.linkeddata.es/def/core#hasNotice",

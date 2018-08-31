@@ -168,6 +168,12 @@ xsd:date rdf:type rdfs:Datatype .
                                                 rdfs:comment "An annotation is made by a person (user)"@es .
 
 
+###  http://transacc.linkeddata.es/def/core#ofDisabilityFeature
+<http://transacc.linkeddata.es/def/core#ofDisabilityFeature> rdf:type owl:ObjectProperty ;
+                                                             rdfs:domain <http://transacc.linkeddata.es/def/core#Annotation> ;
+                                                             rdfs:range <http://transacc.linkeddata.es/def/core#DisabilityFeature> .
+
+
 ###  http://transacc.linkeddata.es/def/core#toRouteDirection
 <http://transacc.linkeddata.es/def/core#toRouteDirection> rdf:type owl:ObjectProperty ;
                                                           rdfs:domain <http://transacc.linkeddata.es/def/core#Platform> ;

@@ -1,7 +1,7 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1000"
-node [shape = rectangle, color="black"]; "base:ExteriorAccess" "base:Sign" "base:Elevator" "base:BusStop" "base:BusRoute" "base:TrainStop" "base:Luminous" "base:Billboard" "base:RouteDirection" "foaf:OnlineAccount" "base:FootPass" "base:Sound" "base:MetroStop" "gtfs:Trip" "base:Notice" "foaf:Person" "gtfs:Stop" "base:MetroRoute" "gtfs:Route" "base:User" ; /*classes style*/
+node [shape = rectangle, color="black"]; "base:ExteriorAccess" "base:Sign" "base:Elevator" "base:BusStop" "base:BusRoute" "base:TrainStop" "base:Luminous" "base:Billboard" "base:RouteDirection" "foaf:OnlineAccount" "gtfs:Trip" "base:Sound" "base:MetroStop" "base:Notice" "base:FootPass" "foaf:Person" "gtfs:Stop" "base:MetroRoute" "gtfs:Route" "base:User" ; /*classes style*/
 	"base:Sign" -> "base:Notice" [ label = "rdfs:subClassOf" ];
 	"foaf:OnlineAccount" -> "owl:Thing" [ label = "rdfs:subClassOf" ];
 	"base:RouteDirection" -> "gtfs:Trip" [ label = "rdfs:subClassOf" ];

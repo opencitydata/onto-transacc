@@ -1,20 +1,20 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1000"
-node [shape = rectangle, color="black"]; "http://transacc.linkeddata.es/def/core#ExteriorAccess" "http://transacc.linkeddata.es/def/core#Sign" "http://transacc.linkeddata.es/def/core#Elevator" "base:FootPass" "http://transacc.linkeddata.es/def/core#BusStop" "http://transacc.linkeddata.es/def/core#BusRoute" "http://transacc.linkeddata.es/def/core#TrainStop" "http://transacc.linkeddata.es/def/core#Luminous" "http://transacc.linkeddata.es/def/core#Billboard" "http://transacc.linkeddata.es/def/core#RouteDirection" "foaf:OnlineAccount" "http://transacc.linkeddata.es/def/core#Sound" "http://transacc.linkeddata.es/def/core#MetroStop" "gtfs:Trip" "foaf:Person" "gtfs:Stop" "http://transacc.linkeddata.es/def/core#MetroRoute" "base:Notice" "gtfs:Route" "base:User" ; /*classes style*/
-	"http://transacc.linkeddata.es/def/core#Sign" -> "base:Notice" [ label = "rdfs:subClassOf" ];
+node [shape = rectangle, color="black"]; "base:ExteriorAccess" "base:Sign" "base:Elevator" "base:BusStop" "base:BusRoute" "base:TrainStop" "base:Luminous" "base:Billboard" "base:RouteDirection" "foaf:OnlineAccount" "base:FootPass" "base:Sound" "base:MetroStop" "gtfs:Trip" "base:Notice" "foaf:Person" "gtfs:Stop" "base:MetroRoute" "gtfs:Route" "base:User" ; /*classes style*/
+	"base:Sign" -> "base:Notice" [ label = "rdfs:subClassOf" ];
 	"foaf:OnlineAccount" -> "owl:Thing" [ label = "rdfs:subClassOf" ];
-	"http://transacc.linkeddata.es/def/core#RouteDirection" -> "gtfs:Trip" [ label = "rdfs:subClassOf" ];
-	"http://transacc.linkeddata.es/def/core#MetroStop" -> "gtfs:Stop" [ label = "rdfs:subClassOf" ];
-	"base:FootPass" -> "http://transacc.linkeddata.es/def/core#ExteriorAccess" [ label = "rdfs:subClassOf" ];
-	"http://transacc.linkeddata.es/def/core#BusRoute" -> "gtfs:Route" [ label = "rdfs:subClassOf" ];
-	"http://transacc.linkeddata.es/def/core#Elevator" -> "http://transacc.linkeddata.es/def/core#ExteriorAccess" [ label = "rdfs:subClassOf" ];
-	"http://transacc.linkeddata.es/def/core#TrainStop" -> "gtfs:Stop" [ label = "rdfs:subClassOf" ];
-	"http://transacc.linkeddata.es/def/core#BusStop" -> "gtfs:Stop" [ label = "rdfs:subClassOf" ];
-	"http://transacc.linkeddata.es/def/core#MetroRoute" -> "gtfs:Route" [ label = "rdfs:subClassOf" ];
-	"http://transacc.linkeddata.es/def/core#Billboard" -> "base:Notice" [ label = "rdfs:subClassOf" ];
-	"http://transacc.linkeddata.es/def/core#Luminous" -> "base:Notice" [ label = "rdfs:subClassOf" ];
-	"http://transacc.linkeddata.es/def/core#Sound" -> "base:Notice" [ label = "rdfs:subClassOf" ];
+	"base:RouteDirection" -> "gtfs:Trip" [ label = "rdfs:subClassOf" ];
+	"base:MetroStop" -> "gtfs:Stop" [ label = "rdfs:subClassOf" ];
+	"base:BusRoute" -> "gtfs:Route" [ label = "rdfs:subClassOf" ];
 	"base:User" -> "foaf:Person" [ label = "rdfs:subClassOf" ];
+	"base:Elevator" -> "base:ExteriorAccess" [ label = "rdfs:subClassOf" ];
+	"base:TrainStop" -> "gtfs:Stop" [ label = "rdfs:subClassOf" ];
+	"base:BusStop" -> "gtfs:Stop" [ label = "rdfs:subClassOf" ];
+	"base:MetroRoute" -> "gtfs:Route" [ label = "rdfs:subClassOf" ];
+	"base:Billboard" -> "base:Notice" [ label = "rdfs:subClassOf" ];
+	"base:Luminous" -> "base:Notice" [ label = "rdfs:subClassOf" ];
+	"base:FootPass" -> "base:ExteriorAccess" [ label = "rdfs:subClassOf" ];
+	"base:Sound" -> "base:Notice" [ label = "rdfs:subClassOf" ];
 
 }

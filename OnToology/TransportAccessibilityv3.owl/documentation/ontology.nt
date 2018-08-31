@@ -113,7 +113,7 @@
 # 
 # http://transacc.linkeddata.es/def/core#hasContent
 <http://transacc.linkeddata.es/def/core#hasContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://transacc.linkeddata.es/def/core#hasContent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice> .
+<http://transacc.linkeddata.es/def/core#hasContent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://transacc.linkeddata.es/def/core#Notice> .
 <http://transacc.linkeddata.es/def/core#hasContent> <http://www.w3.org/2000/01/rdf-schema#range> <http://transacc.linkeddata.es/def/core#Content> .
 <http://transacc.linkeddata.es/def/core#hasContent> <http://www.w3.org/2000/01/rdf-schema#comment> "type of content of notices, for example \"exit address\", \"map of lines\""@es .
 # 
@@ -135,12 +135,12 @@
 # 
 # http://transacc.linkeddata.es/def/core#hasNotice
 <http://transacc.linkeddata.es/def/core#hasNotice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://transacc.linkeddata.es/def/core#hasNotice> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice> .
+<http://transacc.linkeddata.es/def/core#hasNotice> <http://www.w3.org/2000/01/rdf-schema#range> <http://transacc.linkeddata.es/def/core#Notice> .
 <http://transacc.linkeddata.es/def/core#hasNotice> <http://www.w3.org/2000/01/rdf-schema#comment> "A station, platform, bus stop can have notices"@es .
 # 
 # http://transacc.linkeddata.es/def/core#hasStair
 <http://transacc.linkeddata.es/def/core#hasStair> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://transacc.linkeddata.es/def/core#hasStair> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass> .
+<http://transacc.linkeddata.es/def/core#hasStair> <http://www.w3.org/2000/01/rdf-schema#domain> <http://transacc.linkeddata.es/def/core#FootPass> .
 <http://transacc.linkeddata.es/def/core#hasStair> <http://www.w3.org/2000/01/rdf-schema#range> <http://transacc.linkeddata.es/def/core#Stair> .
 <http://transacc.linkeddata.es/def/core#hasStair> <http://www.w3.org/2000/01/rdf-schema#comment> "An exterior access may have stairs"@es .
 # 
@@ -431,7 +431,7 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # http://transacc.linkeddata.es/def/core#Billboard
 <http://transacc.linkeddata.es/def/core#Billboard> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://transacc.linkeddata.es/def/core#Billboard> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice> .
+<http://transacc.linkeddata.es/def/core#Billboard> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://transacc.linkeddata.es/def/core#Notice> .
 # 
 # http://transacc.linkeddata.es/def/core#BusRoute
 <http://transacc.linkeddata.es/def/core#BusRoute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -457,16 +457,19 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # http://transacc.linkeddata.es/def/core#Elevator
 <http://transacc.linkeddata.es/def/core#Elevator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://transacc.linkeddata.es/def/core#Elevator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://transacc.linkeddata.es/def/core#ExteriorAccess> .
-<http://transacc.linkeddata.es/def/core#Elevator> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass> .
-<http://transacc.linkeddata.es/def/core#Elevator> <http://www.w3.org/2000/01/rdf-schema#label> "Ascensor"@es .
+<http://transacc.linkeddata.es/def/core#Elevator> <http://www.w3.org/2002/07/owl#disjointWith> <http://transacc.linkeddata.es/def/core#FootPass> .
 # 
 # http://transacc.linkeddata.es/def/core#ExteriorAccess
 <http://transacc.linkeddata.es/def/core#ExteriorAccess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://transacc.linkeddata.es/def/core#ExteriorAccess> <http://www.w3.org/2000/01/rdf-schema#comment> "Access from the street to the station" .
 # 
+# http://transacc.linkeddata.es/def/core#FootPass
+<http://transacc.linkeddata.es/def/core#FootPass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://transacc.linkeddata.es/def/core#FootPass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://transacc.linkeddata.es/def/core#ExteriorAccess> .
+# 
 # http://transacc.linkeddata.es/def/core#Luminous
 <http://transacc.linkeddata.es/def/core#Luminous> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://transacc.linkeddata.es/def/core#Luminous> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice> .
+<http://transacc.linkeddata.es/def/core#Luminous> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://transacc.linkeddata.es/def/core#Notice> .
 # 
 # http://transacc.linkeddata.es/def/core#MetroRoute
 <http://transacc.linkeddata.es/def/core#MetroRoute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -475,6 +478,23 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # http://transacc.linkeddata.es/def/core#MetroStop
 <http://transacc.linkeddata.es/def/core#MetroStop> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://transacc.linkeddata.es/def/core#MetroStop> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.gtfs.org/terms#Stop> .
+# 
+# http://transacc.linkeddata.es/def/core#Notice
+<http://transacc.linkeddata.es/def/core#Notice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://transacc.linkeddata.es/def/core#Notice> <http://www.w3.org/2002/07/owl#disjointUnionOf> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://transacc.linkeddata.es/def/core#Billboard> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://transacc.linkeddata.es/def/core#Luminous> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://transacc.linkeddata.es/def/core#Sign> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://transacc.linkeddata.es/def/core#Sound> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://transacc.linkeddata.es/def/core#Notice> <http://www.w3.org/2000/01/rdf-schema#comment> "Any written or luminous sign, billboard, or sound announcement" .
 # 
 # http://transacc.linkeddata.es/def/core#Platform
 <http://transacc.linkeddata.es/def/core#Platform> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -487,11 +507,11 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # http://transacc.linkeddata.es/def/core#Sign
 <http://transacc.linkeddata.es/def/core#Sign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://transacc.linkeddata.es/def/core#Sign> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice> .
+<http://transacc.linkeddata.es/def/core#Sign> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://transacc.linkeddata.es/def/core#Notice> .
 # 
 # http://transacc.linkeddata.es/def/core#Sound
 <http://transacc.linkeddata.es/def/core#Sound> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://transacc.linkeddata.es/def/core#Sound> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice> .
+<http://transacc.linkeddata.es/def/core#Sound> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://transacc.linkeddata.es/def/core#Notice> .
 # 
 # http://transacc.linkeddata.es/def/core#Stair
 <http://transacc.linkeddata.es/def/core#Stair> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -499,6 +519,11 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # http://transacc.linkeddata.es/def/core#TrainStop
 <http://transacc.linkeddata.es/def/core#TrainStop> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://transacc.linkeddata.es/def/core#TrainStop> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.gtfs.org/terms#Stop> .
+# 
+# http://transacc.linkeddata.es/def/core#User
+<http://transacc.linkeddata.es/def/core#User> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://transacc.linkeddata.es/def/core#User> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Person> .
+<http://transacc.linkeddata.es/def/core#User> <http://www.w3.org/2000/01/rdf-schema#comment> "User of the accesibility of transport descriptions" .
 # 
 # http://vocab.gtfs.org/terms#Route
 <http://vocab.gtfs.org/terms#Route> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -553,16 +578,16 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # http://vocab.gtfs.org/terms#Stop
 <http://vocab.gtfs.org/terms#Stop> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.gtfs.org/terms#Stop> <http://www.w3.org/2002/07/owl#disjointUnionOf> _:genid12 .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://transacc.linkeddata.es/def/core#BusStop> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://transacc.linkeddata.es/def/core#MetroStop> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid10 .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://transacc.linkeddata.es/def/core#TrainStop> .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://vocab.gtfs.org/terms#Stop> <http://www.w3.org/2002/07/owl#disjointUnionOf> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://transacc.linkeddata.es/def/core#BusStop> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://transacc.linkeddata.es/def/core#MetroStop> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://transacc.linkeddata.es/def/core#TrainStop> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <http://vocab.gtfs.org/terms#Stop> <http://www.w3.org/2000/01/rdf-schema#comment> "A location where passengers board or disembark from a transit vehicle."@en .
 <http://vocab.gtfs.org/terms#Stop> <http://www.w3.org/2000/01/rdf-schema#comment> "Un lugar donde los pasajeros suben o bajan de un veh\u00EDculo de transporte p\u00FAblico."@es .
 <http://vocab.gtfs.org/terms#Stop> <http://www.w3.org/2000/01/rdf-schema#label> "Parada"@es .
@@ -590,33 +615,6 @@ _:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <http://vocab.gtfs.org/terms#WheelchairBoardingStatus> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://developers.google.com/transit/gtfs/reference#stops_fields> .
 <http://vocab.gtfs.org/terms#WheelchairBoardingStatus> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "inestable"@es .
 <http://vocab.gtfs.org/terms#WheelchairBoardingStatus> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "unstable"@en .
-# 
-# http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://transacc.linkeddata.es/def/core#ExteriorAccess> .
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass> <http://www.w3.org/2000/01/rdf-schema#label> "PasoAPie"@es .
-# 
-# http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice> <http://www.w3.org/2002/07/owl#disjointUnionOf> _:genid16 .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://transacc.linkeddata.es/def/core#Billboard> .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid15 .
-_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://transacc.linkeddata.es/def/core#Luminous> .
-_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid14 .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://transacc.linkeddata.es/def/core#Sign> .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid13 .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://transacc.linkeddata.es/def/core#Sound> .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice> <http://www.w3.org/2000/01/rdf-schema#comment> "Any written or luminous sign, billboard, or sound announcement" .
-# 
-# http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#User
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#User> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#User> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Person> .
-<http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#User> <http://www.w3.org/2000/01/rdf-schema#comment> "User of the accesibility of transport descriptions" .
 # 
 # http://www.w3.org/2000/10/swap/pim/contact#Person
 <http://www.w3.org/2000/10/swap/pim/contact#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

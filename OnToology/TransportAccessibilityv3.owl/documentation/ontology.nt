@@ -150,6 +150,11 @@
 <http://transacc.linkeddata.es/def/core#madeBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/10/swap/pim/contact#Person> .
 <http://transacc.linkeddata.es/def/core#madeBy> <http://www.w3.org/2000/01/rdf-schema#comment> "An annotation is made by a person (user)"@es .
 # 
+# http://transacc.linkeddata.es/def/core#ofDisabilityFeature
+<http://transacc.linkeddata.es/def/core#ofDisabilityFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://transacc.linkeddata.es/def/core#ofDisabilityFeature> <http://www.w3.org/2000/01/rdf-schema#domain> <http://transacc.linkeddata.es/def/core#Annotation> .
+<http://transacc.linkeddata.es/def/core#ofDisabilityFeature> <http://www.w3.org/2000/01/rdf-schema#range> <http://transacc.linkeddata.es/def/core#DisabilityFeature> .
+# 
 # http://transacc.linkeddata.es/def/core#toRouteDirection
 <http://transacc.linkeddata.es/def/core#toRouteDirection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://transacc.linkeddata.es/def/core#toRouteDirection> <http://www.w3.org/2000/01/rdf-schema#domain> <http://transacc.linkeddata.es/def/core#Platform> .

@@ -10,7 +10,6 @@
      xmlns:ns2="http://creativecommons.org/ns#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:terms="http://purl.org/dc/terms/"
-     xmlns:trac="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
      xmlns:dcat="http://www.w3.org/ns/dcat#"
@@ -20,7 +19,6 @@
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://transacc.linkeddata.es/def/core#">
         <owl:versionIRI rdf:resource="http://transacc.linkeddata.es/def/core#"/>
-        <owl:imports rdf:resource="http://vocab.gtfs.org/terms#"/>
         <terms:creator>Edna Ruckhaus</terms:creator>
         <terms:description>Ontology that extends the GTFS (General Transit Feed Specification) model to include accessibility features. Case study is public transportation in Madrid, specifically the Bus and Metro systems.</terms:description>
         <rdfs:comment>Ontology for the description of accessibility features of public transportation</rdfs:comment>
@@ -95,6 +93,24 @@
     
 
 
+    <!-- http://purl.org/dc/terms/issued -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://vocab.gtfs.org/terms#comment -->
+
+    <owl:AnnotationProperty rdf:about="http://vocab.gtfs.org/terms#comment"/>
+    
+
+
     <!-- http://www.w3.org/2003/01/geo/wgs84_pos#lat -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
@@ -107,6 +123,12 @@
     
 
 
+    <!-- http://www.w3.org/2003/06/sw-vocab-status/ns#term_status -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"/>
+    
+
+
     <!-- http://www.w3.org/2004/02/skos/core#note -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#note"/>
@@ -116,6 +138,23 @@
     <!-- http://xmlns.com/foaf/0.1/age -->
 
     <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/age"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
     
 
 
@@ -145,6 +184,15 @@
     <owl:ObjectProperty rdf:about="http://transacc.linkeddata.es/def/core#annotates">
         <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#Annotation"/>
         <rdfs:comment xml:lang="es">Any transportation element can be annotated by a user in different dates</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transacc.linkeddata.es/def/core#exteriorAccessTo -->
+
+    <owl:ObjectProperty rdf:about="http://transacc.linkeddata.es/def/core#exteriorAccessTo">
+        <rdfs:subPropertyOf rdf:resource="http://vocab.gtfs.org/terms#parentStation"/>
+        <rdfs:range rdf:resource="http://vocab.gtfs.org/terms#Station"/>
     </owl:ObjectProperty>
     
 
@@ -187,6 +235,25 @@
     
 
 
+    <!-- http://transacc.linkeddata.es/def/core#hasNotice -->
+
+    <owl:ObjectProperty rdf:about="http://transacc.linkeddata.es/def/core#hasNotice">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice"/>
+        <rdfs:comment xml:lang="es">A station, platform, bus stop can have notices</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transacc.linkeddata.es/def/core#hasStair -->
+
+    <owl:ObjectProperty rdf:about="http://transacc.linkeddata.es/def/core#hasStair">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass"/>
+        <rdfs:range rdf:resource="http://transacc.linkeddata.es/def/core#Stair"/>
+        <rdfs:comment xml:lang="es">An exterior access may have stairs</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://transacc.linkeddata.es/def/core#madeBy -->
 
     <owl:ObjectProperty rdf:about="http://transacc.linkeddata.es/def/core#madeBy">
@@ -200,7 +267,7 @@
     <!-- http://transacc.linkeddata.es/def/core#toRouteDirection -->
 
     <owl:ObjectProperty rdf:about="http://transacc.linkeddata.es/def/core#toRouteDirection">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Platform"/>
+        <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#Platform"/>
         <rdfs:range rdf:resource="http://transacc.linkeddata.es/def/core#RouteDirection"/>
         <rdfs:comment xml:lang="es">A platform corresponds to a direction of a route (RouteDirection) in a certain stattion</rdfs:comment>
     </owl:ObjectProperty>
@@ -210,37 +277,148 @@
     <!-- http://transacc.linkeddata.es/def/core#toStation -->
 
     <owl:ObjectProperty rdf:about="http://transacc.linkeddata.es/def/core#toStation">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Platform"/>
+        <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#Platform"/>
         <rdfs:range rdf:resource="http://vocab.gtfs.org/terms#Station"/>
         <rdfs:comment xml:lang="es">A platform corresponds to a direcion of a route in a certain station (Station)</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#exteriorAccessTo -->
+    <!-- http://vocab.gtfs.org/terms#destinationStop -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#exteriorAccessTo">
-        <rdfs:subPropertyOf rdf:resource="http://vocab.gtfs.org/terms#parentStation"/>
+    <owl:ObjectProperty rdf:about="http://vocab.gtfs.org/terms#destinationStop">
+        <rdfs:range rdf:resource="http://vocab.gtfs.org/terms#Stop"/>
+        <gtfs:comment xml:lang="es">Conectado a to_stop_id en transfers.txt</gtfs:comment>
+        <gtfs:comment xml:lang="en">Map from to_stop_id in transfers.txt</gtfs:comment>
+        <rdfs:comment xml:lang="es">Enlace al gtfs:Stop hacia el que va el viaje</rdfs:comment>
+        <rdfs:comment xml:lang="en">Link to gtfs:Stop to go to</rdfs:comment>
+        <rdfs:label xml:lang="en">Destination Stop</rdfs:label>
+        <rdfs:label xml:lang="es">parada de destino</rdfs:label>
+        <ns:term_status xml:lang="es">inestable</ns:term_status>
+        <ns:term_status xml:lang="en">unstable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.gtfs.org/terms#originStop -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.gtfs.org/terms#originStop">
+        <rdfs:range rdf:resource="http://vocab.gtfs.org/terms#Stop"/>
+        <gtfs:comment xml:lang="es">Conectado a from_stop_id en transfers.txt</gtfs:comment>
+        <gtfs:comment xml:lang="en">Map from from_stop_id in transfers.txt</gtfs:comment>
+        <rdfs:comment xml:lang="es">Enlace al gtfs:Stop desde el que empieza el viaje</rdfs:comment>
+        <rdfs:comment xml:lang="en">Link to gtfs:Stop to start from</rdfs:comment>
+        <rdfs:label xml:lang="en">Origin Stop</rdfs:label>
+        <rdfs:label xml:lang="es">parada de origen</rdfs:label>
+        <ns:term_status xml:lang="es">inestable</ns:term_status>
+        <ns:term_status xml:lang="en">unstable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.gtfs.org/terms#parentStation -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.gtfs.org/terms#parentStation">
+        <rdfs:domain rdf:resource="http://vocab.gtfs.org/terms#Stop"/>
         <rdfs:range rdf:resource="http://vocab.gtfs.org/terms#Station"/>
+        <gtfs:comment xml:lang="es">Enlaza a una línea en stop.txt donde locationType=1.</gtfs:comment>
+        <gtfs:comment xml:lang="en">Links to a row in stop.txt where locationType=1.</gtfs:comment>
+        <rdfs:comment xml:lang="es">gtfs:parentStation identifica la estación asociada a la parada</rdfs:comment>
+        <rdfs:comment xml:lang="en">gtfs:parentStation identifies the station associated with the stop</rdfs:comment>
+        <rdfs:label xml:lang="en">Parent Station</rdfs:label>
+        <rdfs:label xml:lang="es">estación matriz</rdfs:label>
+        <ns:term_status xml:lang="es">inestable</ns:term_status>
+        <ns:term_status xml:lang="en">unstable</ns:term_status>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#hasNotice -->
+    <!-- http://vocab.gtfs.org/terms#route -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#hasNotice">
-        <rdfs:range rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Notice"/>
-        <rdfs:comment xml:lang="es">A station, platform, bus stop can have notices</rdfs:comment>
+    <owl:ObjectProperty rdf:about="http://vocab.gtfs.org/terms#route">
+        <rdfs:domain rdf:resource="http://vocab.gtfs.org/terms#Trip"/>
+        <rdfs:range rdf:resource="http://vocab.gtfs.org/terms#Route"/>
+        <rdfs:comment xml:lang="es">Este viaje forma parte de esta gtfs:Route</rdfs:comment>
+        <rdfs:comment xml:lang="en">This thing is applicable to this gtfs:Route</rdfs:comment>
+        <rdfs:label xml:lang="en">Route</rdfs:label>
+        <rdfs:label xml:lang="es">ruta</rdfs:label>
+        <ns:term_status xml:lang="es">inestable</ns:term_status>
+        <ns:term_status xml:lang="en">unstable</ns:term_status>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#hasStair -->
+    <!-- http://vocab.gtfs.org/terms#shape -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#hasStair">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Stair"/>
-        <rdfs:comment xml:lang="es">An exterior access may have stairs</rdfs:comment>
+    <owl:ObjectProperty rdf:about="http://vocab.gtfs.org/terms#shape">
+        <rdfs:range rdf:resource="http://vocab.gtfs.org/terms#Shape"/>
+        <rdfs:comment xml:lang="es">Un enlace al recorrido que sigue el viaje.</rdfs:comment>
+        <rdfs:comment xml:lang="en">a link to a shape the trip follows.</rdfs:comment>
+        <rdfs:label xml:lang="en">Shape</rdfs:label>
+        <rdfs:label xml:lang="es">forma del recorrido, trayecto, itinerario</rdfs:label>
+        <ns:term_status xml:lang="es">inestable</ns:term_status>
+        <ns:term_status xml:lang="en">unstable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.gtfs.org/terms#shapePoint -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.gtfs.org/terms#shapePoint">
+        <rdfs:domain rdf:resource="http://vocab.gtfs.org/terms#Shape"/>
+        <rdfs:range rdf:resource="http://vocab.gtfs.org/terms#ShapePoint"/>
+        <rdfs:comment xml:lang="es">Enlaza a gtfs:ShapePoint</rdfs:comment>
+        <rdfs:comment xml:lang="en">Links to a gtfs:ShapePoint</rdfs:comment>
+        <rdfs:label xml:lang="en">Shape Point</rdfs:label>
+        <rdfs:label xml:lang="es">punto de recorrido</rdfs:label>
+        <ns:term_status xml:lang="es">inestable</ns:term_status>
+        <ns:term_status xml:lang="en">unstable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.gtfs.org/terms#stop -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.gtfs.org/terms#stop">
+        <rdfs:range rdf:resource="http://vocab.gtfs.org/terms#Stop"/>
+        <rdfs:comment xml:lang="es">Indica que este concepto tiene cierta parada.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Indicates that this has a certain stop.</rdfs:comment>
+        <rdfs:label xml:lang="en">Stop</rdfs:label>
+        <rdfs:label xml:lang="es">parada</rdfs:label>
+        <ns:term_status xml:lang="es">inestable</ns:term_status>
+        <ns:term_status xml:lang="en">unstable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.gtfs.org/terms#trip -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.gtfs.org/terms#trip">
+        <rdfs:range rdf:resource="http://vocab.gtfs.org/terms#Trip"/>
+        <rdfs:comment xml:lang="es">Indica que este concepto es parte de cierto gtfs:Trip</rdfs:comment>
+        <rdfs:comment xml:lang="en">Indicates that this is part of a certain gtfs:Trip</rdfs:comment>
+        <rdfs:label xml:lang="en">Trip</rdfs:label>
+        <rdfs:label xml:lang="es">viaje</rdfs:label>
+        <ns:term_status xml:lang="es">inestable</ns:term_status>
+        <ns:term_status xml:lang="en">unstable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.gtfs.org/terms#wheelchairAccessible -->
+
+    <owl:ObjectProperty rdf:about="http://vocab.gtfs.org/terms#wheelchairAccessible">
+        <rdfs:domain rdf:resource="http://vocab.gtfs.org/terms#Station"/>
+        <rdfs:domain rdf:resource="http://vocab.gtfs.org/terms#Stop"/>
+        <rdfs:range rdf:resource="http://vocab.gtfs.org/terms#WheelchairBoardingStatus"/>
+        <gtfs:comment xml:lang="es">Si wheelchair_accessible es 0, mapee a gtfs:CheckParentStation; si es 1, mapee a gtfs:WheelchairAccessible; si es 2, mapee a gtfs:NotWheelchairAccessible.</gtfs:comment>
+        <gtfs:comment xml:lang="en">When wheelchair_accessible is 0, map to gtfs:CheckParentStation; if 1 map to gtfs:WheelchairAccessible; if 2 map to gtfs:NotWheelchairAccessible.</gtfs:comment>
+        <rdfs:comment xml:lang="es">La parada o estación específica es accesible para silla de ruedas. Si esta parada es parte de una estación, hay también una ruta accesible desde el exterior de la estación hasta la parada.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Wheelchair boardings are possible from the specified stop or station. If this stop is part of a station, there is also a wheelchair accessible path from outside the station towards the stop.</rdfs:comment>
+        <rdfs:label xml:lang="es">accesible para silla de ruedas</rdfs:label>
+        <rdfs:label xml:lang="en">wheelchair boarding</rdfs:label>
+        <ns:term_status xml:lang="es">inestable</ns:term_status>
+        <ns:term_status xml:lang="en">unstable</ns:term_status>
     </owl:ObjectProperty>
     
 
@@ -266,6 +444,14 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://transacc.linkeddata.es/def/core#code -->
+
+    <owl:DatatypeProperty rdf:about="http://transacc.linkeddata.es/def/core#code">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -306,6 +492,15 @@
     
 
 
+    <!-- http://transacc.linkeddata.es/def/core#routeId -->
+
+    <owl:DatatypeProperty rdf:about="http://transacc.linkeddata.es/def/core#routeId">
+        <rdfs:domain rdf:resource="http://vocab.gtfs.org/terms#Route"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://transacc.linkeddata.es/def/core#state -->
 
     <owl:DatatypeProperty rdf:about="http://transacc.linkeddata.es/def/core#state">
@@ -315,45 +510,19 @@
     
 
 
-    <!-- http://transacc.linkeddata.es/def/core#typeContent -->
+    <!-- http://transacc.linkeddata.es/def/core#stopId -->
 
-    <owl:DatatypeProperty rdf:about="http://transacc.linkeddata.es/def/core#typeContent">
-        <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#Content"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#code -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#code">
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#routeId -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#routeId">
-        <rdfs:domain rdf:resource="http://vocab.gtfs.org/terms#Route"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#stopId -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#stopId">
+    <owl:DatatypeProperty rdf:about="http://transacc.linkeddata.es/def/core#stopId">
         <rdfs:domain rdf:resource="http://vocab.gtfs.org/terms#Stop"/>
         <rdfs:isDefinedBy xml:lang="es">idParada</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#typeBusStop -->
+    <!-- http://transacc.linkeddata.es/def/core#typeBusStop -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#typeBusStop">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#BusStop"/>
+    <owl:DatatypeProperty rdf:about="http://transacc.linkeddata.es/def/core#typeBusStop">
+        <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#BusStop"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -375,10 +544,19 @@
     
 
 
-    <!-- http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#typePlatform -->
+    <!-- http://transacc.linkeddata.es/def/core#typeContent -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#typePlatform">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Platform"/>
+    <owl:DatatypeProperty rdf:about="http://transacc.linkeddata.es/def/core#typeContent">
+        <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#Content"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://transacc.linkeddata.es/def/core#typePlatform -->
+
+    <owl:DatatypeProperty rdf:about="http://transacc.linkeddata.es/def/core#typePlatform">
+        <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#Platform"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -400,10 +578,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#typeStair -->
+    <!-- http://transacc.linkeddata.es/def/core#typeStair -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#typeStair">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Stair"/>
+    <owl:DatatypeProperty rdf:about="http://transacc.linkeddata.es/def/core#typeStair">
+        <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#Stair"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -421,6 +599,50 @@
                 </owl:oneOf>
             </rdfs:Datatype>
         </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://vocab.gtfs.org/terms#direction -->
+
+    <owl:DatatypeProperty rdf:about="http://vocab.gtfs.org/terms#direction">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">A binary property to indicate the direction the trip is going (e.g., outbound/inbound, center/airport)</rdfs:comment>
+        <rdfs:comment xml:lang="es">Apunta a un valor binario que indica la dirección del viaje (e.g., ida/vuelta, centro/aeropuerto)</rdfs:comment>
+        <rdfs:label xml:lang="en">Direction</rdfs:label>
+        <rdfs:label xml:lang="es">dirección</rdfs:label>
+        <ns:term_status xml:lang="es">inestable</ns:term_status>
+        <ns:term_status xml:lang="en">unstable</ns:term_status>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://vocab.gtfs.org/terms#headsign -->
+
+    <owl:DatatypeProperty rdf:about="http://vocab.gtfs.org/terms#headsign">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="es">Esta propiedad apunta al texto que indica el destino del viaje a los pasajeros.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The gtfs:headsign property contains the text that appears on a sign that identifies the trip&apos;s destination to passengers.</rdfs:comment>
+        <rdfs:label xml:lang="en">Headsign</rdfs:label>
+        <rdfs:label xml:lang="es">destino del viaje</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://developers.google.com/transit/gtfs/examples/display-to-users#TripHeadsign"/>
+        <ns:term_status xml:lang="es">inestable</ns:term_status>
+        <ns:term_status xml:lang="en">unstable</ns:term_status>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://vocab.gtfs.org/terms#pointSequence -->
+
+    <owl:DatatypeProperty rdf:about="http://vocab.gtfs.org/terms#pointSequence">
+        <rdfs:domain rdf:resource="http://vocab.gtfs.org/terms#ShapePoint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment xml:lang="es">El campo shape_pt_sequence asocia la latitud y longitud de un punto de recorrido con su orden de secuencia en el recorrido. Los valores para shape_pt_sequence deben ser números enteros positivos y crecientes conforme avanza el viaje.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The shape_pt_sequence field associates the latitude and longitude of a shape point with its sequence order along the shape. The values for shape_pt_sequence must be non-negative integers, and they must increase along the trip.</rdfs:comment>
+        <rdfs:label xml:lang="en">Point Sequence</rdfs:label>
+        <rdfs:label xml:lang="es">secuencia de puntos</rdfs:label>
+        <ns:term_status xml:lang="es">inestable</ns:term_status>
+        <ns:term_status xml:lang="en">unstable</ns:term_status>
     </owl:DatatypeProperty>
     
 
@@ -491,6 +713,14 @@
     
 
 
+    <!-- http://transacc.linkeddata.es/def/core#BusStop -->
+
+    <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#BusStop">
+        <rdfs:subClassOf rdf:resource="http://vocab.gtfs.org/terms#Stop"/>
+    </owl:Class>
+    
+
+
     <!-- http://transacc.linkeddata.es/def/core#Content -->
 
     <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#Content">
@@ -515,6 +745,24 @@
     
 
 
+    <!-- http://transacc.linkeddata.es/def/core#Elevator -->
+
+    <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#Elevator">
+        <rdfs:subClassOf rdf:resource="http://transacc.linkeddata.es/def/core#ExteriorAccess"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass"/>
+        <rdfs:label xml:lang="es">Ascensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://transacc.linkeddata.es/def/core#ExteriorAccess -->
+
+    <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#ExteriorAccess">
+        <rdfs:comment>Access from the street to the station</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://transacc.linkeddata.es/def/core#Luminous -->
 
     <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#Luminous">
@@ -527,6 +775,22 @@
 
     <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#MetroRoute">
         <rdfs:subClassOf rdf:resource="http://vocab.gtfs.org/terms#Route"/>
+    </owl:Class>
+    
+
+
+    <!-- http://transacc.linkeddata.es/def/core#MetroStop -->
+
+    <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#MetroStop">
+        <rdfs:subClassOf rdf:resource="http://vocab.gtfs.org/terms#Stop"/>
+    </owl:Class>
+    
+
+
+    <!-- http://transacc.linkeddata.es/def/core#Platform -->
+
+    <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#Platform">
+        <rdfs:comment>a platform of a metro route in a certain stop and direction</rdfs:comment>
     </owl:Class>
     
 
@@ -556,6 +820,12 @@
     
 
 
+    <!-- http://transacc.linkeddata.es/def/core#Stair -->
+
+    <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#Stair"/>
+    
+
+
     <!-- http://transacc.linkeddata.es/def/core#TrainStop -->
 
     <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#TrainStop">
@@ -564,48 +834,120 @@
     
 
 
+    <!-- http://vocab.gtfs.org/terms#Route -->
+
+    <owl:Class rdf:about="http://vocab.gtfs.org/terms#Route">
+        <rdfs:comment xml:lang="en">A gtfs:Route is a commercial route followed entirely or partly by gtfs:Trips</rdfs:comment>
+        <rdfs:comment xml:lang="es">Una gtfs:Route es un grupo de viajes (gtfs:Trips) que se muestran a los usuarios como servicio independiente</rdfs:comment>
+        <rdfs:label xml:lang="en">Route</rdfs:label>
+        <rdfs:label xml:lang="es">Ruta</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://developers.google.com/transit/gtfs/reference#routes_fields"/>
+        <ns:term_status xml:lang="es">inestable</ns:term_status>
+        <ns:term_status xml:lang="en">unstable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://vocab.gtfs.org/terms#RouteType -->
+
+    <owl:Class rdf:about="http://vocab.gtfs.org/terms#RouteType">
+        <rdfs:comment xml:lang="es">Describe el tipo de transporte usado en una ruta</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes the type of transportation used on a route</rdfs:comment>
+        <rdfs:label xml:lang="en">Route type</rdfs:label>
+        <rdfs:label xml:lang="es">Tipo de ruta</rdfs:label>
+        <ns:term_status xml:lang="es">inestable</ns:term_status>
+        <ns:term_status xml:lang="en">unstable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://vocab.gtfs.org/terms#Shape -->
+
+    <owl:Class rdf:about="http://vocab.gtfs.org/terms#Shape">
+        <rdfs:comment xml:lang="en">A polygon formed by gtfs:ShapePoints</rdfs:comment>
+        <rdfs:comment xml:lang="es">Un polígono o línea formado por gtfs:ShapePoints</rdfs:comment>
+        <rdfs:label xml:lang="en">Shape</rdfs:label>
+        <rdfs:label xml:lang="es">forma del recorrido, trayecto, itinerario</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://developers.google.com/transit/gtfs/reference#shapes_fields"/>
+        <ns:term_status xml:lang="es">inestable</ns:term_status>
+        <ns:term_status xml:lang="en">unstable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://vocab.gtfs.org/terms#ShapePoint -->
+
+    <owl:Class rdf:about="http://vocab.gtfs.org/terms#ShapePoint">
+        <rdfs:comment xml:lang="en">A geographic point within a gtfs:Shape</rdfs:comment>
+        <rdfs:comment xml:lang="es">Punto geográfico dentro de un recorrido (gtfs:Shape)</rdfs:comment>
+        <rdfs:label xml:lang="es">Punto de recorrido</rdfs:label>
+        <rdfs:label xml:lang="en">Shape Point</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://developers.google.com/transit/gtfs/reference#shapes_fields"/>
+        <ns:term_status xml:lang="es">inestable</ns:term_status>
+        <ns:term_status xml:lang="en">unstable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://vocab.gtfs.org/terms#Station -->
+
+    <owl:Class rdf:about="http://vocab.gtfs.org/terms#Station">
+        <gtfs:comment xml:lang="en">Map a row in stops.txt to gtfs:Station when the location_type is 1.</gtfs:comment>
+        <gtfs:comment xml:lang="es">Mapee una línea en stops.txt a gtfs:Station cuando location_type sea 1.</gtfs:comment>
+        <rdfs:comment xml:lang="en">A physical structure or area that contains one or more stop.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Estructura física o área que contiene una o más paradas.</rdfs:comment>
+        <rdfs:label xml:lang="es">Estación</rdfs:label>
+        <rdfs:label xml:lang="en">Station</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://developers.google.com/transit/gtfs/reference#stops_fields"/>
+        <ns:term_status xml:lang="es">inestable</ns:term_status>
+        <ns:term_status xml:lang="en">unstable</ns:term_status>
+    </owl:Class>
+    
+
+
     <!-- http://vocab.gtfs.org/terms#Stop -->
 
-    <rdf:Description rdf:about="http://vocab.gtfs.org/terms#Stop">
+    <owl:Class rdf:about="http://vocab.gtfs.org/terms#Stop">
         <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://transacc.linkeddata.es/def/core#BusStop"/>
+            <rdf:Description rdf:about="http://transacc.linkeddata.es/def/core#MetroStop"/>
             <rdf:Description rdf:about="http://transacc.linkeddata.es/def/core#TrainStop"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#BusStop"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#MetroStop"/>
         </owl:disjointUnionOf>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#BusStop -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#BusStop">
-        <rdfs:subClassOf rdf:resource="http://vocab.gtfs.org/terms#Stop"/>
+        <rdfs:comment xml:lang="en">A location where passengers board or disembark from a transit vehicle.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Un lugar donde los pasajeros suben o bajan de un vehículo de transporte público.</rdfs:comment>
+        <rdfs:label xml:lang="es">Parada</rdfs:label>
+        <rdfs:label xml:lang="en">Stop</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://developers.google.com/transit/gtfs/reference#stops_fields"/>
+        <ns:term_status xml:lang="es">estable</ns:term_status>
+        <ns:term_status xml:lang="en">stable</ns:term_status>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#MetroStop -->
+    <!-- http://vocab.gtfs.org/terms#Trip -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/edna/ontologies/2018/6/untitled-ontology-16#MetroStop">
-        <rdfs:subClassOf rdf:resource="http://vocab.gtfs.org/terms#Stop"/>
+    <owl:Class rdf:about="http://vocab.gtfs.org/terms#Trip">
+        <rdfs:comment xml:lang="en">A collection of gtfs:StopTimes followed by a transit vehicle</rdfs:comment>
+        <rdfs:comment xml:lang="es">Trayecto de dos o más paradas realizadas por un vehículo que se produce a una gtfs:StopTime</rdfs:comment>
+        <rdfs:label xml:lang="en">Trip</rdfs:label>
+        <rdfs:label xml:lang="es">Viaje</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://developers.google.com/transit/gtfs/reference#trips_fields"/>
+        <ns:term_status xml:lang="es">inestable</ns:term_status>
+        <ns:term_status xml:lang="en">unstable</ns:term_status>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Elevator -->
+    <!-- http://vocab.gtfs.org/terms#WheelchairBoardingStatus -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Elevator">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#ExteriorAccess"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass"/>
-        <rdfs:label xml:lang="es">Ascensor</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#ExteriorAccess -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#ExteriorAccess">
-        <rdfs:comment>Access from the street to the station</rdfs:comment>
+    <owl:Class rdf:about="http://vocab.gtfs.org/terms#WheelchairBoardingStatus">
+        <rdfs:comment xml:lang="en">A class whom&apos;s instances indicate how accessible a gtfs:Trip, gtfs:Stop or gtfs:Station is.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Las instancias de esta clase indican como de accesible es un gtfs:Trip, un gtfs:Stop o una gtfs:Station.</rdfs:comment>
+        <rdfs:label xml:lang="es">Información de accesibilidad para silla de ruedas</rdfs:label>
+        <rdfs:label xml:lang="en">Wheelchair Boarding Information</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://developers.google.com/transit/gtfs/reference#stops_fields"/>
+        <ns:term_status xml:lang="es">inestable</ns:term_status>
+        <ns:term_status xml:lang="en">unstable</ns:term_status>
     </owl:Class>
     
 
@@ -613,7 +955,7 @@
     <!-- http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#FootPass">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#ExteriorAccess"/>
+        <rdfs:subClassOf rdf:resource="http://transacc.linkeddata.es/def/core#ExteriorAccess"/>
         <rdfs:label xml:lang="es">PasoAPie</rdfs:label>
     </owl:Class>
     
@@ -630,20 +972,6 @@
         </owl:disjointUnionOf>
         <rdfs:comment>Any written or luminous sign, billboard, or sound announcement</rdfs:comment>
     </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Platform -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Platform">
-        <rdfs:comment>a platform of a metro route in a certain stop and direction</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Stair -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/edna/ontologies/2018/transportAccessibility#Stair"/>
     
 
 
@@ -667,6 +995,12 @@
     <!-- http://www.w3.org/2004/02/skos/core#Concept -->
 
     <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent"/>
     
 
 

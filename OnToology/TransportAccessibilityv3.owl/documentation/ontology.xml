@@ -287,6 +287,16 @@
     
 
 
+    <!-- http://transacc.linkeddata.es/def/core#ofDisabilityFeature -->
+
+
+    <owl:ObjectProperty rdf:about="http://transacc.linkeddata.es/def/core#ofDisabilityFeature">
+        <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#Annotation"/>
+        <rdfs:range rdf:resource="http://transacc.linkeddata.es/def/core#DisabilityFeature"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://transacc.linkeddata.es/def/core#toRouteDirection -->
 
 

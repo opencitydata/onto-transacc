@@ -1,0 +1,698 @@
+@prefix : <http://transacc.linkeddata.es/def/core##> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://transacc.linkeddata.es/def/core#> .
+
+<http://transacc.linkeddata.es/def/core#> rdf:type owl:Ontology ;
+                                           owl:versionIRI <http://transacc.linkeddata.es/def/core#> ;
+                                           <http://purl.org/dc/terms/creator> "Edna Ruckhaus"^^xsd:string ;
+                                           <http://purl.org/dc/terms/description> "Ontology that extends the GTFS (General Transit Feed Specification) model to include accessibility features. Case study is public transportation in Madrid, specifically the Bus and Metro systems."^^xsd:string ;
+                                           <http://purl.org/dc/terms/title> "Public Transport Accessibility"^^xsd:string ;
+                                           rdfs:comment "Ontology for the description of accessibility features of public transportation"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty ;
+                                              <http://purl.org/dc/terms/description> "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource."@en ;
+                                              <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#description-006> ;
+                                              <http://purl.org/dc/terms/issued> "1999-07-02"^^xsd:date ;
+                                              <http://purl.org/dc/terms/modified> "2008-01-14"^^xsd:date ;
+                                              rdfs:comment "An account of the resource."@en ;
+                                              rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+                                              rdfs:label "Description"@en ;
+                                              <http://www.w3.org/2004/02/skos/core#note> "A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document \"DCMI Metadata Terms\" (http://dublincore.org/documents/dcmi-terms/) for an explanation."@en .
+
+
+###  http://purl.org/dc/elements/1.1/identifier
+<http://purl.org/dc/elements/1.1/identifier> rdf:type owl:AnnotationProperty ;
+                                             <http://purl.org/dc/terms/description> "Recommended best practice is to identify the resource by means of a string conforming to a formal identification system. "@en ;
+                                             <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#identifier-006> ;
+                                             <http://purl.org/dc/terms/issued> "1999-07-02"^^xsd:date ;
+                                             <http://purl.org/dc/terms/modified> "2008-01-14"^^xsd:date ;
+                                             rdfs:comment "An unambiguous reference to the resource within a given context."@en ;
+                                             rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+                                             rdfs:label "Identifier"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#note> "A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document \"DCMI Metadata Terms\" (http://dublincore.org/documents/dcmi-terms/) for an explanation."@en .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/hasVersion
+<http://purl.org/dc/terms/hasVersion> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> rdf:type owl:AnnotationProperty ;
+                                      <http://purl.org/dc/terms/description> "Recommended best practice is to identify the resource by means of a string conforming to a formal identification system. "@en ;
+                                      <http://purl.org/dc/terms/hasVersion> <http://dublincore.org/usage/terms/history/#identifierT-001> ;
+                                      rdfs:comment "An unambiguous reference to the resource within a given context."@en ;
+                                      rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                                      rdfs:label "Identifier"@en ;
+                                      rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/identifier> .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://vocab.gtfs.org/terms#comment
+<http://vocab.gtfs.org/terms#comment> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#lat
+<http://www.w3.org/2003/01/geo/wgs84_pos#lat> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#long
+<http://www.w3.org/2003/01/geo/wgs84_pos#long> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2003/06/sw-vocab-status/ns#term_status
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/age
+<http://xmlns.com/foaf/0.1/age> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://transacc.linkeddata.es/def/core#adresses
+<http://transacc.linkeddata.es/def/core#adresses> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <http://transacc.linkeddata.es/def/core#DisabilityFeature> ;
+                                                  rdfs:range <http://transacc.linkeddata.es/def/core#DisabilityType> ;
+                                                  rdfs:comment "A disability feature adresses a certain disability type"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#annotates
+<http://transacc.linkeddata.es/def/core#annotates> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain <http://transacc.linkeddata.es/def/core#Annotation> ;
+                                                   rdfs:comment "Any transportation element can be annotated by a user in different dates"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#exteriorAccessTo
+<http://transacc.linkeddata.es/def/core#exteriorAccessTo> rdf:type owl:ObjectProperty ;
+                                                          rdfs:subPropertyOf <http://vocab.gtfs.org/terms#parentStation> ;
+                                                          rdfs:range <http://vocab.gtfs.org/terms#Station> .
+
+
+###  http://transacc.linkeddata.es/def/core#hasContent
+<http://transacc.linkeddata.es/def/core#hasContent> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <http://transacc.linkeddata.es/def/core#Notice> ;
+                                                    rdfs:range <http://transacc.linkeddata.es/def/core#Content> ;
+                                                    rdfs:comment "type of content of notices, for example \"exit address\", \"map of lines\""@es .
+
+
+###  http://transacc.linkeddata.es/def/core#hasDirection
+<http://transacc.linkeddata.es/def/core#hasDirection> rdf:type owl:ObjectProperty ;
+                                                      rdfs:domain <http://vocab.gtfs.org/terms#Route> ;
+                                                      rdfs:range <http://transacc.linkeddata.es/def/core#RouteDirection> ;
+                                                      rdfs:comment "a Route can have in general two directions, characterized by headsign"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#hasDisabilityFeature
+<http://transacc.linkeddata.es/def/core#hasDisabilityFeature> rdf:type owl:ObjectProperty ;
+                                                              rdfs:range <http://transacc.linkeddata.es/def/core#DisabilityFeature> ;
+                                                              rdfs:comment "An element in public transportation has a feature for disability"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#hasDisabilityType
+<http://transacc.linkeddata.es/def/core#hasDisabilityType> rdf:type owl:ObjectProperty ;
+                                                           rdfs:range <http://transacc.linkeddata.es/def/core#DisabilityType> ;
+                                                           rdfs:comment "A person has a type of disability"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#hasNotice
+<http://transacc.linkeddata.es/def/core#hasNotice> rdf:type owl:ObjectProperty ;
+                                                   rdfs:range <http://transacc.linkeddata.es/def/core#Notice> ;
+                                                   rdfs:comment "A station, platform, bus stop can have notices"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#hasStair
+<http://transacc.linkeddata.es/def/core#hasStair> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <http://transacc.linkeddata.es/def/core#FootPass> ;
+                                                  rdfs:range <http://transacc.linkeddata.es/def/core#Stair> ;
+                                                  rdfs:comment "An exterior access may have stairs"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#madeBy
+<http://transacc.linkeddata.es/def/core#madeBy> rdf:type owl:ObjectProperty ;
+                                                rdfs:domain <http://transacc.linkeddata.es/def/core#Annotation> ;
+                                                rdfs:range <http://www.w3.org/2000/10/swap/pim/contact#Person> ;
+                                                rdfs:comment "An annotation is made by a person (user)"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#toRouteDirection
+<http://transacc.linkeddata.es/def/core#toRouteDirection> rdf:type owl:ObjectProperty ;
+                                                          rdfs:domain <http://transacc.linkeddata.es/def/core#Platform> ;
+                                                          rdfs:range <http://transacc.linkeddata.es/def/core#RouteDirection> ;
+                                                          rdfs:comment "A platform corresponds to a direction of a route (RouteDirection) in a certain stattion"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#toStation
+<http://transacc.linkeddata.es/def/core#toStation> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain <http://transacc.linkeddata.es/def/core#Platform> ;
+                                                   rdfs:range <http://vocab.gtfs.org/terms#Station> ;
+                                                   rdfs:comment "A platform corresponds to a direcion of a route in a certain station (Station)"@es .
+
+
+###  http://vocab.gtfs.org/terms#destinationStop
+<http://vocab.gtfs.org/terms#destinationStop> rdf:type owl:ObjectProperty ;
+                                              rdfs:range <http://vocab.gtfs.org/terms#Stop> ;
+                                              <http://vocab.gtfs.org/terms#comment> "Conectado a to_stop_id en transfers.txt"@es ,
+                                                                                    "Map from to_stop_id in transfers.txt"@en ;
+                                              rdfs:comment "Enlace al gtfs:Stop hacia el que va el viaje"@es ,
+                                                           "Link to gtfs:Stop to go to"@en ;
+                                              rdfs:label "Destination Stop"@en ,
+                                                         "parada de destino"@es ;
+                                              <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "inestable"@es ,
+                                                                                                         "unstable"@en .
+
+
+###  http://vocab.gtfs.org/terms#originStop
+<http://vocab.gtfs.org/terms#originStop> rdf:type owl:ObjectProperty ;
+                                         rdfs:range <http://vocab.gtfs.org/terms#Stop> ;
+                                         <http://vocab.gtfs.org/terms#comment> "Conectado a from_stop_id en transfers.txt"@es ,
+                                                                               "Map from from_stop_id in transfers.txt"@en ;
+                                         rdfs:comment "Enlace al gtfs:Stop desde el que empieza el viaje"@es ,
+                                                      "Link to gtfs:Stop to start from"@en ;
+                                         rdfs:label "Origin Stop"@en ,
+                                                    "parada de origen"@es ;
+                                         <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "inestable"@es ,
+                                                                                                    "unstable"@en .
+
+
+###  http://vocab.gtfs.org/terms#parentStation
+<http://vocab.gtfs.org/terms#parentStation> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <http://vocab.gtfs.org/terms#Stop> ;
+                                            rdfs:range <http://vocab.gtfs.org/terms#Station> ;
+                                            <http://vocab.gtfs.org/terms#comment> "Enlaza a una línea en stop.txt donde locationType=1."@es ,
+                                                                                  "Links to a row in stop.txt where locationType=1."@en ;
+                                            rdfs:comment "gtfs:parentStation identifica la estación asociada a la parada"@es ,
+                                                         "gtfs:parentStation identifies the station associated with the stop"@en ;
+                                            rdfs:label "Parent Station"@en ,
+                                                       "estación matriz"@es ;
+                                            <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "inestable"@es ,
+                                                                                                       "unstable"@en .
+
+
+###  http://vocab.gtfs.org/terms#route
+<http://vocab.gtfs.org/terms#route> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain <http://vocab.gtfs.org/terms#Trip> ;
+                                    rdfs:range <http://vocab.gtfs.org/terms#Route> ;
+                                    rdfs:comment "Este viaje forma parte de esta gtfs:Route"@es ,
+                                                 "This thing is applicable to this gtfs:Route"@en ;
+                                    rdfs:label "Route"@en ,
+                                               "ruta"@es ;
+                                    <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "inestable"@es ,
+                                                                                               "unstable"@en .
+
+
+###  http://vocab.gtfs.org/terms#shape
+<http://vocab.gtfs.org/terms#shape> rdf:type owl:ObjectProperty ;
+                                    rdfs:range <http://vocab.gtfs.org/terms#Shape> ;
+                                    rdfs:comment "Un enlace al recorrido que sigue el viaje."@es ,
+                                                 "a link to a shape the trip follows."@en ;
+                                    rdfs:label "Shape"@en ,
+                                               "forma del recorrido, trayecto, itinerario"@es ;
+                                    <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "inestable"@es ,
+                                                                                               "unstable"@en .
+
+
+###  http://vocab.gtfs.org/terms#shapePoint
+<http://vocab.gtfs.org/terms#shapePoint> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <http://vocab.gtfs.org/terms#Shape> ;
+                                         rdfs:range <http://vocab.gtfs.org/terms#ShapePoint> ;
+                                         rdfs:comment "Enlaza a gtfs:ShapePoint"@es ,
+                                                      "Links to a gtfs:ShapePoint"@en ;
+                                         rdfs:label "Shape Point"@en ,
+                                                    "punto de recorrido"@es ;
+                                         <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "inestable"@es ,
+                                                                                                    "unstable"@en .
+
+
+###  http://vocab.gtfs.org/terms#stop
+<http://vocab.gtfs.org/terms#stop> rdf:type owl:ObjectProperty ;
+                                   rdfs:range <http://vocab.gtfs.org/terms#Stop> ;
+                                   rdfs:comment "Indica que este concepto tiene cierta parada."@es ,
+                                                "Indicates that this has a certain stop."@en ;
+                                   rdfs:label "Stop"@en ,
+                                              "parada"@es ;
+                                   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "inestable"@es ,
+                                                                                              "unstable"@en .
+
+
+###  http://vocab.gtfs.org/terms#trip
+<http://vocab.gtfs.org/terms#trip> rdf:type owl:ObjectProperty ;
+                                   rdfs:range <http://vocab.gtfs.org/terms#Trip> ;
+                                   rdfs:comment "Indica que este concepto es parte de cierto gtfs:Trip"@es ,
+                                                "Indicates that this is part of a certain gtfs:Trip"@en ;
+                                   rdfs:label "Trip"@en ,
+                                              "viaje"@es ;
+                                   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "inestable"@es ,
+                                                                                              "unstable"@en .
+
+
+###  http://vocab.gtfs.org/terms#wheelchairAccessible
+<http://vocab.gtfs.org/terms#wheelchairAccessible> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain <http://vocab.gtfs.org/terms#Station> ,
+                                                               <http://vocab.gtfs.org/terms#Stop> ;
+                                                   rdfs:range <http://vocab.gtfs.org/terms#WheelchairBoardingStatus> ;
+                                                   <http://vocab.gtfs.org/terms#comment> "Si wheelchair_accessible es 0, mapee a gtfs:CheckParentStation; si es 1, mapee a gtfs:WheelchairAccessible; si es 2, mapee a gtfs:NotWheelchairAccessible."@es ,
+                                                                                         "When wheelchair_accessible is 0, map to gtfs:CheckParentStation; if 1 map to gtfs:WheelchairAccessible; if 2 map to gtfs:NotWheelchairAccessible."@en ;
+                                                   rdfs:comment "La parada o estación específica es accesible para silla de ruedas. Si esta parada es parte de una estación, hay también una ruta accesible desde el exterior de la estación hasta la parada."@es ,
+                                                                "Wheelchair boardings are possible from the specified stop or station. If this stop is part of a station, there is also a wheelchair accessible path from outside the station towards the stop."@en ;
+                                                   rdfs:label "accesible para silla de ruedas"@es ,
+                                                              "wheelchair boarding"@en ;
+                                                   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "inestable"@es ,
+                                                                                                              "unstable"@en .
+
+
+###  http://xmlns.com/foaf/0.1/account
+<http://xmlns.com/foaf/0.1/account> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain <http://xmlns.com/foaf/0.1/Agent> ;
+                                    rdfs:range <http://xmlns.com/foaf/0.1/OnlineAccount> ;
+                                    rdfs:comment "Indicates an account held by this agent."^^xsd:string ;
+                                    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
+                                    rdfs:label "account"^^xsd:string ;
+                                    <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing"^^xsd:string .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://transacc.linkeddata.es/def/core#code
+<http://transacc.linkeddata.es/def/core#code> rdf:type owl:DatatypeProperty ;
+                                              rdfs:range rdfs:Literal .
+
+
+###  http://transacc.linkeddata.es/def/core#dateAnnotation
+<http://transacc.linkeddata.es/def/core#dateAnnotation> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:domain <http://transacc.linkeddata.es/def/core#Annotation> ;
+                                                        rdfs:range xsd:dateTime .
+
+
+###  http://transacc.linkeddata.es/def/core#disabilityType
+<http://transacc.linkeddata.es/def/core#disabilityType> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:domain <http://transacc.linkeddata.es/def/core#DisabilityType> ;
+                                                        rdfs:range rdfs:Literal .
+
+
+###  http://transacc.linkeddata.es/def/core#feature
+<http://transacc.linkeddata.es/def/core#feature> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <http://transacc.linkeddata.es/def/core#DisabilityFeature> ;
+                                                 rdfs:range rdfs:Literal ;
+                                                 rdfs:label "caracteristica"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#impairment
+<http://transacc.linkeddata.es/def/core#impairment> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:domain <http://transacc.linkeddata.es/def/core#DisabilityType> ;
+                                                    rdfs:range rdfs:Literal .
+
+
+###  http://transacc.linkeddata.es/def/core#routeId
+<http://transacc.linkeddata.es/def/core#routeId> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <http://vocab.gtfs.org/terms#Route> ;
+                                                 rdfs:range xsd:positiveInteger .
+
+
+###  http://transacc.linkeddata.es/def/core#state
+<http://transacc.linkeddata.es/def/core#state> rdf:type owl:DatatypeProperty ;
+                                               rdfs:range rdfs:Literal ;
+                                               rdfs:comment "State of a disability feature, for example \"elevator out of order\""@es .
+
+
+###  http://transacc.linkeddata.es/def/core#stopId
+<http://transacc.linkeddata.es/def/core#stopId> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain <http://vocab.gtfs.org/terms#Stop> ;
+                                                rdfs:isDefinedBy "idParada"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#typeBusStop
+<http://transacc.linkeddata.es/def/core#typeBusStop> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:domain <http://transacc.linkeddata.es/def/core#BusStop> ;
+                                                     rdfs:range [ rdf:type rdfs:Datatype ;
+                                                                  owl:oneOf [ rdf:type rdf:List ;
+                                                                              rdf:first "marquee"^^xsd:string ;
+                                                                              rdf:rest [ rdf:type rdf:List ;
+                                                                                         rdf:first "pole"^^xsd:string ;
+                                                                                         rdf:rest rdf:nil
+                                                                                       ]
+                                                                            ]
+                                                                ] .
+
+
+###  http://transacc.linkeddata.es/def/core#typeContent
+<http://transacc.linkeddata.es/def/core#typeContent> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:domain <http://transacc.linkeddata.es/def/core#Content> ;
+                                                     rdfs:range rdfs:Literal .
+
+
+###  http://transacc.linkeddata.es/def/core#typePlatform
+<http://transacc.linkeddata.es/def/core#typePlatform> rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain <http://transacc.linkeddata.es/def/core#Platform> ;
+                                                      rdfs:range [ rdf:type rdfs:Datatype ;
+                                                                   owl:oneOf [ rdf:type rdf:List ;
+                                                                               rdf:first "indoor"^^xsd:string ;
+                                                                               rdf:rest [ rdf:type rdf:List ;
+                                                                                          rdf:first "outdoor"^^xsd:string ;
+                                                                                          rdf:rest rdf:nil
+                                                                                        ]
+                                                                             ]
+                                                                 ] .
+
+
+###  http://transacc.linkeddata.es/def/core#typeStair
+<http://transacc.linkeddata.es/def/core#typeStair> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <http://transacc.linkeddata.es/def/core#Stair> ;
+                                                   rdfs:range [ rdf:type rdfs:Datatype ;
+                                                                owl:oneOf [ rdf:type rdf:List ;
+                                                                            rdf:first "escalator"^^xsd:string ;
+                                                                            rdf:rest [ rdf:type rdf:List ;
+                                                                                       rdf:first "stairs"^^xsd:string ;
+                                                                                       rdf:rest rdf:nil
+                                                                                     ]
+                                                                          ]
+                                                              ] .
+
+
+###  http://vocab.gtfs.org/terms#direction
+<http://vocab.gtfs.org/terms#direction> rdf:type owl:DatatypeProperty ;
+                                        rdfs:range xsd:boolean ;
+                                        rdfs:comment "A binary property to indicate the direction the trip is going (e.g., outbound/inbound, center/airport)"@en ,
+                                                     "Apunta a un valor binario que indica la dirección del viaje (e.g., ida/vuelta, centro/aeropuerto)"@es ;
+                                        rdfs:label "Direction"@en ,
+                                                   "dirección"@es ;
+                                        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "inestable"@es ,
+                                                                                                   "unstable"@en .
+
+
+###  http://vocab.gtfs.org/terms#headsign
+<http://vocab.gtfs.org/terms#headsign> rdf:type owl:DatatypeProperty ;
+                                       rdfs:range xsd:string ;
+                                       rdfs:comment "Esta propiedad apunta al texto que indica el destino del viaje a los pasajeros."@es ,
+                                                    "The gtfs:headsign property contains the text that appears on a sign that identifies the trip's destination to passengers."@en ;
+                                       rdfs:label "Headsign"@en ,
+                                                  "destino del viaje"@es ;
+                                       rdfs:seeAlso <https://developers.google.com/transit/gtfs/examples/display-to-users#TripHeadsign> ;
+                                       <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "inestable"@es ,
+                                                                                                  "unstable"@en .
+
+
+###  http://vocab.gtfs.org/terms#pointSequence
+<http://vocab.gtfs.org/terms#pointSequence> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain <http://vocab.gtfs.org/terms#ShapePoint> ;
+                                            rdfs:range xsd:nonNegativeInteger ;
+                                            rdfs:comment "El campo shape_pt_sequence asocia la latitud y longitud de un punto de recorrido con su orden de secuencia en el recorrido. Los valores para shape_pt_sequence deben ser números enteros positivos y crecientes conforme avanza el viaje."@es ,
+                                                         "The shape_pt_sequence field associates the latitude and longitude of a shape point with its sequence order along the shape. The values for shape_pt_sequence must be non-negative integers, and they must increase along the trip."@en ;
+                                            rdfs:label "Point Sequence"@en ,
+                                                       "secuencia de puntos"@es ;
+                                            <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "inestable"@es ,
+                                                                                                       "unstable"@en .
+
+
+###  http://www.w3.org/2002/07/owl#topDataProperty
+owl:topDataProperty rdfs:range xsd:boolean .
+
+
+###  http://xmlns.com/foaf/0.1/familyName
+<http://xmlns.com/foaf/0.1/familyName> rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+                                       rdfs:range rdfs:Literal ;
+                                       rdfs:comment "The family name of some person."^^xsd:string ;
+                                       rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
+                                       <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing"^^xsd:string .
+
+
+###  http://xmlns.com/foaf/0.1/givenName
+<http://xmlns.com/foaf/0.1/givenName> rdf:type owl:DatatypeProperty ;
+                                      rdfs:comment "The given name of some person."^^xsd:string ;
+                                      rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
+                                      <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing"^^xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://transacc.linkeddata.es/def/core#Annotation
+<http://transacc.linkeddata.es/def/core#Annotation> rdf:type owl:Class ;
+                                                    rdfs:comment "Annotation that a user writes on a disability feature"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#Billboard
+<http://transacc.linkeddata.es/def/core#Billboard> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://transacc.linkeddata.es/def/core#Notice> .
+
+
+###  http://transacc.linkeddata.es/def/core#BusRoute
+<http://transacc.linkeddata.es/def/core#BusRoute> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://vocab.gtfs.org/terms#Route> ;
+                                                  owl:disjointWith <http://transacc.linkeddata.es/def/core#MetroRoute> .
+
+
+###  http://transacc.linkeddata.es/def/core#BusStop
+<http://transacc.linkeddata.es/def/core#BusStop> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://vocab.gtfs.org/terms#Stop> .
+
+
+###  http://transacc.linkeddata.es/def/core#Content
+<http://transacc.linkeddata.es/def/core#Content> rdf:type owl:Class ;
+                                                 rdfs:comment "Content of a Notice"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#DisabilityFeature
+<http://transacc.linkeddata.es/def/core#DisabilityFeature> rdf:type owl:Class ;
+                                                           rdfs:comment "Transportation feature to address some disability type"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#DisabilityType
+<http://transacc.linkeddata.es/def/core#DisabilityType> rdf:type owl:Class ;
+                                                        rdfs:comment "Disability category: cognitive, visual, heariing, etc."@es .
+
+
+###  http://transacc.linkeddata.es/def/core#Elevator
+<http://transacc.linkeddata.es/def/core#Elevator> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://transacc.linkeddata.es/def/core#ExteriorAccess> ;
+                                                  owl:disjointWith <http://transacc.linkeddata.es/def/core#FootPass> .
+
+
+###  http://transacc.linkeddata.es/def/core#ExteriorAccess
+<http://transacc.linkeddata.es/def/core#ExteriorAccess> rdf:type owl:Class ;
+                                                        rdfs:comment "Access from the street to the station"^^xsd:string .
+
+
+###  http://transacc.linkeddata.es/def/core#FootPass
+<http://transacc.linkeddata.es/def/core#FootPass> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://transacc.linkeddata.es/def/core#ExteriorAccess> .
+
+
+###  http://transacc.linkeddata.es/def/core#Luminous
+<http://transacc.linkeddata.es/def/core#Luminous> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://transacc.linkeddata.es/def/core#Notice> .
+
+
+###  http://transacc.linkeddata.es/def/core#MetroRoute
+<http://transacc.linkeddata.es/def/core#MetroRoute> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://vocab.gtfs.org/terms#Route> .
+
+
+###  http://transacc.linkeddata.es/def/core#MetroStop
+<http://transacc.linkeddata.es/def/core#MetroStop> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://vocab.gtfs.org/terms#Stop> .
+
+
+###  http://transacc.linkeddata.es/def/core#Notice
+<http://transacc.linkeddata.es/def/core#Notice> rdf:type owl:Class ;
+                                                owl:disjointUnionOf ( <http://transacc.linkeddata.es/def/core#Billboard>
+                                                                      <http://transacc.linkeddata.es/def/core#Luminous>
+                                                                      <http://transacc.linkeddata.es/def/core#Sign>
+                                                                      <http://transacc.linkeddata.es/def/core#Sound>
+                                                                    ) ;
+                                                rdfs:comment "Any written or luminous sign, billboard, or sound announcement"^^xsd:string .
+
+
+###  http://transacc.linkeddata.es/def/core#Platform
+<http://transacc.linkeddata.es/def/core#Platform> rdf:type owl:Class ;
+                                                  rdfs:comment "a platform of a metro route in a certain stop and direction"^^xsd:string .
+
+
+###  http://transacc.linkeddata.es/def/core#RouteDirection
+<http://transacc.linkeddata.es/def/core#RouteDirection> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://vocab.gtfs.org/terms#Trip> ;
+                                                        rdfs:comment "Direction of a line characterized by its headsign"@es .
+
+
+###  http://transacc.linkeddata.es/def/core#Sign
+<http://transacc.linkeddata.es/def/core#Sign> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://transacc.linkeddata.es/def/core#Notice> .
+
+
+###  http://transacc.linkeddata.es/def/core#Sound
+<http://transacc.linkeddata.es/def/core#Sound> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://transacc.linkeddata.es/def/core#Notice> .
+
+
+###  http://transacc.linkeddata.es/def/core#Stair
+<http://transacc.linkeddata.es/def/core#Stair> rdf:type owl:Class .
+
+
+###  http://transacc.linkeddata.es/def/core#TrainStop
+<http://transacc.linkeddata.es/def/core#TrainStop> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://vocab.gtfs.org/terms#Stop> .
+
+
+###  http://transacc.linkeddata.es/def/core#User
+<http://transacc.linkeddata.es/def/core#User> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> ;
+                                              rdfs:comment "User of the accesibility of transport descriptions"^^xsd:string .
+
+
+###  http://vocab.gtfs.org/terms#Route
+<http://vocab.gtfs.org/terms#Route> rdf:type owl:Class ;
+                                    rdfs:comment "A gtfs:Route is a commercial route followed entirely or partly by gtfs:Trips"@en ,
+                                                 "Una gtfs:Route es un grupo de viajes (gtfs:Trips) que se muestran a los usuarios como servicio independiente"@es ;
+                                    rdfs:label "Route"@en ,
+                                               "Ruta"@es ;
+                                    rdfs:seeAlso <https://developers.google.com/transit/gtfs/reference#routes_fields> ;
+                                    <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "inestable"@es ,
+                                                                                               "unstable"@en .
+
+
+###  http://vocab.gtfs.org/terms#RouteType
+<http://vocab.gtfs.org/terms#RouteType> rdf:type owl:Class ;
+                                        rdfs:comment "Describe el tipo de transporte usado en una ruta"@es ,
+                                                     "Describes the type of transportation used on a route"@en ;
+                                        rdfs:label "Route type"@en ,
+                                                   "Tipo de ruta"@es ;
+                                        <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "inestable"@es ,
+                                                                                                   "unstable"@en .
+
+
+###  http://vocab.gtfs.org/terms#Shape
+<http://vocab.gtfs.org/terms#Shape> rdf:type owl:Class ;
+                                    rdfs:comment "A polygon formed by gtfs:ShapePoints"@en ,
+                                                 "Un polígono o línea formado por gtfs:ShapePoints"@es ;
+                                    rdfs:label "Shape"@en ,
+                                               "forma del recorrido, trayecto, itinerario"@es ;
+                                    rdfs:seeAlso <https://developers.google.com/transit/gtfs/reference#shapes_fields> ;
+                                    <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "inestable"@es ,
+                                                                                               "unstable"@en .
+
+
+###  http://vocab.gtfs.org/terms#ShapePoint
+<http://vocab.gtfs.org/terms#ShapePoint> rdf:type owl:Class ;
+                                         rdfs:comment "A geographic point within a gtfs:Shape"@en ,
+                                                      "Punto geográfico dentro de un recorrido (gtfs:Shape)"@es ;
+                                         rdfs:label "Punto de recorrido"@es ,
+                                                    "Shape Point"@en ;
+                                         rdfs:seeAlso <https://developers.google.com/transit/gtfs/reference#shapes_fields> ;
+                                         <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "inestable"@es ,
+                                                                                                    "unstable"@en .
+
+
+###  http://vocab.gtfs.org/terms#Station
+<http://vocab.gtfs.org/terms#Station> rdf:type owl:Class ;
+                                      <http://vocab.gtfs.org/terms#comment> "Map a row in stops.txt to gtfs:Station when the location_type is 1."@en ,
+                                                                            "Mapee una línea en stops.txt a gtfs:Station cuando location_type sea 1."@es ;
+                                      rdfs:comment "A physical structure or area that contains one or more stop."@en ,
+                                                   "Estructura física o área que contiene una o más paradas."@es ;
+                                      rdfs:label "Estación"@es ,
+                                                 "Station"@en ;
+                                      rdfs:seeAlso <https://developers.google.com/transit/gtfs/reference#stops_fields> ;
+                                      <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "inestable"@es ,
+                                                                                                 "unstable"@en .
+
+
+###  http://vocab.gtfs.org/terms#Stop
+<http://vocab.gtfs.org/terms#Stop> rdf:type owl:Class ;
+                                   owl:disjointUnionOf ( <http://transacc.linkeddata.es/def/core#BusStop>
+                                                         <http://transacc.linkeddata.es/def/core#MetroStop>
+                                                         <http://transacc.linkeddata.es/def/core#TrainStop>
+                                                       ) ;
+                                   rdfs:comment "A location where passengers board or disembark from a transit vehicle."@en ,
+                                                "Un lugar donde los pasajeros suben o bajan de un vehículo de transporte público."@es ;
+                                   rdfs:label "Parada"@es ,
+                                              "Stop"@en ;
+                                   rdfs:seeAlso <https://developers.google.com/transit/gtfs/reference#stops_fields> ;
+                                   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "estable"@es ,
+                                                                                              "stable"@en .
+
+
+###  http://vocab.gtfs.org/terms#Trip
+<http://vocab.gtfs.org/terms#Trip> rdf:type owl:Class ;
+                                   rdfs:comment "A collection of gtfs:StopTimes followed by a transit vehicle"@en ,
+                                                "Trayecto de dos o más paradas realizadas por un vehículo que se produce a una gtfs:StopTime"@es ;
+                                   rdfs:label "Trip"@en ,
+                                              "Viaje"@es ;
+                                   rdfs:seeAlso <https://developers.google.com/transit/gtfs/reference#trips_fields> ;
+                                   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "inestable"@es ,
+                                                                                              "unstable"@en .
+
+
+###  http://vocab.gtfs.org/terms#WheelchairBoardingStatus
+<http://vocab.gtfs.org/terms#WheelchairBoardingStatus> rdf:type owl:Class ;
+                                                       rdfs:comment "A class whom's instances indicate how accessible a gtfs:Trip, gtfs:Stop or gtfs:Station is."@en ,
+                                                                    "Las instancias de esta clase indican como de accesible es un gtfs:Trip, un gtfs:Stop o una gtfs:Station."@es ;
+                                                       rdfs:label "Información de accesibilidad para silla de ruedas"@es ,
+                                                                  "Wheelchair Boarding Information"@en ;
+                                                       rdfs:seeAlso <https://developers.google.com/transit/gtfs/reference#stops_fields> ;
+                                                       <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "inestable"@es ,
+                                                                                                                  "unstable"@en .
+
+
+###  http://www.w3.org/2000/10/swap/pim/contact#Person
+<http://www.w3.org/2000/10/swap/pim/contact#Person> rdf:type owl:Class ;
+                                                    owl:equivalentClass <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/OnlineAccount
+<http://xmlns.com/foaf/0.1/OnlineAccount> rdf:type owl:Class ;
+                                          rdfs:subClassOf owl:Thing ;
+                                          rdfs:comment "An online account."^^xsd:string ;
+                                          rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
+                                          rdfs:label "Online Account"^^xsd:string ;
+                                          <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing"^^xsd:string .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

@@ -1,0 +1,309 @@
+{
+  "@context" : {
+    "stop" : {
+      "@id" : "http://vocab.gtfs.org/terms#stop",
+      "@type" : "@id"
+    },
+    "trip" : {
+      "@id" : "http://vocab.gtfs.org/terms#trip",
+      "@type" : "@id"
+    },
+    "Annotation" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#Annotation"
+    },
+    "Route" : {
+      "@id" : "http://vocab.gtfs.org/terms#Route"
+    },
+    "term_status" : {
+      "@id" : "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"
+    },
+    "impairment" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#impairment",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "TrainStop" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#TrainStop"
+    },
+    "Stair" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#Stair"
+    },
+    "toStation" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#toStation",
+      "@type" : "@id"
+    },
+    "Platform" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#Platform"
+    },
+    "BusRoute" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#BusRoute"
+    },
+    "issued" : {
+      "@id" : "http://purl.org/dc/terms/issued"
+    },
+    "Thing" : {
+      "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    },
+    "topDataProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#topDataProperty",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasContent" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#hasContent",
+      "@type" : "@id"
+    },
+    "age" : {
+      "@id" : "http://xmlns.com/foaf/0.1/age"
+    },
+    "ShapePoint" : {
+      "@id" : "http://vocab.gtfs.org/terms#ShapePoint"
+    },
+    "shape" : {
+      "@id" : "http://vocab.gtfs.org/terms#shape",
+      "@type" : "@id"
+    },
+    "hasVersion" : {
+      "@id" : "http://purl.org/dc/terms/hasVersion"
+    },
+    "Notice" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#Notice"
+    },
+    "long" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#long"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "Sound" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#Sound"
+    },
+    "Concept" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "familyName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/familyName",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "toRouteDirection" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#toRouteDirection",
+      "@type" : "@id"
+    },
+    "route" : {
+      "@id" : "http://vocab.gtfs.org/terms#route",
+      "@type" : "@id"
+    },
+    "destinationStop" : {
+      "@id" : "http://vocab.gtfs.org/terms#destinationStop",
+      "@type" : "@id"
+    },
+    "User" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#User"
+    },
+    "FootPass" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#FootPass"
+    },
+    "hasNotice" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#hasNotice",
+      "@type" : "@id"
+    },
+    "stopId" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#stopId"
+    },
+    "wheelchairAccessible" : {
+      "@id" : "http://vocab.gtfs.org/terms#wheelchairAccessible",
+      "@type" : "@id"
+    },
+    "Person" : {
+      "@id" : "http://www.w3.org/2000/10/swap/pim/contact#Person"
+    },
+    "note" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#note"
+    },
+    "headsign" : {
+      "@id" : "http://vocab.gtfs.org/terms#headsign",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Sign" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#Sign"
+    },
+    "feature" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#feature",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "Agent" : {
+      "@id" : "http://xmlns.com/foaf/0.1/Agent"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/terms/creator"
+    },
+    "givenName" : {
+      "@id" : "http://xmlns.com/foaf/0.1/givenName"
+    },
+    "typePlatform" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#typePlatform"
+    },
+    "Billboard" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#Billboard"
+    },
+    "typeStair" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#typeStair"
+    },
+    "shapePoint" : {
+      "@id" : "http://vocab.gtfs.org/terms#shapePoint",
+      "@type" : "@id"
+    },
+    "direction" : {
+      "@id" : "http://vocab.gtfs.org/terms#direction",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "RouteDirection" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#RouteDirection"
+    },
+    "identifier" : {
+      "@id" : "http://purl.org/dc/terms/identifier"
+    },
+    "disabilityType" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#disabilityType",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "routeId" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#routeId",
+      "@type" : "http://www.w3.org/2001/XMLSchema#positiveInteger"
+    },
+    "DisabilityType" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#DisabilityType"
+    },
+    "OnlineAccount" : {
+      "@id" : "http://xmlns.com/foaf/0.1/OnlineAccount"
+    },
+    "typeBusStop" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#typeBusStop"
+    },
+    "DisabilityFeature" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#DisabilityFeature"
+    },
+    "account" : {
+      "@id" : "http://xmlns.com/foaf/0.1/account",
+      "@type" : "@id"
+    },
+    "isDefinedBy" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+    },
+    "hasDisabilityType" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#hasDisabilityType",
+      "@type" : "@id"
+    },
+    "Content" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#Content"
+    },
+    "Elevator" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#Elevator"
+    },
+    "adresses" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#adresses",
+      "@type" : "@id"
+    },
+    "hasDirection" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#hasDirection",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title"
+    },
+    "lat" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+    },
+    "MetroRoute" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#MetroRoute"
+    },
+    "hasDisabilityFeature" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#hasDisabilityFeature",
+      "@type" : "@id"
+    },
+    "state" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#state",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "originStop" : {
+      "@id" : "http://vocab.gtfs.org/terms#originStop",
+      "@type" : "@id"
+    },
+    "modified" : {
+      "@id" : "http://purl.org/dc/terms/modified"
+    },
+    "ExteriorAccess" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#ExteriorAccess"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+    },
+    "MetroStop" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#MetroStop"
+    },
+    "dateAnnotation" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#dateAnnotation",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Station" : {
+      "@id" : "http://vocab.gtfs.org/terms#Station"
+    },
+    "annotates" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#annotates",
+      "@type" : "@id"
+    },
+    "Trip" : {
+      "@id" : "http://vocab.gtfs.org/terms#Trip"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "RouteType" : {
+      "@id" : "http://vocab.gtfs.org/terms#RouteType"
+    },
+    "BusStop" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#BusStop"
+    },
+    "parentStation" : {
+      "@id" : "http://vocab.gtfs.org/terms#parentStation",
+      "@type" : "@id"
+    },
+    "Shape" : {
+      "@id" : "http://vocab.gtfs.org/terms#Shape"
+    },
+    "madeBy" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#madeBy",
+      "@type" : "@id"
+    },
+    "code" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#code",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "hasStair" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#hasStair",
+      "@type" : "@id"
+    },
+    "typeContent" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#typeContent",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "pointSequence" : {
+      "@id" : "http://vocab.gtfs.org/terms#pointSequence",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description"
+    },
+    "exteriorAccessTo" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#exteriorAccessTo",
+      "@type" : "@id"
+    },
+    "Stop" : {
+      "@id" : "http://vocab.gtfs.org/terms#Stop"
+    },
+    "Luminous" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#Luminous"
+    },
+    "WheelchairBoardingStatus" : {
+      "@id" : "http://vocab.gtfs.org/terms#WheelchairBoardingStatus"
+    }
+  }
+}

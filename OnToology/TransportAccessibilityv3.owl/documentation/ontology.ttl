@@ -87,6 +87,10 @@
 <http://www.w3.org/2004/02/skos/core#note> rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3.org/2008/05/skos#definition
+<http://www.w3.org/2008/05/skos#definition> rdf:type owl:AnnotationProperty .
+
+
 ###  http://xmlns.com/foaf/0.1/age
 <http://xmlns.com/foaf/0.1/age> rdf:type owl:AnnotationProperty .
 
@@ -120,13 +124,6 @@ xsd:date rdf:type rdfs:Datatype .
 <http://transacc.linkeddata.es/def/core#exteriorAccessTo> rdf:type owl:ObjectProperty ;
                                                           rdfs:subPropertyOf <http://vocab.gtfs.org/terms#parentStation> ;
                                                           rdfs:range <http://vocab.gtfs.org/terms#Station> .
-
-
-###  http://transacc.linkeddata.es/def/core#hasContent
-<http://transacc.linkeddata.es/def/core#hasContent> rdf:type owl:ObjectProperty ;
-                                                    rdfs:domain <http://transacc.linkeddata.es/def/core#Notice> ;
-                                                    rdfs:range <http://transacc.linkeddata.es/def/core#Content> ;
-                                                    rdfs:comment "type of content of notices, for example \"exit address\", \"map of lines\""@es .
 
 
 ###  http://transacc.linkeddata.es/def/core#hasDirection
@@ -300,6 +297,16 @@ xsd:date rdf:type rdfs:Datatype .
                                                                                                               "unstable"@en .
 
 
+###  http://www.w3.org/2008/05/skos#inScheme
+<http://www.w3.org/2008/05/skos#inScheme> rdf:type owl:ObjectProperty ;
+                                          rdfs:range <http://www.w3.org/2008/05/skos#ConceptScheme> ;
+                                          <http://purl.org/dc/terms/issued> "2008-05-xx"^^xsd:string ;
+                                          rdfs:comment "A concept may be a member of more than one concept scheme."@en ;
+                                          rdfs:isDefinedBy <http://www.w3.org/2008/05/skos> ;
+                                          rdfs:label "in scheme"@en ;
+                                          <http://www.w3.org/2008/05/skos#definition> "A concept scheme in which the concept is included."@en .
+
+
 ###  http://xmlns.com/foaf/0.1/account
 <http://xmlns.com/foaf/0.1/account> rdf:type owl:ObjectProperty ;
                                     rdfs:domain <http://xmlns.com/foaf/0.1/Agent> ;
@@ -334,8 +341,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://transacc.linkeddata.es/def/core#feature
 <http://transacc.linkeddata.es/def/core#feature> rdf:type owl:DatatypeProperty ;
                                                  rdfs:domain <http://transacc.linkeddata.es/def/core#DisabilityFeature> ;
-                                                 rdfs:range rdfs:Literal ;
-                                                 rdfs:label "caracteristica"@es .
+                                                 rdfs:range rdfs:Literal .
 
 
 ###  http://transacc.linkeddata.es/def/core#impairment
@@ -378,7 +384,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://transacc.linkeddata.es/def/core#typeContent
 <http://transacc.linkeddata.es/def/core#typeContent> rdf:type owl:DatatypeProperty ;
-                                                     rdfs:domain <http://transacc.linkeddata.es/def/core#Content> ;
                                                      rdfs:range rdfs:Literal .
 
 
@@ -488,11 +493,6 @@ owl:topDataProperty rdfs:range xsd:boolean .
 ###  http://transacc.linkeddata.es/def/core#BusStop
 <http://transacc.linkeddata.es/def/core#BusStop> rdf:type owl:Class ;
                                                  rdfs:subClassOf <http://vocab.gtfs.org/terms#Stop> .
-
-
-###  http://transacc.linkeddata.es/def/core#Content
-<http://transacc.linkeddata.es/def/core#Content> rdf:type owl:Class ;
-                                                 rdfs:comment "Content of a Notice"@es .
 
 
 ###  http://transacc.linkeddata.es/def/core#DisabilityFeature
@@ -682,6 +682,26 @@ owl:topDataProperty rdfs:range xsd:boolean .
 
 ###  http://www.w3.org/2004/02/skos/core#Concept
 <http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2008/05/skos#Collection
+<http://www.w3.org/2008/05/skos#Collection> rdf:type owl:Class ;
+                                            owl:disjointWith <http://www.w3.org/2008/05/skos#ConceptScheme> .
+
+
+###  http://www.w3.org/2008/05/skos#Concept
+<http://www.w3.org/2008/05/skos#Concept> rdf:type owl:Class ;
+                                         owl:disjointWith <http://www.w3.org/2008/05/skos#ConceptScheme> .
+
+
+###  http://www.w3.org/2008/05/skos#ConceptScheme
+<http://www.w3.org/2008/05/skos#ConceptScheme> rdf:type owl:Class ;
+                                               <http://purl.org/dc/terms/issued> "2008-05-xx"^^xsd:string ;
+                                               rdfs:comment "A concept scheme may be defined to include concepts from different sources."@en ,
+                                                            "Thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', and other types of controlled vocabulary are all examples of concept schemes.  Concept schemes are also embedded in glossaries and terminologies."@en ;
+                                               rdfs:isDefinedBy <http://www.w3.org/2008/05/skos> ;
+                                               rdfs:label "Concept Scheme"@en ;
+                                               <http://www.w3.org/2008/05/skos#definition> "A set of concepts, optionally including statements about semantic relationships between those concepts."@en .
 
 
 ###  http://xmlns.com/foaf/0.1/Agent

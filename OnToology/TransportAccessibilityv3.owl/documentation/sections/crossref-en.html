@@ -25,9 +25,17 @@ This section provides details for each class and property defined by Public Tran
          </a>
       </li>
       <li>
-         <a href="#Content" title="http://transacc.linkeddata.es/def/core#Content">
-            <span>content</span>
+         <a href="#http://www.w3.org/2008/05/skos#Collection" title="http://www.w3.org/2008/05/skos#Collection">
+            <span>collection</span>
          </a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/2008/05/skos#Concept" title="http://www.w3.org/2008/05/skos#Concept">
+            <span>concept</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/2008/05/skos#ConceptScheme" title="http://www.w3.org/2008/05/skos#ConceptScheme">Concept Scheme</a>
       </li>
       <li>
          <a href="#DisabilityFeature"
@@ -226,28 +234,63 @@ This section provides details for each class and property defined by Public Tran
          </dd>
       </dl>
    </div>
-   <div class="entity" id="Content">
-      <h3>content<sup class="type-c" title="class">c</sup>
+   <div class="entity" id="http://www.w3.org/2008/05/skos#Collection">
+      <h3>collection<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#Content</p>
-      <div class="comment">
-         <span class="markdown">Content of a Notice</span>
-      </div>
+         <strong>IRI:</strong> http://www.w3.org/2008/05/skos#Collection</p>
       <dl class="description">
-         <dt>is in domain of</dt>
+         <dt>is disjoint with</dt>
          <dd>
-            <a href="#typeContent"
-               title="http://transacc.linkeddata.es/def/core#typeContent">type content</a>
-            <sup class="type-dp" title="data property">dp</sup>
+            <a href="#http://www.w3.org/2008/05/skos#ConceptScheme" title="http://www.w3.org/2008/05/skos#ConceptScheme">Concept Scheme</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.w3.org/2008/05/skos#Concept">
+      <h3>concept<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2008/05/skos#Concept</p>
+      <dl class="description">
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#http://www.w3.org/2008/05/skos#ConceptScheme" title="http://www.w3.org/2008/05/skos#ConceptScheme">Concept Scheme</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.w3.org/2008/05/skos#ConceptScheme">
+      <h3>Concept Scheme<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2008/05/skos#ConceptScheme</p>
+      <div class="comment">
+         <span class="markdown">A concept scheme may be defined to include concepts from different sources.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://www.w3.org/2008/05/skos">http://www.w3.org/2008/05/skos</a>
+         </dd>
+      </dl>
+      <dl class="description">
          <dt>is in range of</dt>
          <dd>
-            <a href="#hasContent"
-               title="http://transacc.linkeddata.es/def/core#hasContent">has content</a>
+            <a href="#http://www.w3.org/2008/05/skos#inScheme" title="http://www.w3.org/2008/05/skos#inScheme">in scheme</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#http://www.w3.org/2008/05/skos#Collection" title="http://www.w3.org/2008/05/skos#Collection">collection</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#http://www.w3.org/2008/05/skos#Concept" title="http://www.w3.org/2008/05/skos#Concept">concept</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -265,7 +308,7 @@ This section provides details for each class and property defined by Public Tran
          <dt>is in domain of</dt>
          <dd>
             <a href="#adresses" title="http://transacc.linkeddata.es/def/core#adresses">adresses</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#feature" title="http://transacc.linkeddata.es/def/core#feature">caracteristica</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#feature" title="http://transacc.linkeddata.es/def/core#feature">feature</a>
             <sup class="type-dp" title="data property">dp</sup>
          </dd>
          <dt>is in range of</dt>
@@ -440,12 +483,6 @@ This section provides details for each class and property defined by Public Tran
             <sup class="type-c" title="class">c</sup>, <a href="#Sign" title="http://transacc.linkeddata.es/def/core#Sign">sign</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Sound" title="http://transacc.linkeddata.es/def/core#Sound">sound</a>
             <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#hasContent"
-               title="http://transacc.linkeddata.es/def/core#hasContent">has content</a>
-            <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
@@ -882,12 +919,6 @@ This section provides details for each class and property defined by Public Tran
          </a>
       </li>
       <li>
-         <a href="#hasContent"
-            title="http://transacc.linkeddata.es/def/core#hasContent">
-            <span>has content</span>
-         </a>
-      </li>
-      <li>
          <a href="#hasDirection"
             title="http://transacc.linkeddata.es/def/core#hasDirection">
             <span>has direction</span>
@@ -914,6 +945,9 @@ This section provides details for each class and property defined by Public Tran
          <a href="#hasStair" title="http://transacc.linkeddata.es/def/core#hasStair">
             <span>has stair</span>
          </a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/2008/05/skos#inScheme" title="http://www.w3.org/2008/05/skos#inScheme">in scheme</a>
       </li>
       <li>
          <a href="#madeBy" title="http://transacc.linkeddata.es/def/core#madeBy">
@@ -1092,31 +1126,6 @@ This section provides details for each class and property defined by Public Tran
          </dl>
       </div>
    </div>
-   <div class="entity" id="hasContent">
-      <h3>has content<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#hasContent</p>
-      <div class="comment">
-         <span class="markdown">type of content of notices, for example "exit address", "map of lines"</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Notice" title="http://transacc.linkeddata.es/def/core#Notice">notice</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Content" title="http://transacc.linkeddata.es/def/core#Content">content</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
    <div class="entity" id="hasDirection">
       <h3>has direction<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -1225,6 +1234,32 @@ This section provides details for each class and property defined by Public Tran
             <dt>has range</dt>
             <dd>
                <span class="dotted" title="http://transacc.linkeddata.es/def/core#Stair">stair</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.w3.org/2008/05/skos#inScheme">
+      <h3>in scheme<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2008/05/skos#inScheme</p>
+      <div class="comment">
+         <span class="markdown">A concept may be a member of more than one concept scheme.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://www.w3.org/2008/05/skos">http://www.w3.org/2008/05/skos</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/2008/05/skos#ConceptScheme" title="http://www.w3.org/2008/05/skos#ConceptScheme">Concept Scheme</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -1567,9 +1602,6 @@ This section provides details for each class and property defined by Public Tran
    <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
       <li>
-         <a href="#feature" title="http://transacc.linkeddata.es/def/core#feature">caracteristica</a>
-      </li>
-      <li>
          <a href="#code" title="http://transacc.linkeddata.es/def/core#code">
             <span>code</span>
          </a>
@@ -1592,6 +1624,11 @@ This section provides details for each class and property defined by Public Tran
       <li>
          <a href="#http://xmlns.com/foaf/0.1/familyName" title="http://xmlns.com/foaf/0.1/familyName">
             <span>family name</span>
+         </a>
+      </li>
+      <li>
+         <a href="#feature" title="http://transacc.linkeddata.es/def/core#feature">
+            <span>feature</span>
          </a>
       </li>
       <li>
@@ -1650,28 +1687,6 @@ This section provides details for each class and property defined by Public Tran
          </a>
       </li>
    </ul>
-   <div class="entity" id="feature">
-      <h3>caracteristica<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#feature</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#DisabilityFeature"
-                  title="http://transacc.linkeddata.es/def/core#DisabilityFeature">disability feature</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
    <div class="entity" id="code">
       <h3>code<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
@@ -1781,6 +1796,28 @@ This section provides details for each class and property defined by Public Tran
             <dt>has domain</dt>
             <dd>
                <span class="dotted" title="http://xmlns.com/foaf/0.1/Person">person</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="feature">
+      <h3>feature<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#feature</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#DisabilityFeature"
+                  title="http://transacc.linkeddata.es/def/core#DisabilityFeature">disability feature</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1976,11 +2013,6 @@ This section provides details for each class and property defined by Public Tran
          <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#typeContent</p>
       <div class="description">
          <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Content" title="http://transacc.linkeddata.es/def/core#Content">content</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
             <dt>has range</dt>
             <dd>
                <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</span>

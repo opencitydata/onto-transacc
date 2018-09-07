@@ -71,6 +71,9 @@
 # http://www.w3.org/2004/02/skos/core#note
 <http://www.w3.org/2004/02/skos/core#note> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
+# http://www.w3.org/2008/05/skos#definition
+<http://www.w3.org/2008/05/skos#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
 # http://xmlns.com/foaf/0.1/age
 <http://xmlns.com/foaf/0.1/age> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
@@ -110,12 +113,6 @@
 <http://transacc.linkeddata.es/def/core#exteriorAccessTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://transacc.linkeddata.es/def/core#exteriorAccessTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://vocab.gtfs.org/terms#parentStation> .
 <http://transacc.linkeddata.es/def/core#exteriorAccessTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://vocab.gtfs.org/terms#Station> .
-# 
-# http://transacc.linkeddata.es/def/core#hasContent
-<http://transacc.linkeddata.es/def/core#hasContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://transacc.linkeddata.es/def/core#hasContent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://transacc.linkeddata.es/def/core#Notice> .
-<http://transacc.linkeddata.es/def/core#hasContent> <http://www.w3.org/2000/01/rdf-schema#range> <http://transacc.linkeddata.es/def/core#Content> .
-<http://transacc.linkeddata.es/def/core#hasContent> <http://www.w3.org/2000/01/rdf-schema#comment> "type of content of notices, for example \"exit address\", \"map of lines\""@es .
 # 
 # http://transacc.linkeddata.es/def/core#hasDirection
 <http://transacc.linkeddata.es/def/core#hasDirection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -270,6 +267,15 @@
 <http://vocab.gtfs.org/terms#wheelchairAccessible> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "inestable"@es .
 <http://vocab.gtfs.org/terms#wheelchairAccessible> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "unstable"@en .
 # 
+# http://www.w3.org/2008/05/skos#inScheme
+<http://www.w3.org/2008/05/skos#inScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2008/05/skos#inScheme> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2008/05/skos#ConceptScheme> .
+<http://www.w3.org/2008/05/skos#inScheme> <http://purl.org/dc/terms/issued> "2008-05-xx" .
+<http://www.w3.org/2008/05/skos#inScheme> <http://www.w3.org/2000/01/rdf-schema#comment> "A concept may be a member of more than one concept scheme."@en .
+<http://www.w3.org/2008/05/skos#inScheme> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos> .
+<http://www.w3.org/2008/05/skos#inScheme> <http://www.w3.org/2000/01/rdf-schema#label> "in scheme"@en .
+<http://www.w3.org/2008/05/skos#inScheme> <http://www.w3.org/2008/05/skos#definition> "A concept scheme in which the concept is included."@en .
+# 
 # http://xmlns.com/foaf/0.1/account
 <http://xmlns.com/foaf/0.1/account> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://xmlns.com/foaf/0.1/account> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Agent> .
@@ -306,7 +312,6 @@
 <http://transacc.linkeddata.es/def/core#feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://transacc.linkeddata.es/def/core#feature> <http://www.w3.org/2000/01/rdf-schema#domain> <http://transacc.linkeddata.es/def/core#DisabilityFeature> .
 <http://transacc.linkeddata.es/def/core#feature> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
-<http://transacc.linkeddata.es/def/core#feature> <http://www.w3.org/2000/01/rdf-schema#label> "caracteristica"@es .
 # 
 # http://transacc.linkeddata.es/def/core#impairment
 <http://transacc.linkeddata.es/def/core#impairment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -343,7 +348,6 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # http://transacc.linkeddata.es/def/core#typeContent
 <http://transacc.linkeddata.es/def/core#typeContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://transacc.linkeddata.es/def/core#typeContent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://transacc.linkeddata.es/def/core#Content> .
 <http://transacc.linkeddata.es/def/core#typeContent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
 # 
 # http://transacc.linkeddata.es/def/core#typePlatform
@@ -446,10 +450,6 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # http://transacc.linkeddata.es/def/core#BusStop
 <http://transacc.linkeddata.es/def/core#BusStop> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://transacc.linkeddata.es/def/core#BusStop> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.gtfs.org/terms#Stop> .
-# 
-# http://transacc.linkeddata.es/def/core#Content
-<http://transacc.linkeddata.es/def/core#Content> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://transacc.linkeddata.es/def/core#Content> <http://www.w3.org/2000/01/rdf-schema#comment> "Content of a Notice"@es .
 # 
 # http://transacc.linkeddata.es/def/core#DisabilityFeature
 <http://transacc.linkeddata.es/def/core#DisabilityFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -627,6 +627,23 @@ _:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 # 
 # http://www.w3.org/2004/02/skos/core#Concept
 <http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/2008/05/skos#Collection
+<http://www.w3.org/2008/05/skos#Collection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2008/05/skos#Collection> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.w3.org/2008/05/skos#ConceptScheme> .
+# 
+# http://www.w3.org/2008/05/skos#Concept
+<http://www.w3.org/2008/05/skos#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2008/05/skos#Concept> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.w3.org/2008/05/skos#ConceptScheme> .
+# 
+# http://www.w3.org/2008/05/skos#ConceptScheme
+<http://www.w3.org/2008/05/skos#ConceptScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2008/05/skos#ConceptScheme> <http://purl.org/dc/terms/issued> "2008-05-xx" .
+<http://www.w3.org/2008/05/skos#ConceptScheme> <http://www.w3.org/2000/01/rdf-schema#comment> "A concept scheme may be defined to include concepts from different sources."@en .
+<http://www.w3.org/2008/05/skos#ConceptScheme> <http://www.w3.org/2000/01/rdf-schema#comment> "Thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', and other types of controlled vocabulary are all examples of concept schemes.  Concept schemes are also embedded in glossaries and terminologies."@en .
+<http://www.w3.org/2008/05/skos#ConceptScheme> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos> .
+<http://www.w3.org/2008/05/skos#ConceptScheme> <http://www.w3.org/2000/01/rdf-schema#label> "Concept Scheme"@en .
+<http://www.w3.org/2008/05/skos#ConceptScheme> <http://www.w3.org/2008/05/skos#definition> "A set of concepts, optionally including statements about semantic relationships between those concepts."@en .
 # 
 # http://xmlns.com/foaf/0.1/Agent
 <http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

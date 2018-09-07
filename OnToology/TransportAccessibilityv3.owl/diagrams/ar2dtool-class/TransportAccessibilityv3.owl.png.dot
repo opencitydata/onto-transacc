@@ -1,11 +1,12 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1501"
-node [shape = rectangle, color="orange"]; "base:Annotation" "base:Sign" "http://www.w3.org/2000/10/swap/pim/contact#Person" "base:Elevator" "foaf:Agent" "base:Stair" "gtfs:Station" "base:BusStop" "base:DisabilityFeature" "base:BusRoute" "base:Platform" "base:Content" "gtfs:WheelchairBoardingStatus" "base:TrainStop" "base:Luminous" "base:Billboard" "gtfs:Shape" "base:RouteDirection" "foaf:OnlineAccount" "gtfs:Trip" "base:Sound" "base:MetroStop" "base:Notice" "base:FootPass" "foaf:Person" "gtfs:Stop" "gtfs:ShapePoint" "base:MetroRoute" "gtfs:Route" "base:DisabilityType" ; /*classes style*/
+node [shape = rectangle, color="orange"]; "base:Annotation" "base:Sign" "http://www.w3.org/2000/10/swap/pim/contact#Person" "foaf:Agent" "base:Elevator" "skos1:ConceptScheme" "base:Stair" "skos1:Concept" "gtfs:Station" "base:BusStop" "base:DisabilityFeature" "base:BusRoute" "base:Platform" "gtfs:WheelchairBoardingStatus" "base:TrainStop" "base:Luminous" "base:Billboard" "gtfs:Shape" "base:RouteDirection" "foaf:OnlineAccount" "gtfs:Trip" "base:Sound" "base:MetroStop" "base:Notice" "base:FootPass" "foaf:Person" "gtfs:Stop" "gtfs:ShapePoint" "base:MetroRoute" "skos1:Collection" "gtfs:Route" "base:DisabilityType" ; /*classes style*/
 	"gtfs:Shape" -> "https://developers.google.com/transit/gtfs/reference#shapes_fields" [ label = "rdfs:seeAlso" ];
 	"dc:identifier" -> "http://dublincore.org/usage/terms/history/#identifier-006" [ label = "terms:hasVersion" ];
 	"gtfs:ShapePoint" -> "https://developers.google.com/transit/gtfs/reference#shapes_fields" [ label = "rdfs:seeAlso" ];
 	"gtfs:Trip" -> "https://developers.google.com/transit/gtfs/reference#trips_fields" [ label = "rdfs:seeAlso" ];
+	"skos1:Collection" -> "skos1:ConceptScheme" [ label = "owl:disjointWith" ];
 	"base:" -> "base:" [ label = "owl:versionIRI" ];
 	"dc:description" -> "http://dublincore.org/usage/terms/history/#description-006" [ label = "terms:hasVersion" ];
 	"gtfs:headsign" -> "https://developers.google.com/transit/gtfs/examples/display-to-users#TripHeadsign" [ label = "rdfs:seeAlso" ];
@@ -13,34 +14,35 @@ node [shape = rectangle, color="orange"]; "base:Annotation" "base:Sign" "http://
 	"terms:identifier" -> "dc:identifier" [ label = "rdfs:subPropertyOf" ];
 	"terms:identifier" -> "http://dublincore.org/usage/terms/history/#identifierT-001" [ label = "terms:hasVersion" ];
 	"gtfs:Stop" -> "https://developers.google.com/transit/gtfs/reference#stops_fields" [ label = "rdfs:seeAlso" ];
-	"gtfs:Stop" -> "1f02d2f1:16590102225:-7fef" [ label = "owl:disjointUnionOf" ];
+	"gtfs:Stop" -> "-77900b71:165b4003fdf:-7fef" [ label = "owl:disjointUnionOf" ];
 	"base:Elevator" -> "base:FootPass" [ label = "owl:disjointWith" ];
 	"gtfs:Station" -> "https://developers.google.com/transit/gtfs/reference#stops_fields" [ label = "rdfs:seeAlso" ];
-	"NULL" -> "1f02d2f1:16590102225:-7ff1" [ label = "rdf:rest" ];
-	"NULL" -> "1f02d2f1:16590102225:-7ff5" [ label = "owl:oneOf" ];
-	"NULL" -> "1f02d2f1:16590102225:-7ffa" [ label = "rdf:rest" ];
-	"NULL" -> "1f02d2f1:16590102225:-7fee" [ label = "rdf:rest" ];
-	"NULL" -> "1f02d2f1:16590102225:-7fed" [ label = "rdf:rest" ];
-	"NULL" -> "base:BusStop" [ label = "rdf:first" ];
-	"NULL" -> "1f02d2f1:16590102225:-7ff0" [ label = "rdf:rest" ];
+	"NULL" -> "-77900b71:165b4003fdf:-7fed" [ label = "rdf:rest" ];
+	"NULL" -> "-77900b71:165b4003fdf:-7ff8" [ label = "owl:oneOf" ];
+	"NULL" -> "-77900b71:165b4003fdf:-7ff2" [ label = "rdf:rest" ];
 	"NULL" -> "base:Luminous" [ label = "rdf:first" ];
+	"NULL" -> "base:BusStop" [ label = "rdf:first" ];
 	"NULL" -> "base:Billboard" [ label = "rdf:first" ];
 	"NULL" -> "base:Sound" [ label = "rdf:first" ];
+	"NULL" -> "-77900b71:165b4003fdf:-7ffb" [ label = "owl:oneOf" ];
+	"NULL" -> "-77900b71:165b4003fdf:-7ff5" [ label = "owl:oneOf" ];
 	"NULL" -> "base:Sign" [ label = "rdf:first" ];
 	"NULL" -> "base:MetroStop" [ label = "rdf:first" ];
+	"NULL" -> "-77900b71:165b4003fdf:-7ff1" [ label = "rdf:rest" ];
 	"NULL" -> "rdf:nil" [ label = "rdf:rest" ];
-	"NULL" -> "1f02d2f1:16590102225:-7ff2" [ label = "rdf:rest" ];
-	"NULL" -> "1f02d2f1:16590102225:-7ffb" [ label = "owl:oneOf" ];
-	"NULL" -> "1f02d2f1:16590102225:-7ff8" [ label = "owl:oneOf" ];
+	"NULL" -> "-77900b71:165b4003fdf:-7ff4" [ label = "rdf:rest" ];
+	"NULL" -> "-77900b71:165b4003fdf:-7ff7" [ label = "rdf:rest" ];
+	"NULL" -> "-77900b71:165b4003fdf:-7fee" [ label = "rdf:rest" ];
 	"NULL" -> "base:TrainStop" [ label = "rdf:first" ];
-	"NULL" -> "1f02d2f1:16590102225:-7ff7" [ label = "rdf:rest" ];
-	"NULL" -> "1f02d2f1:16590102225:-7ff4" [ label = "rdf:rest" ];
+	"NULL" -> "-77900b71:165b4003fdf:-7ffa" [ label = "rdf:rest" ];
+	"NULL" -> "-77900b71:165b4003fdf:-7ff0" [ label = "rdf:rest" ];
 	"base:BusRoute" -> "base:MetroRoute" [ label = "owl:disjointWith" ];
+	"skos1:Concept" -> "skos1:ConceptScheme" [ label = "owl:disjointWith" ];
 	"http://www.w3.org/2000/10/swap/pim/contact#Person" -> "foaf:Person" [ label = "owl:equivalentClass" ];
-	"base:Notice" -> "1f02d2f1:16590102225:-7ff3" [ label = "owl:disjointUnionOf" ];
+	"base:Notice" -> "-77900b71:165b4003fdf:-7ff3" [ label = "owl:disjointUnionOf" ];
 	"gtfs:Route" -> "https://developers.google.com/transit/gtfs/reference#routes_fields" [ label = "rdfs:seeAlso" ];
 	"gtfs:WheelchairBoardingStatus" -> "https://developers.google.com/transit/gtfs/reference#stops_fields" [ label = "rdfs:seeAlso" ];
-	"base:BusStop" -> "1f02d2f1:16590102225:-7ffc" [ label = "base:typeBusStop" ];
+	"base:BusStop" -> "-77900b71:165b4003fdf:-7ffc" [ label = "base:typeBusStop" ];
 	"base:DisabilityType" -> "rdfs:Literal" [ label = "base:disabilityType" ];
 	"owl:Thing" -> "base:DisabilityType" [ label = "base:hasDisabilityType" ];
 	"gtfs:ShapePoint" -> "xsd:nonNegativeInteger" [ label = "gtfs:pointSequence" ];
@@ -49,14 +51,14 @@ node [shape = rectangle, color="orange"]; "base:Annotation" "base:Sign" "http://
 	"owl:Thing" -> "rdfs:Literal" [ label = "base:state" ];
 	"gtfs:Stop" -> "gtfs:Station" [ label = "gtfs:parentStation" ];
 	"gtfs:Stop" -> "owl:Thing" [ label = "base:stopId" ];
-	"base:Platform" -> "1f02d2f1:16590102225:-7ff9" [ label = "base:typePlatform" ];
+	"base:Platform" -> "-77900b71:165b4003fdf:-7ff9" [ label = "base:typePlatform" ];
 	"owl:Thing" -> "rdfs:Literal" [ label = "base:code" ];
 	"foaf:Person" -> "rdfs:Literal" [ label = "foaf:familyName" ];
 	"base:DisabilityType" -> "rdfs:Literal" [ label = "base:impairment" ];
 	"gtfs:Shape" -> "gtfs:ShapePoint" [ label = "gtfs:shapePoint" ];
 	"owl:Thing" -> "gtfs:Stop" [ label = "gtfs:originStop" ];
 	"owl:Thing" -> "gtfs:Trip" [ label = "gtfs:trip" ];
-	"base:Stair" -> "1f02d2f1:16590102225:-7ff6" [ label = "base:typeStair" ];
+	"base:Stair" -> "-77900b71:165b4003fdf:-7ff6" [ label = "base:typeStair" ];
 	"owl:Thing" -> "xsd:boolean" [ label = "gtfs:direction" ];
 	"owl:Thing" -> "gtfs:Shape" [ label = "gtfs:shape" ];
 	"base:Annotation" -> "xsd:dateTime" [ label = "base:dateAnnotation" ];
@@ -65,7 +67,7 @@ node [shape = rectangle, color="orange"]; "base:Annotation" "base:Sign" "http://
 	"gtfs:Stop" -> "gtfs:WheelchairBoardingStatus" [ label = "gtfs:wheelchairAccessible" ];
 	"base:Annotation" -> "owl:Thing" [ label = "base:annotates" ];
 	"owl:Thing" -> "gtfs:Stop" [ label = "gtfs:stop" ];
-	"base:Content" -> "rdfs:Literal" [ label = "base:typeContent" ];
+	"owl:Thing" -> "rdfs:Literal" [ label = "base:typeContent" ];
 	"base:DisabilityFeature" -> "base:DisabilityType" [ label = "base:adresses" ];
 	"base:Annotation" -> "http://www.w3.org/2000/10/swap/pim/contact#Person" [ label = "base:madeBy" ];
 	"owl:Thing" -> "base:Notice" [ label = "base:hasNotice" ];
@@ -78,7 +80,7 @@ node [shape = rectangle, color="orange"]; "base:Annotation" "base:Sign" "http://
 	"owl:Thing" -> "gtfs:Station" [ label = "base:exteriorAccessTo" ];
 	"owl:Thing" -> "xsd:boolean" [ label = "owl:topDataProperty" ];
 	"owl:Thing" -> "xsd:string" [ label = "gtfs:headsign" ];
-	"base:Notice" -> "base:Content" [ label = "base:hasContent" ];
+	"owl:Thing" -> "skos1:ConceptScheme" [ label = "skos1:inScheme" ];
 	"owl:Thing" -> "base:DisabilityFeature" [ label = "base:hasDisabilityFeature" ];
 
 }

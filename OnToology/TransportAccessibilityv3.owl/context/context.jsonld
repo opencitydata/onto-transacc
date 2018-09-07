@@ -47,10 +47,6 @@
       "@id" : "http://www.w3.org/2002/07/owl#topDataProperty",
       "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
     },
-    "hasContent" : {
-      "@id" : "http://transacc.linkeddata.es/def/core#hasContent",
-      "@type" : "@id"
-    },
     "ofDisabilityFeature" : {
       "@id" : "http://transacc.linkeddata.es/def/core#ofDisabilityFeature",
       "@type" : "@id"
@@ -81,7 +77,7 @@
       "@id" : "http://transacc.linkeddata.es/def/core#Sound"
     },
     "Concept" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+      "@id" : "http://www.w3.org/2008/05/skos#Concept"
     },
     "familyName" : {
       "@id" : "http://xmlns.com/foaf/0.1/familyName",
@@ -196,8 +192,11 @@
       "@id" : "http://transacc.linkeddata.es/def/core#hasDisabilityType",
       "@type" : "@id"
     },
-    "Content" : {
-      "@id" : "http://transacc.linkeddata.es/def/core#Content"
+    "definition" : {
+      "@id" : "http://www.w3.org/2008/05/skos#definition"
+    },
+    "ConceptScheme" : {
+      "@id" : "http://www.w3.org/2008/05/skos#ConceptScheme"
     },
     "Elevator" : {
       "@id" : "http://transacc.linkeddata.es/def/core#Elevator"
@@ -293,6 +292,10 @@
       "@id" : "http://vocab.gtfs.org/terms#pointSequence",
       "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
     },
+    "inScheme" : {
+      "@id" : "http://www.w3.org/2008/05/skos#inScheme",
+      "@type" : "@id"
+    },
     "description" : {
       "@id" : "http://purl.org/dc/terms/description"
     },
@@ -302,6 +305,9 @@
     },
     "Stop" : {
       "@id" : "http://vocab.gtfs.org/terms#Stop"
+    },
+    "Collection" : {
+      "@id" : "http://www.w3.org/2008/05/skos#Collection"
     },
     "Luminous" : {
       "@id" : "http://transacc.linkeddata.es/def/core#Luminous"

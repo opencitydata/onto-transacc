@@ -50,6 +50,18 @@ This section provides details for each class and property defined by Public Tran
          </a>
       </li>
       <li>
+         <a href="#ElementWDisabFeature"
+            title="http://transacc.linkeddata.es/def/core#ElementWDisabFeature">
+            <span>element w disab feature</span>
+         </a>
+      </li>
+      <li>
+         <a href="#ElementWNotice"
+            title="http://transacc.linkeddata.es/def/core#ElementWNotice">
+            <span>element w notice</span>
+         </a>
+      </li>
+      <li>
          <a href="#Elevator" title="http://transacc.linkeddata.es/def/core#Elevator">
             <span>elevator</span>
          </a>
@@ -130,6 +142,11 @@ This section provides details for each class and property defined by Public Tran
          </a>
       </li>
       <li>
+         <a href="#Stair" title="http://transacc.linkeddata.es/def/core#Stair">
+            <span>stair</span>
+         </a>
+      </li>
+      <li>
          <a href="#http://vocab.gtfs.org/terms#Station" title="http://vocab.gtfs.org/terms#Station">Station</a>
       </li>
       <li>
@@ -173,7 +190,8 @@ This section provides details for each class and property defined by Public Tran
             <sup class="type-dp" title="data property">dp</sup>, <a href="#madeBy" title="http://transacc.linkeddata.es/def/core#madeBy">made by</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#ofDisabilityFeature"
                title="http://transacc.linkeddata.es/def/core#ofDisabilityFeature">of disability feature</a>
-            <sup class="type-op" title="object property">op</sup>
+            <sup class="type-op" title="object property">op</sup>, <a href="#state" title="http://transacc.linkeddata.es/def/core#state">state</a>
+            <sup class="type-dp" title="data property">dp</sup>
          </dd>
       </dl>
    </div>
@@ -188,6 +206,13 @@ This section provides details for each class and property defined by Public Tran
          <dt>has super-classes</dt>
          <dd>
             <a href="#Notice" title="http://transacc.linkeddata.es/def/core#Notice">notice</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Luminous" title="http://transacc.linkeddata.es/def/core#Luminous">luminous</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Sign" title="http://transacc.linkeddata.es/def/core#Sign">sign</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Sound" title="http://transacc.linkeddata.es/def/core#Sound">sound</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -223,6 +248,16 @@ This section provides details for each class and property defined by Public Tran
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
+            <a href="#ElementWDisabFeature"
+               title="http://transacc.linkeddata.es/def/core#ElementWDisabFeature">element w disab feature</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#ElementWNotice"
+               title="http://transacc.linkeddata.es/def/core#ElementWNotice">element w notice</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
             <a href="#http://vocab.gtfs.org/terms#Stop" title="http://vocab.gtfs.org/terms#Stop">Stop</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
@@ -231,6 +266,14 @@ This section provides details for each class and property defined by Public Tran
             <a href="#typeBusStop"
                title="http://transacc.linkeddata.es/def/core#typeBusStop">type bus stop</a>
             <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#MetroStop"
+               title="http://transacc.linkeddata.es/def/core#MetroStop">metro stop</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#TrainStop"
+               title="http://transacc.linkeddata.es/def/core#TrainStop">train stop</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -257,6 +300,14 @@ This section provides details for each class and property defined by Public Tran
       <p>
          <strong>IRI:</strong> http://www.w3.org/2008/05/skos#Concept</p>
       <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#content" title="http://transacc.linkeddata.es/def/core#content">content</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#feature" title="http://transacc.linkeddata.es/def/core#feature">feature</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#impairment"
+               title="http://transacc.linkeddata.es/def/core#impairment">impairment</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
          <dt>is disjoint with</dt>
          <dd>
             <a href="#http://www.w3.org/2008/05/skos#ConceptScheme" title="http://www.w3.org/2008/05/skos#ConceptScheme">Concept Scheme</a>
@@ -309,7 +360,7 @@ This section provides details for each class and property defined by Public Tran
          <dd>
             <a href="#adresses" title="http://transacc.linkeddata.es/def/core#adresses">adresses</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#feature" title="http://transacc.linkeddata.es/def/core#feature">feature</a>
-            <sup class="type-dp" title="data property">dp</sup>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
@@ -334,17 +385,74 @@ This section provides details for each class and property defined by Public Tran
       <dl class="description">
          <dt>is in domain of</dt>
          <dd>
-            <a href="#disabilityType"
-               title="http://transacc.linkeddata.es/def/core#disabilityType">disability type</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#impairment"
+            <a href="#impairment"
                title="http://transacc.linkeddata.es/def/core#impairment">impairment</a>
-            <sup class="type-dp" title="data property">dp</sup>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#adresses" title="http://transacc.linkeddata.es/def/core#adresses">adresses</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasDisabilityType"
                title="http://transacc.linkeddata.es/def/core#hasDisabilityType">has disability type</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ElementWDisabFeature">
+      <h3>element w disab feature<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#ElementWDisabFeature</p>
+      <div class="comment">
+         <span class="markdown">Elements that may have features for disability that can be annotated</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#BusStop" title="http://transacc.linkeddata.es/def/core#BusStop">bus stop</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ExteriorAccess"
+               title="http://transacc.linkeddata.es/def/core#ExteriorAccess">exterior access</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Notice" title="http://transacc.linkeddata.es/def/core#Notice">notice</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Platform" title="http://transacc.linkeddata.es/def/core#Platform">platform</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Stair" title="http://transacc.linkeddata.es/def/core#Stair">stair</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasDisabilityFeature"
+               title="http://transacc.linkeddata.es/def/core#hasDisabilityFeature">has disability feature</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#annotates" title="http://transacc.linkeddata.es/def/core#annotates">annotates</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ElementWNotice">
+      <h3>element w notice<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#ElementWNotice</p>
+      <div class="comment">
+         <span class="markdown">Elements that may have Notice(s)</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#http://vocab.gtfs.org/terms#Station" title="http://vocab.gtfs.org/terms#Station">Station</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#BusStop" title="http://transacc.linkeddata.es/def/core#BusStop">bus stop</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Platform" title="http://transacc.linkeddata.es/def/core#Platform">platform</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasNotice" title="http://transacc.linkeddata.es/def/core#hasNotice">has notice</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -381,6 +489,12 @@ This section provides details for each class and property defined by Public Tran
          <span class="markdown">Access from the street to the station</span>
       </div>
       <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ElementWDisabFeature"
+               title="http://transacc.linkeddata.es/def/core#ElementWDisabFeature">element w disab feature</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>has sub-classes</dt>
          <dd>
             <a href="#Elevator" title="http://transacc.linkeddata.es/def/core#Elevator">elevator</a>
@@ -428,6 +542,13 @@ This section provides details for each class and property defined by Public Tran
             <a href="#Notice" title="http://transacc.linkeddata.es/def/core#Notice">notice</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Billboard" title="http://transacc.linkeddata.es/def/core#Billboard">billboard</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Sign" title="http://transacc.linkeddata.es/def/core#Sign">sign</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Sound" title="http://transacc.linkeddata.es/def/core#Sound">sound</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
       </dl>
    </div>
    <div class="entity" id="MetroRoute">
@@ -463,6 +584,13 @@ This section provides details for each class and property defined by Public Tran
             <a href="#http://vocab.gtfs.org/terms#Stop" title="http://vocab.gtfs.org/terms#Stop">Stop</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#BusStop" title="http://transacc.linkeddata.es/def/core#BusStop">bus stop</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#TrainStop"
+               title="http://transacc.linkeddata.es/def/core#TrainStop">train stop</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
       </dl>
    </div>
    <div class="entity" id="Notice">
@@ -476,6 +604,12 @@ This section provides details for each class and property defined by Public Tran
          <span class="markdown">Any written or luminous sign, billboard, or sound announcement</span>
       </div>
       <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ElementWDisabFeature"
+               title="http://transacc.linkeddata.es/def/core#ElementWDisabFeature">element w disab feature</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>has sub-classes</dt>
          <dd>
             <a href="#Billboard" title="http://transacc.linkeddata.es/def/core#Billboard">billboard</a>
@@ -483,6 +617,11 @@ This section provides details for each class and property defined by Public Tran
             <sup class="type-c" title="class">c</sup>, <a href="#Sign" title="http://transacc.linkeddata.es/def/core#Sign">sign</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Sound" title="http://transacc.linkeddata.es/def/core#Sound">sound</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#content" title="http://transacc.linkeddata.es/def/core#content">content</a>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
@@ -555,6 +694,17 @@ This section provides details for each class and property defined by Public Tran
          <span class="markdown">a platform of a metro route in a certain stop and direction</span>
       </div>
       <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ElementWDisabFeature"
+               title="http://transacc.linkeddata.es/def/core#ElementWDisabFeature">element w disab feature</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#ElementWNotice"
+               title="http://transacc.linkeddata.es/def/core#ElementWNotice">element w notice</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is in domain of</dt>
          <dd>
             <a href="#toRouteDirection"
@@ -714,6 +864,13 @@ This section provides details for each class and property defined by Public Tran
             <a href="#Notice" title="http://transacc.linkeddata.es/def/core#Notice">notice</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Billboard" title="http://transacc.linkeddata.es/def/core#Billboard">billboard</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Luminous" title="http://transacc.linkeddata.es/def/core#Luminous">luminous</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Sound" title="http://transacc.linkeddata.es/def/core#Sound">sound</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
       </dl>
    </div>
    <div class="entity" id="Sound">
@@ -728,6 +885,42 @@ This section provides details for each class and property defined by Public Tran
          <dd>
             <a href="#Notice" title="http://transacc.linkeddata.es/def/core#Notice">notice</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Billboard" title="http://transacc.linkeddata.es/def/core#Billboard">billboard</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Luminous" title="http://transacc.linkeddata.es/def/core#Luminous">luminous</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Sign" title="http://transacc.linkeddata.es/def/core#Sign">sign</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Stair">
+      <h3>stair<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#Stair</p>
+      <div class="comment">
+         <span class="markdown">A Stair in an acces to a station</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ElementWDisabFeature"
+               title="http://transacc.linkeddata.es/def/core#ElementWDisabFeature">element w disab feature</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#typeStair" title="http://transacc.linkeddata.es/def/core#typeStair">type stair</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasStair" title="http://transacc.linkeddata.es/def/core#hasStair">has stair</a>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -747,10 +940,11 @@ This section provides details for each class and property defined by Public Tran
          <dd>unstable</dd>
       </dl>
       <dl class="description">
-         <dt>is in domain of</dt>
+         <dt>has super-classes</dt>
          <dd>
-            <a href="#http://vocab.gtfs.org/terms#wheelchairAccessible" title="http://vocab.gtfs.org/terms#wheelchairAccessible">wheelchair boarding</a>
-            <sup class="type-op" title="object property">op</sup>
+            <a href="#ElementWNotice"
+               title="http://transacc.linkeddata.es/def/core#ElementWNotice">element w notice</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
@@ -790,7 +984,8 @@ This section provides details for each class and property defined by Public Tran
          <dt>is in domain of</dt>
          <dd>
             <a href="#http://vocab.gtfs.org/terms#parentStation" title="http://vocab.gtfs.org/terms#parentStation">Parent Station</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#stopId" title="http://transacc.linkeddata.es/def/core#stopId">stop id</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#code" title="http://transacc.linkeddata.es/def/core#code">code</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#stopId" title="http://transacc.linkeddata.es/def/core#stopId">stop id</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#http://vocab.gtfs.org/terms#wheelchairAccessible" title="http://vocab.gtfs.org/terms#wheelchairAccessible">wheelchair boarding</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
@@ -814,6 +1009,13 @@ This section provides details for each class and property defined by Public Tran
          <dt>has super-classes</dt>
          <dd>
             <a href="#http://vocab.gtfs.org/terms#Stop" title="http://vocab.gtfs.org/terms#Stop">Stop</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#BusStop" title="http://transacc.linkeddata.es/def/core#BusStop">bus stop</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MetroStop"
+               title="http://transacc.linkeddata.es/def/core#MetroStop">metro stop</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -910,12 +1112,22 @@ This section provides details for each class and property defined by Public Tran
          </a>
       </li>
       <li>
+         <a href="#content" title="http://transacc.linkeddata.es/def/core#content">
+            <span>content</span>
+         </a>
+      </li>
+      <li>
          <a href="#http://vocab.gtfs.org/terms#destinationStop" title="http://vocab.gtfs.org/terms#destinationStop">Destination Stop</a>
       </li>
       <li>
          <a href="#exteriorAccessTo"
             title="http://transacc.linkeddata.es/def/core#exteriorAccessTo">
             <span>exterior access to</span>
+         </a>
+      </li>
+      <li>
+         <a href="#feature" title="http://transacc.linkeddata.es/def/core#feature">
+            <span>feature</span>
          </a>
       </li>
       <li>
@@ -944,6 +1156,12 @@ This section provides details for each class and property defined by Public Tran
       <li>
          <a href="#hasStair" title="http://transacc.linkeddata.es/def/core#hasStair">
             <span>has stair</span>
+         </a>
+      </li>
+      <li>
+         <a href="#impairment"
+            title="http://transacc.linkeddata.es/def/core#impairment">
+            <span>impairment</span>
          </a>
       </li>
       <li>
@@ -1066,7 +1284,7 @@ This section provides details for each class and property defined by Public Tran
       <p>
          <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#annotates</p>
       <div class="comment">
-         <span class="markdown">Any transportation element can be annotated by a user in different dates</span>
+         <span class="markdown">Any transportation element (station, exterior access, platform) disability feature can be annotated by a user in different dates</span>
       </div>
       <div class="description">
          <dl>
@@ -1074,6 +1292,37 @@ This section provides details for each class and property defined by Public Tran
             <dd>
                <a href="#Annotation"
                   title="http://transacc.linkeddata.es/def/core#Annotation">annotation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#ElementWDisabFeature"
+                  title="http://transacc.linkeddata.es/def/core#ElementWDisabFeature">element w disab feature</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="content">
+      <h3>content<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#content</p>
+      <div class="comment">
+         <span class="markdown">The content of a Notice, is a SKOS concept</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Notice" title="http://transacc.linkeddata.es/def/core#Notice">notice</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/2008/05/skos#Concept" title="http://www.w3.org/2008/05/skos#Concept">concept</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -1126,6 +1375,32 @@ This section provides details for each class and property defined by Public Tran
          </dl>
       </div>
    </div>
+   <div class="entity" id="feature">
+      <h3>feature<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#feature</p>
+      <div class="comment">
+         <span class="markdown">The disability feature of a transportation element (bus stop, station, exterior access, etc.). Is a SKOS concept</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#DisabilityFeature"
+                  title="http://transacc.linkeddata.es/def/core#DisabilityFeature">disability feature</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/2008/05/skos#Concept" title="http://www.w3.org/2008/05/skos#Concept">concept</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="hasDirection">
       <h3>has direction<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -1159,11 +1434,14 @@ This section provides details for each class and property defined by Public Tran
       </h3>
       <p>
          <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#hasDisabilityFeature</p>
-      <div class="comment">
-         <span class="markdown">An element in public transportation has a feature for disability</span>
-      </div>
       <div class="description">
          <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ElementWDisabFeature"
+                  title="http://transacc.linkeddata.es/def/core#ElementWDisabFeature">element w disab feature</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
             <dt>has range</dt>
             <dd>
                <a href="#DisabilityFeature"
@@ -1185,6 +1463,11 @@ This section provides details for each class and property defined by Public Tran
       </div>
       <div class="description">
          <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://xmlns.com/foaf/0.1/Person">person</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
             <dt>has range</dt>
             <dd>
                <a href="#DisabilityType"
@@ -1206,6 +1489,12 @@ This section provides details for each class and property defined by Public Tran
       </div>
       <div class="description">
          <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ElementWNotice"
+                  title="http://transacc.linkeddata.es/def/core#ElementWNotice">element w notice</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
             <dt>has range</dt>
             <dd>
                <a href="#Notice" title="http://transacc.linkeddata.es/def/core#Notice">notice</a>
@@ -1233,7 +1522,30 @@ This section provides details for each class and property defined by Public Tran
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://transacc.linkeddata.es/def/core#Stair">stair</span>
+               <a href="#Stair" title="http://transacc.linkeddata.es/def/core#Stair">stair</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="impairment">
+      <h3>impairment<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#impairment</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#DisabilityType"
+                  title="http://transacc.linkeddata.es/def/core#DisabilityType">disability type</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/2008/05/skos#Concept" title="http://www.w3.org/2008/05/skos#Concept">concept</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -1299,6 +1611,9 @@ This section provides details for each class and property defined by Public Tran
       </h3>
       <p>
          <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#ofDisabilityFeature</p>
+      <div class="comment">
+         <span class="markdown">An annotation corresponds to a certain disability feature of a transportation element (station, platform, exterior access, bus stop)</span>
+      </div>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -1521,7 +1836,7 @@ This section provides details for each class and property defined by Public Tran
       <p>
          <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#toStation</p>
       <div class="comment">
-         <span class="markdown">A platform corresponds to a direcion of a route in a certain station (Station)</span>
+         <span class="markdown">A platform corresponds to a direction of a route in a certain station</span>
       </div>
       <div class="description">
          <dl>
@@ -1582,10 +1897,6 @@ This section provides details for each class and property defined by Public Tran
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#http://vocab.gtfs.org/terms#Station" title="http://vocab.gtfs.org/terms#Station">Station</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dd>
                <a href="#http://vocab.gtfs.org/terms#Stop" title="http://vocab.gtfs.org/terms#Stop">Stop</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
@@ -1616,19 +1927,8 @@ This section provides details for each class and property defined by Public Tran
          <a href="#http://vocab.gtfs.org/terms#direction" title="http://vocab.gtfs.org/terms#direction">Direction</a>
       </li>
       <li>
-         <a href="#disabilityType"
-            title="http://transacc.linkeddata.es/def/core#disabilityType">
-            <span>disability type</span>
-         </a>
-      </li>
-      <li>
          <a href="#http://xmlns.com/foaf/0.1/familyName" title="http://xmlns.com/foaf/0.1/familyName">
             <span>family name</span>
-         </a>
-      </li>
-      <li>
-         <a href="#feature" title="http://transacc.linkeddata.es/def/core#feature">
-            <span>feature</span>
          </a>
       </li>
       <li>
@@ -1638,12 +1938,6 @@ This section provides details for each class and property defined by Public Tran
       </li>
       <li>
          <a href="#http://vocab.gtfs.org/terms#headsign" title="http://vocab.gtfs.org/terms#headsign">Headsign</a>
-      </li>
-      <li>
-         <a href="#impairment"
-            title="http://transacc.linkeddata.es/def/core#impairment">
-            <span>impairment</span>
-         </a>
       </li>
       <li>
          <a href="#http://vocab.gtfs.org/terms#pointSequence" title="http://vocab.gtfs.org/terms#pointSequence">Point Sequence</a>
@@ -1670,12 +1964,6 @@ This section provides details for each class and property defined by Public Tran
          </a>
       </li>
       <li>
-         <a href="#typeContent"
-            title="http://transacc.linkeddata.es/def/core#typeContent">
-            <span>type content</span>
-         </a>
-      </li>
-      <li>
          <a href="#typePlatform"
             title="http://transacc.linkeddata.es/def/core#typePlatform">
             <span>type platform</span>
@@ -1696,6 +1984,11 @@ This section provides details for each class and property defined by Public Tran
          <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#code</p>
       <div class="description">
          <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://vocab.gtfs.org/terms#Stop" title="http://vocab.gtfs.org/terms#Stop">Stop</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
             <dt>has range</dt>
             <dd>
                <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</span>
@@ -1710,6 +2003,9 @@ This section provides details for each class and property defined by Public Tran
       </h3>
       <p>
          <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#dateAnnotation</p>
+      <div class="comment">
+         <span class="markdown">The date an annotation was made</span>
+      </div>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -1749,28 +2045,6 @@ This section provides details for each class and property defined by Public Tran
          </dl>
       </div>
    </div>
-   <div class="entity" id="disabilityType">
-      <h3>disability type<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#disabilityType</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#DisabilityType"
-                  title="http://transacc.linkeddata.es/def/core#DisabilityType">disability type</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
    <div class="entity" id="http://xmlns.com/foaf/0.1/familyName">
       <h3>family name<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
@@ -1796,28 +2070,6 @@ This section provides details for each class and property defined by Public Tran
             <dt>has domain</dt>
             <dd>
                <span class="dotted" title="http://xmlns.com/foaf/0.1/Person">person</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="feature">
-      <h3>feature<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#feature</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#DisabilityFeature"
-                  title="http://transacc.linkeddata.es/def/core#DisabilityFeature">disability feature</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1872,28 +2124,6 @@ This section provides details for each class and property defined by Public Tran
          </dl>
       </div>
    </div>
-   <div class="entity" id="impairment">
-      <h3>impairment<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#impairment</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#DisabilityType"
-                  title="http://transacc.linkeddata.es/def/core#DisabilityType">disability type</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
    <div class="entity" id="http://vocab.gtfs.org/terms#pointSequence">
       <h3>Point Sequence<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
@@ -1931,6 +2161,9 @@ This section provides details for each class and property defined by Public Tran
       </h3>
       <p>
          <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#routeId</p>
+      <div class="comment">
+         <span class="markdown">The id of a route</span>
+      </div>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -1953,10 +2186,16 @@ This section provides details for each class and property defined by Public Tran
       <p>
          <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#state</p>
       <div class="comment">
-         <span class="markdown">State of a disability feature, for example "elevator out of order"</span>
+         <span class="markdown">In an annotation, state of a disability feature in a transport element (for example "out of order"</span>
       </div>
       <div class="description">
          <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Annotation"
+                  title="http://transacc.linkeddata.es/def/core#Annotation">annotation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
             <dt>has range</dt>
             <dd>
                <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</span>
@@ -1992,6 +2231,9 @@ This section provides details for each class and property defined by Public Tran
       </h3>
       <p>
          <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#typeBusStop</p>
+      <div class="comment">
+         <span class="markdown">Type of bus stop, marquee or pole</span>
+      </div>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -2004,22 +2246,6 @@ This section provides details for each class and property defined by Public Tran
          </dl>
       </div>
    </div>
-   <div class="entity" id="typeContent">
-      <h3>type content<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#typeContent</p>
-      <div class="description">
-         <dl>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
    <div class="entity" id="typePlatform">
       <h3>type platform<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
@@ -2027,6 +2253,9 @@ This section provides details for each class and property defined by Public Tran
       </h3>
       <p>
          <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#typePlatform</p>
+      <div class="comment">
+         <span class="markdown">type of platform, indoor or outdoor</span>
+      </div>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -2046,11 +2275,14 @@ This section provides details for each class and property defined by Public Tran
       </h3>
       <p>
          <strong>IRI:</strong> http://transacc.linkeddata.es/def/core#typeStair</p>
+      <div class="comment">
+         <span class="markdown">type of stairs, escalator or regular stairs</span>
+      </div>
       <div class="description">
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="http://transacc.linkeddata.es/def/core#Stair">stair</span>
+               <a href="#Stair" title="http://transacc.linkeddata.es/def/core#Stair">stair</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>

@@ -190,7 +190,18 @@
 
     <owl:ObjectProperty rdf:about="http://transacc.linkeddata.es/def/core#annotates">
         <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#Annotation"/>
-        <rdfs:comment xml:lang="es">Any transportation element can be annotated by a user in different dates</rdfs:comment>
+        <rdfs:range rdf:resource="http://transacc.linkeddata.es/def/core#ElementWDisabFeature"/>
+        <rdfs:comment xml:lang="es">Any transportation element (station, exterior access, platform) disability feature can be annotated by a user in different dates</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transacc.linkeddata.es/def/core#content -->
+
+    <owl:ObjectProperty rdf:about="http://transacc.linkeddata.es/def/core#content">
+        <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#Notice"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2008/05/skos#Concept"/>
+        <rdfs:comment>The content of a Notice, is a SKOS concept</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -200,6 +211,16 @@
     <owl:ObjectProperty rdf:about="http://transacc.linkeddata.es/def/core#exteriorAccessTo">
         <rdfs:subPropertyOf rdf:resource="http://vocab.gtfs.org/terms#parentStation"/>
         <rdfs:range rdf:resource="http://vocab.gtfs.org/terms#Station"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transacc.linkeddata.es/def/core#feature -->
+
+    <owl:ObjectProperty rdf:about="http://transacc.linkeddata.es/def/core#feature">
+        <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#DisabilityFeature"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2008/05/skos#Concept"/>
+        <rdfs:comment>The disability feature of a transportation element (bus stop, station, exterior access, etc.). Is a SKOS concept</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -217,8 +238,8 @@
     <!-- http://transacc.linkeddata.es/def/core#hasDisabilityFeature -->
 
     <owl:ObjectProperty rdf:about="http://transacc.linkeddata.es/def/core#hasDisabilityFeature">
+        <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#ElementWDisabFeature"/>
         <rdfs:range rdf:resource="http://transacc.linkeddata.es/def/core#DisabilityFeature"/>
-        <rdfs:comment xml:lang="es">An element in public transportation has a feature for disability</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -226,6 +247,7 @@
     <!-- http://transacc.linkeddata.es/def/core#hasDisabilityType -->
 
     <owl:ObjectProperty rdf:about="http://transacc.linkeddata.es/def/core#hasDisabilityType">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://transacc.linkeddata.es/def/core#DisabilityType"/>
         <rdfs:comment xml:lang="es">A person has a type of disability</rdfs:comment>
     </owl:ObjectProperty>
@@ -235,6 +257,7 @@
     <!-- http://transacc.linkeddata.es/def/core#hasNotice -->
 
     <owl:ObjectProperty rdf:about="http://transacc.linkeddata.es/def/core#hasNotice">
+        <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#ElementWNotice"/>
         <rdfs:range rdf:resource="http://transacc.linkeddata.es/def/core#Notice"/>
         <rdfs:comment xml:lang="es">A station, platform, bus stop can have notices</rdfs:comment>
     </owl:ObjectProperty>
@@ -247,6 +270,15 @@
         <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#FootPass"/>
         <rdfs:range rdf:resource="http://transacc.linkeddata.es/def/core#Stair"/>
         <rdfs:comment xml:lang="es">An exterior access may have stairs</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://transacc.linkeddata.es/def/core#impairment -->
+
+    <owl:ObjectProperty rdf:about="http://transacc.linkeddata.es/def/core#impairment">
+        <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#DisabilityType"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2008/05/skos#Concept"/>
     </owl:ObjectProperty>
     
 
@@ -266,6 +298,7 @@
     <owl:ObjectProperty rdf:about="http://transacc.linkeddata.es/def/core#ofDisabilityFeature">
         <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#Annotation"/>
         <rdfs:range rdf:resource="http://transacc.linkeddata.es/def/core#DisabilityFeature"/>
+        <rdfs:comment>An annotation corresponds to a certain disability feature of a transportation element (station, platform, exterior access, bus stop)</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -285,7 +318,7 @@
     <owl:ObjectProperty rdf:about="http://transacc.linkeddata.es/def/core#toStation">
         <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#Platform"/>
         <rdfs:range rdf:resource="http://vocab.gtfs.org/terms#Station"/>
-        <rdfs:comment xml:lang="es">A platform corresponds to a direcion of a route in a certain station (Station)</rdfs:comment>
+        <rdfs:comment xml:lang="es">A platform corresponds to a direction of a route in a certain station</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -414,7 +447,6 @@
     <!-- http://vocab.gtfs.org/terms#wheelchairAccessible -->
 
     <owl:ObjectProperty rdf:about="http://vocab.gtfs.org/terms#wheelchairAccessible">
-        <rdfs:domain rdf:resource="http://vocab.gtfs.org/terms#Station"/>
         <rdfs:domain rdf:resource="http://vocab.gtfs.org/terms#Stop"/>
         <rdfs:range rdf:resource="http://vocab.gtfs.org/terms#WheelchairBoardingStatus"/>
         <gtfs:comment xml:lang="es">Si wheelchair_accessible es 0, mapee a gtfs:CheckParentStation; si es 1, mapee a gtfs:WheelchairAccessible; si es 2, mapee a gtfs:NotWheelchairAccessible.</gtfs:comment>
@@ -469,6 +501,7 @@
     <!-- http://transacc.linkeddata.es/def/core#code -->
 
     <owl:DatatypeProperty rdf:about="http://transacc.linkeddata.es/def/core#code">
+        <rdfs:domain rdf:resource="http://vocab.gtfs.org/terms#Stop"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
     </owl:DatatypeProperty>
     
@@ -479,33 +512,7 @@
     <owl:DatatypeProperty rdf:about="http://transacc.linkeddata.es/def/core#dateAnnotation">
         <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#Annotation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://transacc.linkeddata.es/def/core#disabilityType -->
-
-    <owl:DatatypeProperty rdf:about="http://transacc.linkeddata.es/def/core#disabilityType">
-        <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#DisabilityType"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://transacc.linkeddata.es/def/core#feature -->
-
-    <owl:DatatypeProperty rdf:about="http://transacc.linkeddata.es/def/core#feature">
-        <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#DisabilityFeature"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://transacc.linkeddata.es/def/core#impairment -->
-
-    <owl:DatatypeProperty rdf:about="http://transacc.linkeddata.es/def/core#impairment">
-        <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#DisabilityType"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The date an annotation was made</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -515,6 +522,7 @@
     <owl:DatatypeProperty rdf:about="http://transacc.linkeddata.es/def/core#routeId">
         <rdfs:domain rdf:resource="http://vocab.gtfs.org/terms#Route"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <rdfs:comment>The id of a route</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -522,8 +530,9 @@
     <!-- http://transacc.linkeddata.es/def/core#state -->
 
     <owl:DatatypeProperty rdf:about="http://transacc.linkeddata.es/def/core#state">
+        <rdfs:domain rdf:resource="http://transacc.linkeddata.es/def/core#Annotation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="es">State of a disability feature, for example &quot;elevator out of order&quot;</rdfs:comment>
+        <rdfs:comment xml:lang="es">In an annotation, state of a disability feature in a transport element (for example &quot;out of order&quot;</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -558,14 +567,7 @@
                 </owl:oneOf>
             </rdfs:Datatype>
         </rdfs:range>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://transacc.linkeddata.es/def/core#typeContent -->
-
-    <owl:DatatypeProperty rdf:about="http://transacc.linkeddata.es/def/core#typeContent">
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>Type of bus stop, marquee or pole</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -591,6 +593,7 @@
                 </owl:oneOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <rdfs:comment>type of platform, indoor or outdoor</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -616,6 +619,7 @@
                 </owl:oneOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <rdfs:comment>type of stairs, escalator or regular stairs</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -733,6 +737,8 @@
     <!-- http://transacc.linkeddata.es/def/core#BusStop -->
 
     <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#BusStop">
+        <rdfs:subClassOf rdf:resource="http://transacc.linkeddata.es/def/core#ElementWDisabFeature"/>
+        <rdfs:subClassOf rdf:resource="http://transacc.linkeddata.es/def/core#ElementWNotice"/>
         <rdfs:subClassOf rdf:resource="http://vocab.gtfs.org/terms#Stop"/>
     </owl:Class>
     
@@ -754,6 +760,22 @@
     
 
 
+    <!-- http://transacc.linkeddata.es/def/core#ElementWDisabFeature -->
+
+    <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#ElementWDisabFeature">
+        <rdfs:comment>Elements that may have features for disability that can be annotated</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://transacc.linkeddata.es/def/core#ElementWNotice -->
+
+    <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#ElementWNotice">
+        <rdfs:comment>Elements that may have Notice(s)</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://transacc.linkeddata.es/def/core#Elevator -->
 
     <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#Elevator">
@@ -766,6 +788,7 @@
     <!-- http://transacc.linkeddata.es/def/core#ExteriorAccess -->
 
     <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#ExteriorAccess">
+        <rdfs:subClassOf rdf:resource="http://transacc.linkeddata.es/def/core#ElementWDisabFeature"/>
         <rdfs:comment>Access from the street to the station</rdfs:comment>
     </owl:Class>
     
@@ -806,6 +829,7 @@
     <!-- http://transacc.linkeddata.es/def/core#Notice -->
 
     <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#Notice">
+        <rdfs:subClassOf rdf:resource="http://transacc.linkeddata.es/def/core#ElementWDisabFeature"/>
         <owl:disjointUnionOf rdf:parseType="Collection">
             <rdf:Description rdf:about="http://transacc.linkeddata.es/def/core#Billboard"/>
             <rdf:Description rdf:about="http://transacc.linkeddata.es/def/core#Luminous"/>
@@ -820,6 +844,8 @@
     <!-- http://transacc.linkeddata.es/def/core#Platform -->
 
     <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#Platform">
+        <rdfs:subClassOf rdf:resource="http://transacc.linkeddata.es/def/core#ElementWDisabFeature"/>
+        <rdfs:subClassOf rdf:resource="http://transacc.linkeddata.es/def/core#ElementWNotice"/>
         <rdfs:comment>a platform of a metro route in a certain stop and direction</rdfs:comment>
     </owl:Class>
     
@@ -852,7 +878,10 @@
 
     <!-- http://transacc.linkeddata.es/def/core#Stair -->
 
-    <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#Stair"/>
+    <owl:Class rdf:about="http://transacc.linkeddata.es/def/core#Stair">
+        <rdfs:subClassOf rdf:resource="http://transacc.linkeddata.es/def/core#ElementWDisabFeature"/>
+        <rdfs:comment>A Stair in an acces to a station</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -931,6 +960,7 @@
     <!-- http://vocab.gtfs.org/terms#Station -->
 
     <owl:Class rdf:about="http://vocab.gtfs.org/terms#Station">
+        <rdfs:subClassOf rdf:resource="http://transacc.linkeddata.es/def/core#ElementWNotice"/>
         <gtfs:comment xml:lang="en">Map a row in stops.txt to gtfs:Station when the location_type is 1.</gtfs:comment>
         <gtfs:comment xml:lang="es">Mapee una línea en stops.txt a gtfs:Station cuando location_type sea 1.</gtfs:comment>
         <rdfs:comment xml:lang="en">A physical structure or area that contains one or more stop.</rdfs:comment>
@@ -999,12 +1029,6 @@
     
 
 
-    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
-
-    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
-    
-
-
     <!-- http://www.w3.org/2008/05/skos#Collection -->
 
     <owl:Class rdf:about="http://www.w3.org/2008/05/skos#Collection">
@@ -1055,6 +1079,34 @@
     <!-- http://xmlns.com/foaf/0.1/Person -->
 
     <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://transacc.linkeddata.es/def/core#Billboard"/>
+            <rdf:Description rdf:about="http://transacc.linkeddata.es/def/core#Luminous"/>
+            <rdf:Description rdf:about="http://transacc.linkeddata.es/def/core#Sign"/>
+            <rdf:Description rdf:about="http://transacc.linkeddata.es/def/core#Sound"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://transacc.linkeddata.es/def/core#BusStop"/>
+            <rdf:Description rdf:about="http://transacc.linkeddata.es/def/core#MetroStop"/>
+            <rdf:Description rdf:about="http://transacc.linkeddata.es/def/core#TrainStop"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 

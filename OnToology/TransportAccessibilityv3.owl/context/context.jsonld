@@ -14,12 +14,15 @@
     "Route" : {
       "@id" : "http://vocab.gtfs.org/terms#Route"
     },
+    "ElementWNotice" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#ElementWNotice"
+    },
     "term_status" : {
       "@id" : "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"
     },
     "impairment" : {
       "@id" : "http://transacc.linkeddata.es/def/core#impairment",
-      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+      "@type" : "@id"
     },
     "TrainStop" : {
       "@id" : "http://transacc.linkeddata.es/def/core#TrainStop"
@@ -127,7 +130,7 @@
     },
     "feature" : {
       "@id" : "http://transacc.linkeddata.es/def/core#feature",
-      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+      "@type" : "@id"
     },
     "Agent" : {
       "@id" : "http://xmlns.com/foaf/0.1/Agent"
@@ -161,10 +164,6 @@
     "identifier" : {
       "@id" : "http://purl.org/dc/terms/identifier"
     },
-    "disabilityType" : {
-      "@id" : "http://transacc.linkeddata.es/def/core#disabilityType",
-      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
-    },
     "routeId" : {
       "@id" : "http://transacc.linkeddata.es/def/core#routeId",
       "@type" : "http://www.w3.org/2001/XMLSchema#positiveInteger"
@@ -177,6 +176,10 @@
     },
     "typeBusStop" : {
       "@id" : "http://transacc.linkeddata.es/def/core#typeBusStop"
+    },
+    "content" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#content",
+      "@type" : "@id"
     },
     "DisabilityFeature" : {
       "@id" : "http://transacc.linkeddata.es/def/core#DisabilityFeature"
@@ -284,10 +287,6 @@
       "@id" : "http://transacc.linkeddata.es/def/core#hasStair",
       "@type" : "@id"
     },
-    "typeContent" : {
-      "@id" : "http://transacc.linkeddata.es/def/core#typeContent",
-      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
-    },
     "pointSequence" : {
       "@id" : "http://vocab.gtfs.org/terms#pointSequence",
       "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -305,6 +304,9 @@
     },
     "Stop" : {
       "@id" : "http://vocab.gtfs.org/terms#Stop"
+    },
+    "ElementWDisabFeature" : {
+      "@id" : "http://transacc.linkeddata.es/def/core#ElementWDisabFeature"
     },
     "Collection" : {
       "@id" : "http://www.w3.org/2008/05/skos#Collection"

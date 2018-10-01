@@ -1,20 +1,28 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1000"
-node [shape = rectangle, color="black"]; "base:ExteriorAccess" "base:Sign" "base:Elevator" "base:BusStop" "base:BusRoute" "base:TrainStop" "base:Luminous" "base:Billboard" "base:RouteDirection" "foaf:OnlineAccount" "gtfs:Trip" "base:Sound" "base:MetroStop" "base:Notice" "base:FootPass" "foaf:Person" "gtfs:Stop" "base:MetroRoute" "gtfs:Route" "base:User" ; /*classes style*/
-	"base:Sign" -> "base:Notice" [ label = "rdfs:subClassOf" ];
-	"foaf:OnlineAccount" -> "owl:Thing" [ label = "rdfs:subClassOf" ];
-	"base:RouteDirection" -> "gtfs:Trip" [ label = "rdfs:subClassOf" ];
-	"base:MetroStop" -> "gtfs:Stop" [ label = "rdfs:subClassOf" ];
-	"base:BusRoute" -> "gtfs:Route" [ label = "rdfs:subClassOf" ];
+node [shape = rectangle, color="black"]; "base:ExteriorAccess" "base:ElementWDisabFeature" "base:Sign" "base:Elevator" "base:Stair" "gtfs:Station" "base:BusStop" "base:BusRoute" "base:Platform" "base:TrainStop" "base:Luminous" "base:Billboard" "base:RouteDirection" "foaf:OnlineAccount" "gtfs:Trip" "base:Sound" "base:MetroStop" "base:Notice" "base:FootPass" "foaf:Person" "gtfs:Stop" "base:MetroRoute" "base:ElementWNotice" "gtfs:Route" "base:User" ; /*classes style*/
 	"base:User" -> "foaf:Person" [ label = "rdfs:subClassOf" ];
-	"base:Elevator" -> "base:ExteriorAccess" [ label = "rdfs:subClassOf" ];
-	"base:TrainStop" -> "gtfs:Stop" [ label = "rdfs:subClassOf" ];
-	"base:BusStop" -> "gtfs:Stop" [ label = "rdfs:subClassOf" ];
-	"base:MetroRoute" -> "gtfs:Route" [ label = "rdfs:subClassOf" ];
 	"base:Billboard" -> "base:Notice" [ label = "rdfs:subClassOf" ];
-	"base:Luminous" -> "base:Notice" [ label = "rdfs:subClassOf" ];
-	"base:FootPass" -> "base:ExteriorAccess" [ label = "rdfs:subClassOf" ];
+	"base:BusStop" -> "gtfs:Stop" [ label = "rdfs:subClassOf" ];
+	"base:BusStop" -> "base:ElementWNotice" [ label = "rdfs:subClassOf" ];
+	"base:BusStop" -> "base:ElementWDisabFeature" [ label = "rdfs:subClassOf" ];
+	"base:MetroStop" -> "gtfs:Stop" [ label = "rdfs:subClassOf" ];
 	"base:Sound" -> "base:Notice" [ label = "rdfs:subClassOf" ];
+	"base:Platform" -> "base:ElementWNotice" [ label = "rdfs:subClassOf" ];
+	"base:Platform" -> "base:ElementWDisabFeature" [ label = "rdfs:subClassOf" ];
+	"base:ExteriorAccess" -> "base:ElementWDisabFeature" [ label = "rdfs:subClassOf" ];
+	"base:Sign" -> "base:Notice" [ label = "rdfs:subClassOf" ];
+	"base:FootPass" -> "base:ExteriorAccess" [ label = "rdfs:subClassOf" ];
+	"base:Stair" -> "base:ElementWDisabFeature" [ label = "rdfs:subClassOf" ];
+	"base:Notice" -> "base:ElementWDisabFeature" [ label = "rdfs:subClassOf" ];
+	"base:TrainStop" -> "gtfs:Stop" [ label = "rdfs:subClassOf" ];
+	"base:RouteDirection" -> "gtfs:Trip" [ label = "rdfs:subClassOf" ];
+	"base:Luminous" -> "base:Notice" [ label = "rdfs:subClassOf" ];
+	"foaf:OnlineAccount" -> "owl:Thing" [ label = "rdfs:subClassOf" ];
+	"base:MetroRoute" -> "gtfs:Route" [ label = "rdfs:subClassOf" ];
+	"base:BusRoute" -> "gtfs:Route" [ label = "rdfs:subClassOf" ];
+	"base:Elevator" -> "base:ExteriorAccess" [ label = "rdfs:subClassOf" ];
+	"gtfs:Station" -> "base:ElementWNotice" [ label = "rdfs:subClassOf" ];
 
 }
